@@ -7,11 +7,10 @@ The University of Tokyo <br>
 
 **Eurographics 2026**
 
-<!-- <a href=""><img src='https://img.shields.io/badge/arXiv-LeafFit 🌿-firebrick?logo=arxiv' alt='Arxiv'></a> -->
+<a href=""><img src='https://img.shields.io/badge/arXiv-LeafFit 🌿-firebrick?logo=arxiv' alt='Arxiv'></a>
 <a href="./pdf/paper.pdf"><img src='https://img.shields.io/badge/PDF-LeafFit 🌿-orange?logo=googledocs&logoColor=white' alt='PDF'></a>
 <a href='https://netbeifeng.github.io/LeafFit/'><img src='https://img.shields.io/badge/Project_Page-LeafFit 🌿-green?logo=googlechrome&logoColor=white' alt='Project Page'></a>
-<!-- <a href=''><img src='https://img.shields.io/badge/Video-LeafFit 🌿-red?logo=youtube' alt='Youtube Video'></a> -->
-<p style=''> Code will release soon! </p>
+<a href=''><img src='https://img.shields.io/badge/Video-LeafFit 🌿-red?logo=youtube' alt='Youtube Video'></a>
 </div>
 
 <!-- [\[Arxiv\]]() -->
@@ -19,6 +18,10 @@ The University of Tokyo <br>
 [\[Project Page\]](https://netbeifeng.github.io/LeafFit/) 
 <!-- [\[Video\]]()  -->
 
+## TODO
+Currently, the code is still a prototype and may require some expertise to run. We are working on:
+- [ ] Clean code
+- [ ] Make a ready-to-go GUI
 
 ![teaser](./imgs/teaser.png)
 
