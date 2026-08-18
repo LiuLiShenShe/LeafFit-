@@ -1,0 +1,15 @@
+{
+  "single": {
+    "min": 0.0,
+    "max": 4.066367474941328,
+    "mean": 2.5675781943791636,
+    "finite": true
+  },
+  "multisource": {
+    "min": -0.04614403037273451,
+    "max": 4.023150670690297,
+    "mean": 2.524359395650322,
+    "finite": true
+  },
+  "note": "multisource min may be slightly negative near sources (potpourri3d behavior); official code consumes as-is."
+}

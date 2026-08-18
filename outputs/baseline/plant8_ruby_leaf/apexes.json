@@ -1,0 +1,130 @@
+[
+  {
+    "apex_id": 0,
+    "gaussian_index": 24752,
+    "sample_index": 3,
+    "xyz": [
+      0.7656736969947815,
+      0.7657278776168823,
+      -0.2630240321159363
+    ],
+    "root_geodesic": 2.8853988551600414,
+    "type": "single_tip",
+    "tips": [
+      24752
+    ],
+    "base_gaussian_index": 27065
+  },
+  {
+    "apex_id": 1,
+    "gaussian_index": 10922,
+    "sample_index": 5,
+    "xyz": [
+      -0.12878161668777466,
+      1.0165003538131714,
+      -1.292651891708374
+    ],
+    "root_geodesic": 4.083582907839628,
+    "type": "single_tip",
+    "tips": [
+      10922
+    ],
+    "base_gaussian_index": 6126
+  },
+  {
+    "apex_id": 2,
+    "gaussian_index": 11680,
+    "sample_index": 7,
+    "xyz": [
+      -0.8809921741485596,
+      -0.14330315589904785,
+      0.3913480043411255
+    ],
+    "root_geodesic": 2.972959832604742,
+    "type": "single_tip",
+    "tips": [
+      11680
+    ],
+    "base_gaussian_index": 19038
+  },
+  {
+    "apex_id": 3,
+    "gaussian_index": 22796,
+    "sample_index": 19,
+    "xyz": [
+      0.6757685542106628,
+      0.17621707916259766,
+      -0.6823923587799072
+    ],
+    "root_geodesic": 2.995950744737502,
+    "type": "single_tip",
+    "tips": [
+      22796
+    ],
+    "base_gaussian_index": 25411
+  },
+  {
+    "apex_id": 4,
+    "gaussian_index": 8950,
+    "sample_index": 46,
+    "xyz": [
+      -0.23609334230422974,
+      -0.48776859045028687,
+      -0.467498779296875
+    ],
+    "root_geodesic": 3.834885732551669,
+    "type": "single_tip",
+    "tips": [
+      8950
+    ],
+    "base_gaussian_index": 9192
+  },
+  {
+    "apex_id": 5,
+    "gaussian_index": 20689,
+    "sample_index": 91,
+    "xyz": [
+      -0.5654512047767639,
+      -0.7150305509567261,
+      0.4726985692977905
+    ],
+    "root_geodesic": 3.0249691787090605,
+    "type": "single_tip",
+    "tips": [
+      20689
+    ],
+    "base_gaussian_index": 25804
+  },
+  {
+    "apex_id": 6,
+    "gaussian_index": 638,
+    "sample_index": 5687,
+    "xyz": [
+      0.4960952401161194,
+      -1.501583218574524,
+      0.8144809007644653
+    ],
+    "root_geodesic": 3.2689683915778986,
+    "type": "single_tip",
+    "tips": [
+      638
+    ],
+    "base_gaussian_index": 32305
+  },
+  {
+    "apex_id": 7,
+    "gaussian_index": 21492,
+    "sample_index": 6296,
+    "xyz": [
+      -0.9471054077148438,
+      0.96714186668396,
+      -0.2292765974998474
+    ],
+    "root_geodesic": 3.105941615244222,
+    "type": "single_tip",
+    "tips": [
+      21492
+    ],
+    "base_gaussian_index": 19370
+  }
+]

@@ -11,5 +11,5 @@ __pycache__/
 *.mtl
 *.obj
 
-# Generated segmentation outputs (do not commit to version control)
-outputs/
+# Large point-cloud segmentation results (regenerable; keep repo lean)
+*.ply

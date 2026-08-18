@@ -1,0 +1,66 @@
+{
+  "method": "geodesic_tip_graph",
+  "frozen_baseline": {
+    "Ns": 8192,
+    "h": 7,
+    "t_coef": 100000000.0,
+    "root_basin_radius": 0.1,
+    "opacity_threshold": 0.0,
+    "center_gaussians": true
+  },
+  "effective_runtime_params": {
+    "tips_k": 128,
+    "path_k": 256,
+    "overlap_cut": 0.8,
+    "triangle_cut": 0.62,
+    "slack_eps": 1e-09,
+    "max_iters": 50,
+    "multi_tips_distance_factor": 1.25,
+    "single_tip_distance_factor": 1.0,
+    "euclidean_offset": 0.25,
+    "geodesic_offset": 0.5,
+    "petiole_method": "geodesic_tip_graph",
+    "petiole_min_distance_threshold": 0.05,
+    "petiole_tolerance_percentage": 0.02,
+    "petiole_last_virtual_path_distance_factor": 2.5,
+    "petiole_protection_period_ratio": 0.25
+  },
+  "paper_vs_code_discrepancies": [
+    {
+      "param": "tips neighbor k",
+      "paper_says": "Nk=512 (flat)",
+      "code_does": "len(sparse)//64 = 128",
+      "decision": "keep code behavior (baseline = upstream source)"
+    },
+    {
+      "param": "path neighbor k",
+      "paper_says": "512/128 (flat)",
+      "code_does": "len(sparse)//32 = 256",
+      "decision": "keep code behavior (baseline = upstream source)"
+    },
+    {
+      "param": "apex grouping margin tau",
+      "paper_says": "tau=0.5",
+      "code_does": "triangle_cut=0.62",
+      "decision": "keep code (upstream group_apexes_by_inequality default)"
+    },
+    {
+      "param": "petiole epsilon",
+      "paper_says": "epsilon=0.05",
+      "code_does": "tolerance_percentage=0.02 at call site (signature default 0.005)",
+      "decision": "keep call-site value 0.02 (official calculate_cluster_base_indices)"
+    },
+    {
+      "param": "petiole delta",
+      "paper_says": "delta=0.01",
+      "code_does": "min_distance_threshold=0.05",
+      "decision": "keep code (official call site)"
+    },
+    {
+      "param": "petiole rho",
+      "paper_says": "rho=0.25",
+      "code_does": "protection_period_ratio=0.25",
+      "decision": "matches paper"
+    }
+  ]
+}

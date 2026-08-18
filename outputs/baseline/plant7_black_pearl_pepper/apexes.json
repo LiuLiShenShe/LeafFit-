@@ -1,0 +1,194 @@
+[
+  {
+    "apex_id": 0,
+    "gaussian_index": 81392,
+    "sample_index": 1,
+    "xyz": [
+      0.3206985294818878,
+      2.0237138271331787,
+      1.5537757873535156
+    ],
+    "root_geodesic": 3.698401144475034,
+    "type": "single_tip",
+    "tips": [
+      81392
+    ],
+    "base_gaussian_index": 72873
+  },
+  {
+    "apex_id": 1,
+    "gaussian_index": 52183,
+    "sample_index": 2,
+    "xyz": [
+      0.828045666217804,
+      -0.4342411756515503,
+      0.8170626759529114
+    ],
+    "root_geodesic": 4.738693459958947,
+    "type": "single_tip",
+    "tips": [
+      52183
+    ],
+    "base_gaussian_index": 29795
+  },
+  {
+    "apex_id": 2,
+    "gaussian_index": 39358,
+    "sample_index": 4,
+    "xyz": [
+      0.8681679368019104,
+      0.9802908301353455,
+      -0.4470461905002594
+    ],
+    "root_geodesic": 4.264305339228652,
+    "type": "single_tip",
+    "tips": [
+      39358
+    ],
+    "base_gaussian_index": 36698
+  },
+  {
+    "apex_id": 3,
+    "gaussian_index": 3698,
+    "sample_index": 56,
+    "xyz": [
+      -0.06606488674879074,
+      -0.3908675014972687,
+      -1.2686092853546143
+    ],
+    "root_geodesic": 4.846266604402154,
+    "type": "single_tip",
+    "tips": [
+      3698
+    ],
+    "base_gaussian_index": 7345
+  },
+  {
+    "apex_id": 4,
+    "gaussian_index": 22971,
+    "sample_index": 11,
+    "xyz": [
+      0.6238127946853638,
+      -0.8955709338188171,
+      -1.5724103450775146
+    ],
+    "root_geodesic": 5.25482151035207,
+    "type": "single_tip",
+    "tips": [
+      22971
+    ],
+    "base_gaussian_index": 27378
+  },
+  {
+    "apex_id": 5,
+    "gaussian_index": 29476,
+    "sample_index": 5,
+    "xyz": [
+      0.23441678285598755,
+      -1.87107515335083,
+      -0.13093039393424988
+    ],
+    "root_geodesic": 5.39924036460099,
+    "type": "single_tip",
+    "tips": [
+      29476
+    ],
+    "base_gaussian_index": 12115
+  },
+  {
+    "apex_id": 6,
+    "gaussian_index": 70764,
+    "sample_index": 6,
+    "xyz": [
+      -0.9774177670478821,
+      1.4515546560287476,
+      1.509190559387207
+    ],
+    "root_geodesic": 3.8922785468351595,
+    "type": "single_tip",
+    "tips": [
+      70764
+    ],
+    "base_gaussian_index": 57083
+  },
+  {
+    "apex_id": 7,
+    "gaussian_index": 1,
+    "sample_index": 92,
+    "xyz": [
+      -0.6394787430763245,
+      -0.4337614178657532,
+      -1.5438659191131592
+    ],
+    "root_geodesic": 5.218669284719914,
+    "type": "single_tip",
+    "tips": [
+      1
+    ],
+    "base_gaussian_index": 5693
+  },
+  {
+    "apex_id": 8,
+    "gaussian_index": 7713,
+    "sample_index": 12,
+    "xyz": [
+      -1.0760788917541504,
+      -1.150611162185669,
+      -0.6798107028007507
+    ],
+    "root_geodesic": 5.128982375599451,
+    "type": "single_tip",
+    "tips": [
+      7713
+    ],
+    "base_gaussian_index": 15112
+  },
+  {
+    "apex_id": 9,
+    "gaussian_index": 64952,
+    "sample_index": 106,
+    "xyz": [
+      -1.0511797666549683,
+      1.2024964094161987,
+      0.13790065050125122
+    ],
+    "root_geodesic": 3.7321776493977707,
+    "type": "single_tip",
+    "tips": [
+      64952
+    ],
+    "base_gaussian_index": 57436
+  },
+  {
+    "apex_id": 10,
+    "gaussian_index": 40814,
+    "sample_index": 1270,
+    "xyz": [
+      -0.7146874666213989,
+      -1.052728533744812,
+      0.41762179136276245
+    ],
+    "root_geodesic": 4.993891795110905,
+    "type": "single_tip",
+    "tips": [
+      40814
+    ],
+    "base_gaussian_index": 18703
+  },
+  {
+    "apex_id": 11,
+    "gaussian_index": 68523,
+    "sample_index": 8117,
+    "xyz": [
+      -0.04746842384338379,
+      0.24842093884944916,
+      1.423884391784668
+    ],
+    "root_geodesic": 4.1567647080177235,
+    "type": "single_tip",
+    "tips": [
+      68523
+    ],
+    "base_gaussian_index": 42594
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "phases": {
+    "center": 0.0019,
+    "root": 2.5014,
+    "sampling": 0.1504,
+    "root_field": 0.9932,
+    "temperature": 0.0997,
+    "segment": 4.6987,
+    "total": 8.4653,
+    "load": 0.1394,
+    "writers": 3.5824
+  },
+  "total_sec": 8.4653
+}

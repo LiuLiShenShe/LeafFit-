@@ -1,0 +1,12 @@
+{
+  "root_index": 34026,
+  "root_source": "fixed",
+  "xyz": [
+    -0.12707072496414185,
+    0.12814009189605713,
+    1.6576569080352783
+  ],
+  "basin_radius": 0.1,
+  "basin_size": 12,
+  "note": "Mode A: exact Gaussian index. Mode B: official PCA-asymmetry auto root."
+}

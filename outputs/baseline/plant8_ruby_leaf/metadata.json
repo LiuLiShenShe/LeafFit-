@@ -1,0 +1,25 @@
+{
+  "plant": "plant8_ruby_leaf",
+  "input_ply": "/data/fj/LeafFit论文复现及修改/leaf_fit/data/plant8_ruby_leaf.ply",
+  "num_gaussians": 34046,
+  "method": "geodesic_tip_graph",
+  "root_index": 34026,
+  "root_source": "fixed",
+  "num_apexes": 8,
+  "num_leaf_instances": 8,
+  "centered": true,
+  "coordinate_space": "centered (official pipeline centers before segmentation)",
+  "status": {
+    "status": "SUCCESS",
+    "error": null,
+    "failure_stage": null
+  },
+  "python": "3.10.20",
+  "numpy": "2.2.6",
+  "potpourri3d": "1.4.0",
+  "fpsample": "1.0.2",
+  "scipy": "1.15.3",
+  "sklearn": "1.7.2",
+  "ours_commit": "2e85bd154809e6ba8ba52b53350cd9529e040822",
+  "upstream_commit": "2e85bd154809e6ba8ba52b53350cd9529e040822"
+}

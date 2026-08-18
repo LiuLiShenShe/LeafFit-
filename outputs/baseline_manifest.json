@@ -1,0 +1,96 @@
+{
+  "method": "geodesic_tip_graph",
+  "python": "3.10.20",
+  "numpy": "2.2.6",
+  "potpourri3d": "1.4.0",
+  "plants": {
+    "plant1_green_pepper": {
+      "status": "SUCCESS",
+      "error": null,
+      "root_index": 47330,
+      "root_source": "frozen(auto)",
+      "num_gaussians": 47340,
+      "num_apexes": 10,
+      "num_leaf_instances": 10,
+      "source": "fixed(meta)",
+      "rc": 0
+    },
+    "plant2_rubber_tree": {
+      "status": "SUCCESS",
+      "error": null,
+      "root_index": 118506,
+      "root_source": "frozen(auto)",
+      "num_gaussians": 122545,
+      "num_apexes": 15,
+      "num_leaf_instances": 15,
+      "source": "fixed(meta)",
+      "rc": 0
+    },
+    "plant3_cotton_rose": {
+      "status": "SUCCESS",
+      "error": null,
+      "root_index": 106216,
+      "root_source": "frozen(auto)",
+      "num_gaussians": 106250,
+      "num_apexes": 13,
+      "num_leaf_instances": 13,
+      "source": "fixed(meta)",
+      "rc": 0
+    },
+    "plant4_golden_pothos": {
+      "status": "SUCCESS",
+      "error": null,
+      "root_index": 45265,
+      "root_source": "frozen(auto)",
+      "num_gaussians": 54479,
+      "num_apexes": 6,
+      "num_leaf_instances": 6,
+      "source": "fixed(meta)",
+      "rc": 0
+    },
+    "plant5_white_flag_bush": {
+      "status": "SUCCESS",
+      "error": null,
+      "root_index": 49169,
+      "root_source": "frozen(auto)",
+      "num_gaussians": 98828,
+      "num_apexes": 28,
+      "num_leaf_instances": 28,
+      "source": "fixed(meta)",
+      "rc": 0
+    },
+    "plant6_lucky_bamboo": {
+      "status": "SUCCESS",
+      "error": null,
+      "root_index": 21846,
+      "root_source": "frozen(auto)",
+      "num_gaussians": 79091,
+      "num_apexes": 12,
+      "num_leaf_instances": 12,
+      "source": "fixed(meta)",
+      "rc": 0
+    },
+    "plant7_black_pearl_pepper": {
+      "status": "SUCCESS",
+      "error": null,
+      "root_index": 80488,
+      "root_source": "frozen(auto)",
+      "num_gaussians": 81393,
+      "num_apexes": 12,
+      "num_leaf_instances": 12,
+      "source": "fixed(meta)",
+      "rc": 0
+    },
+    "plant8_ruby_leaf": {
+      "status": "SUCCESS",
+      "error": null,
+      "root_index": 34026,
+      "root_source": "frozen(auto)",
+      "num_gaussians": 34046,
+      "num_apexes": 8,
+      "num_leaf_instances": 8,
+      "source": "fixed(meta)",
+      "rc": 0
+    }
+  }
+}
