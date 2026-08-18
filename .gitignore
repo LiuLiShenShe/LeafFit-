@@ -10,3 +10,6 @@ __pycache__/
 
 *.mtl
 *.obj
+
+# Generated segmentation outputs (do not commit to version control)
+outputs/
