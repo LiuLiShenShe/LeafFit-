@@ -443,3 +443,114 @@ def build_petioles(result: HeadlessResult) -> List[dict]:
             "provenance": "official calculate_cluster_base_indices output",
         })
     return petioles
+
+
+def build_pre_grouping_replay(result: HeadlessResult) -> dict:
+    """Pre-grouping diagnostic replay for Figure 13(a)-style analysis.
+
+    PROBLEM: the official grouping step (group_apexes_by_inequality) is a single
+    monolithic call inside get_segment_mask; it does not return the pre-grouping
+    state. The currently saved `apex_grouping.json` post-hoc report only sees the
+    FINAL selected tips (one per merged cluster), so it cannot tell whether two
+    apexes that ended up in one cluster were SEPARATE leaves merged during grouping.
+
+    FIX (pure diagnostic, ZERO algorithm change): replay the official pre-grouping
+    stage by calling the same official functions in the SAME order and with the SAME
+    inputs get_segment_mask uses:
+        1. find_local_tips(k=len(sparse)//64)   -> candidate tips (pre-grouping)
+        2. find_path_from_tip_to_root(k=len(sparse)//32, euclidean) -> per-tip paths
+        3. group_apexes_by_inequality(...)      -> cluster_info (post-grouping)
+    and record candidate tips / candidate paths / per-tip cluster assignment / which
+    candidate tips share a cluster (the "merged" candidates). Because tips and paths
+    are deterministic functions of the same inputs, the replay reproduces EXACTLY the
+    grouping decision the official pipeline makes.
+
+    This is a separate, additive diagnostic — it never calls get_segment_mask and
+    never alters any core algorithm file.
+    """
+    from auto_segment import find_local_tips, find_path_from_tip_to_root
+    from apex_grouping import group_apexes_by_inequality
+
+    corrected = result.gaussians_centered
+    sparse_indices = result.sparse_indices
+    mapping = result.orig_to_sparse_mapping
+    solver = result.solver
+    ckdtree = result.ckdtree
+    temp_field = result.temperature_field
+    cached_root = result.root_geodesic_multisource
+    heat_source_idx = result.root_basin_indices.tolist()
+
+    # ---- 1) candidate tips (official k = len(sparse)//64) ----
+    tips = [int(t) for t in find_local_tips(corrected, sparse_indices, mapping,
+                                            temp_field, ckdtree,
+                                            k=len(sparse_indices) // 64)]
+    # ---- 2) candidate tip->root paths (official k = len(sparse)//32, euclidean) ----
+    is_path_marks = np.zeros(len(corrected.xyz), dtype=int)
+    paths = []
+    for t in tips:
+        p = find_path_from_tip_to_root(
+            corrected, temp_field, t, heat_source_idx[0],
+            {"method": "euclidean", "tree": ckdtree, "dense_solver": solver},
+            is_path_marks, k=len(sparse_indices) // 32)
+        paths.append([int(x) for x in p])
+
+    # ---- 3) official grouping ----
+    cluster_info = group_apexes_by_inequality(
+        tips, paths,
+        overlap_cut=0.8,
+        root_cahced_distance=cached_root,
+        dense_solver=solver,
+    )
+
+    # ---- record which candidate tip belongs to which final cluster ----
+    tip_to_cluster: Dict[int, int] = {}
+    for ci_idx, ci in enumerate(cluster_info):
+        for t in ci.get("tips", []):
+            tip_to_cluster[int(t)] = ci_idx
+    # candidates that were NOT in any cluster (dropped / singletons)
+    ungrouped = [t for t in tips if t not in tip_to_cluster]
+
+    # ---- candidate-level detail ----
+    candidate_tips = []
+    for t in tips:
+        candidate_tips.append({
+            "gaussian_index": t,
+            "sample_index": int(build_dense_to_sparse_map(result)[t]),
+            "xyz": np.asarray(corrected.xyz[t], dtype=float).tolist(),
+            "cluster_index": tip_to_cluster.get(t),
+            "root_geodesic": float(cached_root[t]),
+        })
+
+    # ---- which candidate tips were merged into the SAME cluster (Fig.13a scenario) ----
+    merged_groups = []
+    for ci_idx, ci in enumerate(cluster_info):
+        member_tips = [int(t) for t in ci.get("tips", [])]
+        if len(member_tips) > 1:
+            merged_groups.append({
+                "cluster_index": ci_idx,
+                "candidate_tips": member_tips,
+                "num_candidates": len(member_tips),
+                "paths_sample_indices": [
+                    [int(build_dense_to_sparse_map(result)[x]) for x in paths[tips.index(t)]] if t in tips else []
+                    for t in member_tips],
+            })
+
+    return {
+        "num_candidate_tips": len(tips),
+        "num_clusters_after_grouping": len(cluster_info),
+        "candidate_tips": candidate_tips,
+        "candidate_paths": [
+            {"tip": tips[i], "path_gaussian_indices": paths[i],
+             "path_sample_indices": [int(build_dense_to_sparse_map(result)[x]) for x in paths[i]]}
+            for i in range(len(tips))],
+        "cluster_info_after_grouping": [
+            {"cluster_index": i, "tips": [int(t) for t in ci.get("tips", [])],
+             "lca": ci.get("lca")}
+            for i, ci in enumerate(cluster_info)],
+        "ungrouped_candidates": ungrouped,
+        "merged_candidate_groups": merged_groups,
+        "note": "pre-grouping diagnostic replay; reproduced EXACTLY with official "
+                "find_local_tips/find_path_from_tip_to_root/group_apexes_by_inequality "
+                "in the SAME order/params get_segment_mask uses; does not alter the "
+                "official grouping decision.",
+    }

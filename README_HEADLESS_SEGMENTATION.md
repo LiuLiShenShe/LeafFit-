@@ -92,6 +92,7 @@ $PY scripts/evaluate_segmentation.py --pred out/labels.npy --gt /path/to/gt.npy
 | `paths.json` | per-leaf tip→root dense path |
 | `tree.json` | root→apex tree (post-hoc, **provenance-tagged**) |
 | `apex_grouping.json` | pairwise grouping margins (post-hoc, **provenance-tagged**) |
+| `pre_grouping_replay.json` | **pre-grouping diagnostic replay** — candidate tips / candidate paths / merged-groups BEFORE `group_apexes_by_inequality` (Task 2 Fig.13 analysis) |
 | `petioles.json` | per-leaf base/petiole (official output, provenance-tagged) |
 | `raw_labels.npy` | `(N,)` official labels (0=unassigned, 1..K) |
 | `labels.npy` | `(N,)` unified labels (0=stem, 1..K leaf) |
@@ -128,9 +129,29 @@ official decision, and carry a `"provenance"` field stating exactly that.
 `scripts/evaluate_segmentation.py` is **instance-level and permutation-invariant**:
 it first matches predicted instances to ground-truth instances via **IoU + Hungarian
 optimal assignment**, then computes Accuracy / mIoU / mF1 / PQ. Label IDs are unordered,
-so raw label-to-label comparison is rejected by design. If no GT path is provided it
-prints `no GT available` and exits 0 **without fabricating any metric** (the official
-data has no labeled ground-truth).
+so raw label-to-label comparison is rejected by design. **A candidate (pred, gt) pair
+is only a valid match if IoU ≥ 0.5** (LeafFit paper Fig. 10); sub-threshold and
+zero-overlap pairs are non-matchable. If no GT path is provided it prints
+`no GT available` and exits 0 **without fabricating any metric** (the official data
+has no labeled ground-truth).
+
+## Pre-grouping diagnostic replay (Task 2)
+
+`group_apexes_by_inequality` is a single monolithic call inside `get_segment_mask`
+that does not expose its pre-grouping state. For **Figure 13(a)-style analysis** ("two
+apexes that belonged to two leaves were merged during grouping"), each plant output
+also contains `pre_grouping_replay.json`, produced by `build_pre_grouping_replay`:
+
+- runs the **same official functions in the same order/params** as `get_segment_mask`
+  (`find_local_tips` k=len(sparse)//64 → `find_path_from_tip_to_root`
+  k=len(sparse)//32 euclidean → `group_apexes_by_inequality` overlap_cut=0.8,
+  triangle_cut=0.62), so it reproduces the grouping decision **exactly**;
+- records **candidate tips**, **candidate tip→root paths**, **cluster assignment
+  before grouping**, and the **merged_candidate_groups** (multiple candidate tips that
+  ended up in one cluster — the exact "two leaves merged" diagnostic signal).
+
+This is a **pure diagnostic**: it never calls `get_segment_mask` and changes no core
+algorithm file. It is additive (disable with `--no-pre-grouping-replay`).
 
 ## Environment
 

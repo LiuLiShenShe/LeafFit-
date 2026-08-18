@@ -50,11 +50,15 @@ def _intersection_counts(pred: np.ndarray, gt: np.ndarray):
     return counts, n_p, n_g
 
 
+MATCH_IOU_THRESHOLD = 0.5   # LeafFit Fig.10 / paper: instance correspondence requires IoU >= 0.5
+
+
 def hungarian_match(counts: np.ndarray):
     """Maximize total IoU between pred instances (rows, excl 0) and gt instances (cols, excl 0).
 
     Builds a cost matrix = -IoU for every (pred_i, gt_j) with any overlap; cells with
-    zero overlap are left at a large positive cost so no spurious matches are made.
+    overlap below MATCH_IOU_THRESHOLD (or zero) are set to a large positive cost so they
+    are NOT matchable — matching a candidate requires IoU >= 0.5 (LeafFit paper Fig.10).
     Uses scipy.optimize.linear_sum_assignment.
     """
     from scipy.optimize import linear_sum_assignment
@@ -69,14 +73,15 @@ def hungarian_match(counts: np.ndarray):
             union = (counts[i, :].sum() + counts[:, j].sum() - inter)
             if union > 0:
                 iou[i - 1, j - 1] = inter / union
+    # only pairs with IoU >= 0.5 are candidate matches
+    matchable = iou >= MATCH_IOU_THRESHOLD
     BIG = 1e6
-    cost = np.where(iou > 0.0, -iou, BIG)
-    # allow dummy "no-match" rows/cols so unmatched instances carry 0 IoU
+    cost = np.where(matchable, -iou, BIG)
     rows, cols = linear_sum_assignment(cost)
     matched = []
     for r, c in zip(rows, cols):
         iou_v = iou[r, c]
-        if iou_v > 0.0:
+        if iou_v >= MATCH_IOU_THRESHOLD:
             matched.append((r + 1, c + 1, iou_v))     # pred_label, gt_label, IoU
     return matched, iou
 

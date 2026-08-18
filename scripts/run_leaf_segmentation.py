@@ -243,6 +243,13 @@ def write_petioles(outdir: str, res: hs.HeadlessResult) -> None:
         json.dump(hs.build_petioles(res), f, indent=2, ensure_ascii=False)
 
 
+def write_pre_grouping_replay(outdir: str, res: hs.HeadlessResult) -> None:
+    """Pre-grouping diagnostic replay (Task 2 Figure-13-style analysis). Additive;
+    does NOT change the segmentation outputs (labels/status/root/geodesics)."""
+    with open(os.path.join(outdir, "pre_grouping_replay.json"), "w") as f:
+        json.dump(hs.build_pre_grouping_replay(res), f, indent=2, ensure_ascii=False)
+
+
 def write_labels(outdir: str, res: hs.HeadlessResult) -> None:
     """Write raw_labels.npy (official) + labels.npy (unified 0=stem, 1..K=leaf)."""
     raw = np.zeros(res.N, dtype=np.int64)     # 0 = unassigned/stem (official)
@@ -334,6 +341,8 @@ def main(argv=None) -> int:
     grp.add_argument("--root-index", type=int, help="Mode A: exact Gaussian index (fixed root)")
     grp.add_argument("--root", choices=["auto"], help="Mode B: official PCA auto root")
     ap.add_argument("--save-debug", action="store_true", help="(all debug artifacts always written; kept for parity)")
+    ap.add_argument("--no-pre-grouping-replay", action="store_true",
+                    help="skip the additive pre-grouping diagnostic replay json")
     ap.add_argument("--seed", type=int, default=None, help="RNG seed (informational; Mode A deterministic)")
     ap.add_argument("--device", default="cpu", help="CPU only (documented); no GPU path")
     args = ap.parse_args(argv)
@@ -367,6 +376,8 @@ def main(argv=None) -> int:
         write_tree(outdir, res)
         write_apex_grouping(outdir, res)
         write_petioles(outdir, res)
+        if not args.no_pre_grouping_replay:
+            write_pre_grouping_replay(outdir, res)
         write_labels(outdir, res)
         write_colored_ply(outdir, res)
         res.phases["writers"] = time.time() - t_w

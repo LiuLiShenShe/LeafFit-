@@ -20,6 +20,6 @@
   "fpsample": "1.0.2",
   "scipy": "1.15.3",
   "sklearn": "1.7.2",
-  "ours_commit": "2e85bd154809e6ba8ba52b53350cd9529e040822",
-  "upstream_commit": "2e85bd154809e6ba8ba52b53350cd9529e040822"
+  "ours_commit": "f16d0e79f2c136c5ff10c8ac47114cbe246d15f4",
+  "upstream_commit": "9a41af59ca48c9b765b49e83acf2eaef5c5c5fea"
 }
