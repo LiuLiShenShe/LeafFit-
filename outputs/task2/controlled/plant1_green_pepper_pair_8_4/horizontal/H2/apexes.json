@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "selected_tip_sparse": 41603,
+    "gaussian_index": -1,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 2,
+    "selected_tip_sparse": 43410,
+    "gaussian_index": -1,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 3,
+    "selected_tip_sparse": 23237,
+    "gaussian_index": -1,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 4,
+    "selected_tip_sparse": 69,
+    "gaussian_index": 43459,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 5,
+    "selected_tip_sparse": 28890,
+    "gaussian_index": -1,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 6,
+    "selected_tip_sparse": 21596,
+    "gaussian_index": -1,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 7,
+    "selected_tip_sparse": 37212,
+    "gaussian_index": -1,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 8,
+    "selected_tip_sparse": 36823,
+    "gaussian_index": -1,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  }
+]

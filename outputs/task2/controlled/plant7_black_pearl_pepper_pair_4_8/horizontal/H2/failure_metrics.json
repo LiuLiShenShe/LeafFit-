@@ -1,0 +1,36 @@
+{
+  "pair_key": "plant7_black_pearl_pepper_pair_4_8",
+  "mode": "horizontal",
+  "severity": "H2",
+  "instance": {
+    "mIoU": 0.9992145949038285,
+    "PQ": 0.8688822564381118,
+    "matched_pairs": 10,
+    "false_positives": 1,
+    "false_negatives": 2
+  },
+  "pair_local": {
+    "matched_pred_a": 1,
+    "matched_pred_b": 0,
+    "fp_leakage": 0.32547864506627394,
+    "fn_rate": 0.8733582192727776
+  },
+  "geodesic": {
+    "apex_recall": 1.0,
+    "detected_apex_count": 1,
+    "merge_level": 0,
+    "pred_instances_covering_a": 1,
+    "pred_instances_covering_b": 0
+  },
+  "first_failure_stage": "NONE",
+  "construction": {
+    "projected_overlap_fraction": 0.04681151739975269,
+    "contact_fraction": 0.09016393442622951,
+    "min_cross_leaf_distance_ratio": 0.1250658411581305,
+    "spacing_a": 0.01007726294138111,
+    "spacing_b": 0.010500272654578079,
+    "centroid_dist": 0.22786632276222632,
+    "leaf_a_count": 2440.0,
+    "leaf_b_count": 4793.0
+  }
+}

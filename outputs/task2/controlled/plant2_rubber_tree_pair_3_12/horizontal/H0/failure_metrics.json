@@ -1,0 +1,36 @@
+{
+  "pair_key": "plant2_rubber_tree_pair_3_12",
+  "mode": "horizontal",
+  "severity": "H0",
+  "instance": {
+    "mIoU": 1.0,
+    "PQ": 1.0,
+    "matched_pairs": 15,
+    "false_positives": 0,
+    "false_negatives": 0
+  },
+  "pair_local": {
+    "matched_pred_a": 1,
+    "matched_pred_b": 1,
+    "fp_leakage": 0.0,
+    "fn_rate": 0.0
+  },
+  "geodesic": {
+    "apex_recall": 1.0,
+    "detected_apex_count": 1,
+    "merge_level": 0,
+    "pred_instances_covering_a": 1,
+    "pred_instances_covering_b": 1
+  },
+  "first_failure_stage": "NONE",
+  "construction": {
+    "projected_overlap_fraction": 0.0,
+    "contact_fraction": 0.0,
+    "min_cross_leaf_distance_ratio": 30.929035922713794,
+    "spacing_a": 0.011705307638559063,
+    "spacing_b": 0.012120974671242284,
+    "centroid_dist": 0.5459113593099225,
+    "leaf_a_count": 6778.0,
+    "leaf_b_count": 6227.0
+  }
+}

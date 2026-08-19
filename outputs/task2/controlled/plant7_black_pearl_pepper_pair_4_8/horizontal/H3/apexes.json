@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "selected_tip_sparse": 81392,
+    "gaussian_index": -1,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 2,
+    "selected_tip_sparse": 7400,
+    "gaussian_index": 61850,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 3,
+    "selected_tip_sparse": 22971,
+    "gaussian_index": -1,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 4,
+    "selected_tip_sparse": 29476,
+    "gaussian_index": -1,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 5,
+    "selected_tip_sparse": 68522,
+    "gaussian_index": -1,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 6,
+    "selected_tip_sparse": 7713,
+    "gaussian_index": 64823,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 7,
+    "selected_tip_sparse": 52183,
+    "gaussian_index": -1,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 8,
+    "selected_tip_sparse": 39393,
+    "gaussian_index": -1,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 9,
+    "selected_tip_sparse": 40267,
+    "gaussian_index": -1,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 10,
+    "selected_tip_sparse": 70764,
+    "gaussian_index": -1,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 11,
+    "selected_tip_sparse": 64952,
+    "gaussian_index": -1,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  }
+]

@@ -1,0 +1,165 @@
+{
+  "task": "overlap_benchmark_source_pairs",
+  "num_pairs": 3,
+  "distinct_plants": 3,
+  "manual_sanity": false,
+  "checked_items": [
+    "distinct leaves",
+    "no obvious split",
+    "no obvious merge into a third leaf",
+    "base/pivot position plausible"
+  ],
+  "pairs": [
+    {
+      "plant": "plant2_rubber_tree",
+      "leaf_a_id": 3,
+      "leaf_b_id": 12,
+      "leaf_a": {
+        "leaf_id": 3,
+        "count": 6778,
+        "base_gaussian_index": 50673,
+        "base_xyz": [
+          -0.39874058961868286,
+          -0.05269155651330948,
+          0.131827712059021
+        ],
+        "apex_gaussian_index": 110250,
+        "apex_xyz": [
+          -1.1239440441131592,
+          -0.46982067823410034,
+          0.6844075918197632
+        ],
+        "centroid": [
+          -0.7555932737348283,
+          -0.3208471734475759,
+          0.28969357843137344
+        ],
+        "type": "single_tip"
+      },
+      "leaf_b": {
+        "leaf_id": 12,
+        "count": 6227,
+        "base_gaussian_index": 37093,
+        "base_xyz": [
+          -0.4474579989910126,
+          -0.5493459701538086,
+          -0.09534144401550293
+        ],
+        "apex_gaussian_index": 24962,
+        "apex_xyz": [
+          -1.3250194787979126,
+          -1.0325183868408203,
+          0.34085845947265625
+        ],
+        "centroid": [
+          -0.8232854407682108,
+          -0.8090379300442174,
+          0.05494527083463992
+        ],
+        "type": "single_tip"
+      },
+      "pair_centroid_distance": 0.5459113593099225
+    },
+    {
+      "plant": "plant7_black_pearl_pepper",
+      "leaf_a_id": 4,
+      "leaf_b_id": 8,
+      "leaf_a": {
+        "leaf_id": 4,
+        "count": 2440,
+        "base_gaussian_index": 7345,
+        "base_xyz": [
+          0.003855115734040737,
+          -0.6853451132774353,
+          -0.9261822700500488
+        ],
+        "apex_gaussian_index": 3698,
+        "apex_xyz": [
+          -0.06606488674879074,
+          -0.3908675014972687,
+          -1.2686092853546143
+        ],
+        "centroid": [
+          -0.014728255475466674,
+          -0.595546746205111,
+          -1.1237788979635863
+        ],
+        "type": "single_tip"
+      },
+      "leaf_b": {
+        "leaf_id": 8,
+        "count": 4793,
+        "base_gaussian_index": 5693,
+        "base_xyz": [
+          -0.1867760419845581,
+          -0.7143065929412842,
+          -0.8712154626846313
+        ],
+        "apex_gaussian_index": 1,
+        "apex_xyz": [
+          -0.6394787430763245,
+          -0.4337614178657532,
+          -1.5438659191131592
+        ],
+        "centroid": [
+          -0.3974512485927563,
+          -0.6170583303054787,
+          -1.1870046298513326
+        ],
+        "type": "single_tip"
+      },
+      "pair_centroid_distance": 0.3885062816530838
+    },
+    {
+      "plant": "plant1_green_pepper",
+      "leaf_a_id": 8,
+      "leaf_b_id": 4,
+      "leaf_a": {
+        "leaf_id": 8,
+        "count": 3517,
+        "base_gaussian_index": 12766,
+        "base_xyz": [
+          0.23423868417739868,
+          -0.198783278465271,
+          -0.17951726913452148
+        ],
+        "apex_gaussian_index": 5043,
+        "apex_xyz": [
+          0.8432101607322693,
+          -0.32128286361694336,
+          -0.7694759368896484
+        ],
+        "centroid": [
+          0.522706036595482,
+          -0.2623287777958995,
+          -0.4576028825072765
+        ],
+        "type": "single_tip"
+      },
+      "leaf_b": {
+        "leaf_id": 4,
+        "count": 5888,
+        "base_gaussian_index": 29751,
+        "base_xyz": [
+          0.1523888111114502,
+          0.029796957969665527,
+          -0.3102703094482422
+        ],
+        "apex_gaussian_index": 28890,
+        "apex_xyz": [
+          0.13345801830291748,
+          0.897086501121521,
+          -1.1562526226043701
+        ],
+        "centroid": [
+          0.0847940034556972,
+          0.3819678948341828,
+          -0.7170603503270642
+        ],
+        "type": "single_tip"
+      },
+      "pair_centroid_distance": 0.8210988544251365
+    }
+  ],
+  "note": "constructed from Task 1 clean single-tip leaves; manual_sanity must be set true after human visual review."
+}

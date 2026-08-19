@@ -1,0 +1,40 @@
+{
+  "pair_key": "plant2_rubber_tree_pair_3_12",
+  "mode": "vertical",
+  "severity": "V4",
+  "instance": {
+    "mIoU": 0.999927635863666,
+    "PQ": 0.8666039510818438,
+    "matched_pairs": 13,
+    "false_positives": 2,
+    "false_negatives": 2
+  },
+  "pair_local": {
+    "matched_pred_a": 1,
+    "matched_pred_b": 2,
+    "fp_leakage": 0.06236711552090716,
+    "fn_rate": 0.7965397923875432
+  },
+  "geodesic": {
+    "apex_recall": 1.0,
+    "detected_apex_count": 1,
+    "merge_level": 1,
+    "pred_instances_covering_a": 1,
+    "pred_instances_covering_b": 2
+  },
+  "first_failure_stage": "GROUPING",
+  "construction": {
+    "projected_overlap_fraction": 0.0558301831927886,
+    "contact_fraction": 0.05945706698141045,
+    "min_cross_leaf_distance_ratio": 0.14825684202291342,
+    "spacing_a": 0.01170532955648871,
+    "spacing_b": 0.012120974671242284,
+    "centroid_dist": 0.41387684466148655,
+    "leaf_a_count": 6778.0,
+    "leaf_b_count": 6227.0
+  },
+  "shortcut": {
+    "shortcut_ratio": null,
+    "reason": "upper_apex_not_found"
+  }
+}
