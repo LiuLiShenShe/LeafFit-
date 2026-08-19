@@ -1,8 +1,8 @@
 {
   "task": "Task 2: LeafFit Figure 13 failure mechanisms",
   "objective": "Reproduce and quantify horizontal (grouping failure) and vertical (apex shortcut) failure mechanisms under controlled geometric transforms",
-  "methodology": "Base-anchor rotation of individual leaves with frozen transforms, zero algorithm modifications",
-  "plants_used": [
+  "methodology": "Base-anchor rotation of individual leaves (t=0), frozen transforms, zero algorithm modifications",
+  "plants": [
     "plant1_green_pepper",
     "plant2_rubber_tree",
     "plant7_black_pearl_pepper"
@@ -37,36 +37,46 @@
           "mIoU": 1.0,
           "PQ": 1.0,
           "merge_level": 0,
-          "contact_fraction": 0.0,
-          "first_failure": "NONE"
+          "apex_recall": 1.0,
+          "first_failure": "NONE",
+          "dominant_failure": "NONE",
+          "contact": "0.0000"
         },
         "H1": {
           "mIoU": 0.996,
           "PQ": 0.629,
           "merge_level": 2,
-          "contact_fraction": 0.0401,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.0401"
         },
         "H2": {
           "mIoU": 0.942,
           "PQ": 0.8373,
           "merge_level": 1,
-          "contact_fraction": 0.0904,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.0904"
         },
         "H3": {
           "mIoU": 0.9789,
           "PQ": 0.7459,
           "merge_level": 1,
-          "contact_fraction": 0.1393,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.1393"
         },
         "H4": {
           "mIoU": 0.9789,
           "PQ": 0.7459,
           "merge_level": 1,
-          "contact_fraction": 0.1393,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.1393"
         }
       },
       "first_merge_severity": "H1",
@@ -78,36 +88,46 @@
           "mIoU": 1.0,
           "PQ": 1.0,
           "merge_level": 0,
-          "contact_fraction": 0.0,
-          "first_failure": "NONE"
+          "apex_recall": 1.0,
+          "first_failure": "NONE",
+          "dominant_failure": "NONE",
+          "contact": "0.0000"
         },
         "H1": {
           "mIoU": 0.9999,
           "PQ": 0.8386,
           "merge_level": 1,
-          "contact_fraction": 0.04,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.0400"
         },
         "H2": {
           "mIoU": 0.9785,
           "PQ": 0.8098,
           "merge_level": 1,
-          "contact_fraction": 0.0894,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.0894"
         },
         "H3": {
           "mIoU": 0.9999,
           "PQ": 0.7585,
           "merge_level": 1,
-          "contact_fraction": 0.1604,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.1604"
         },
         "H4": {
           "mIoU": 0.9843,
           "PQ": 0.8437,
           "merge_level": 0,
-          "contact_fraction": 0.2147,
-          "first_failure": "NONE"
+          "apex_recall": 0.0,
+          "first_failure": "APEX",
+          "dominant_failure": "APEX",
+          "contact": "0.2147"
         }
       },
       "first_merge_severity": "H1",
@@ -119,36 +139,46 @@
           "mIoU": 1.0,
           "PQ": 1.0,
           "merge_level": 0,
-          "contact_fraction": 0.0,
-          "first_failure": "NONE"
+          "apex_recall": 1.0,
+          "first_failure": "NONE",
+          "dominant_failure": "NONE",
+          "contact": "0.0000"
         },
         "H1": {
           "mIoU": 0.9652,
           "PQ": 0.9232,
           "merge_level": 1,
-          "contact_fraction": 0.0402,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.0402"
         },
         "H2": {
           "mIoU": 0.9992,
           "PQ": 0.8689,
           "merge_level": 0,
-          "contact_fraction": 0.0902,
-          "first_failure": "NONE"
+          "apex_recall": 0.0,
+          "first_failure": "APEX",
+          "dominant_failure": "APEX",
+          "contact": "0.0902"
         },
         "H3": {
           "mIoU": 0.9997,
           "PQ": 0.8693,
           "merge_level": 1,
-          "contact_fraction": 0.1598,
-          "first_failure": "GROUPING"
+          "apex_recall": 0.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.1598"
         },
         "H4": {
           "mIoU": 0.9997,
           "PQ": 0.5712,
           "merge_level": 1,
-          "contact_fraction": 0.2393,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.2393"
         }
       },
       "first_merge_severity": "H1",
@@ -162,39 +192,50 @@
           "mIoU": 1.0,
           "PQ": 1.0,
           "merge_level": 0,
-          "contact_fraction": 0.0,
-          "first_failure": "NONE"
+          "apex_recall": 1.0,
+          "first_failure": "NONE",
+          "dominant_failure": "NONE",
+          "contact": "0.0000"
         },
         "V1": {
           "mIoU": 0.945,
           "PQ": 0.7958,
           "merge_level": 1,
-          "contact_fraction": 0.0398,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.0398"
         },
         "V2": {
           "mIoU": 0.8996,
           "PQ": 0.8522,
           "merge_level": 1,
-          "contact_fraction": 0.0608,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.0608"
         },
         "V3": {
           "mIoU": 0.9465,
           "PQ": 0.7971,
           "merge_level": 1,
-          "contact_fraction": 0.081,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.0810"
         },
         "V4": {
           "mIoU": 0.9558,
           "PQ": 0.9055,
           "merge_level": 1,
-          "contact_fraction": 0.0796,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.0796"
         }
       },
       "first_merge_severity": "V1",
+      "shortcut_confirmed_at_levels": 4,
       "failure_observed": true
     },
     "plant2_rubber_tree_pair_3_12": {
@@ -203,39 +244,50 @@
           "mIoU": 1.0,
           "PQ": 1.0,
           "merge_level": 0,
-          "contact_fraction": 0.0,
-          "first_failure": "NONE"
+          "apex_recall": 1.0,
+          "first_failure": "NONE",
+          "dominant_failure": "NONE",
+          "contact": "0.0000"
         },
         "V1": {
           "mIoU": 0.9999,
           "PQ": 0.8386,
           "merge_level": 1,
-          "contact_fraction": 0.0695,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.0695"
         },
         "V2": {
           "mIoU": 0.999,
           "PQ": 0.8658,
           "merge_level": 1,
-          "contact_fraction": 0.0506,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.0506"
         },
         "V3": {
           "mIoU": 0.9999,
           "PQ": 0.8965,
           "merge_level": 1,
-          "contact_fraction": 0.0624,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.0624"
         },
         "V4": {
           "mIoU": 0.9999,
           "PQ": 0.8666,
           "merge_level": 1,
-          "contact_fraction": 0.0595,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.0595"
         }
       },
       "first_merge_severity": "V1",
+      "shortcut_confirmed_at_levels": 4,
       "failure_observed": true
     },
     "plant7_black_pearl_pepper_pair_4_8": {
@@ -244,69 +296,195 @@
           "mIoU": 1.0,
           "PQ": 1.0,
           "merge_level": 0,
-          "contact_fraction": 0.0,
-          "first_failure": "NONE"
+          "apex_recall": 1.0,
+          "first_failure": "NONE",
+          "dominant_failure": "NONE",
+          "contact": "0.0000"
         },
         "V1": {
           "mIoU": 0.9643,
           "PQ": 0.9223,
           "merge_level": 1,
-          "contact_fraction": 0.0533,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.0533"
         },
         "V2": {
           "mIoU": 0.9647,
           "PQ": 0.9227,
           "merge_level": 1,
-          "contact_fraction": 0.0471,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.0471"
         },
         "V3": {
           "mIoU": 0.9599,
           "PQ": 0.9182,
           "merge_level": 1,
-          "contact_fraction": 0.0852,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.0852"
         },
         "V4": {
           "mIoU": 0.9649,
           "PQ": 0.9229,
           "merge_level": 1,
-          "contact_fraction": 0.1066,
-          "first_failure": "GROUPING"
+          "apex_recall": 1.0,
+          "first_failure": "GROUPING",
+          "dominant_failure": "GROUPING",
+          "contact": "0.1066"
         }
       },
       "first_merge_severity": "V1",
+      "shortcut_confirmed_at_levels": 4,
       "failure_observed": true
     }
   },
-  "pass_criterion": ">=2 independent pairs from >=2 plants show systematic failure",
+  "vertical_shortcut_evidence": {
+    "plant1_green_pepper_pair_8_4": {
+      "V0": {
+        "shortcut_ratio": 1.0,
+        "shortcut_confirmed": false,
+        "cross_leaf_merge": false,
+        "cross_leaf_path": false,
+        "PQ": 1.0
+      },
+      "V1": {
+        "shortcut_ratio": 0.944,
+        "shortcut_confirmed": true,
+        "cross_leaf_merge": true,
+        "cross_leaf_path": true,
+        "PQ": 0.7958
+      },
+      "V2": {
+        "shortcut_ratio": 0.9684,
+        "shortcut_confirmed": true,
+        "cross_leaf_merge": true,
+        "cross_leaf_path": true,
+        "PQ": 0.8522
+      },
+      "V3": {
+        "shortcut_ratio": 0.9704,
+        "shortcut_confirmed": true,
+        "cross_leaf_merge": true,
+        "cross_leaf_path": true,
+        "PQ": 0.7971
+      },
+      "V4": {
+        "shortcut_ratio": 0.9631,
+        "shortcut_confirmed": true,
+        "cross_leaf_merge": true,
+        "cross_leaf_path": true,
+        "PQ": 0.9055
+      }
+    },
+    "plant2_rubber_tree_pair_3_12": {
+      "V0": {
+        "shortcut_ratio": 1.0,
+        "shortcut_confirmed": false,
+        "cross_leaf_merge": false,
+        "cross_leaf_path": false,
+        "PQ": 1.0
+      },
+      "V1": {
+        "shortcut_ratio": 0.904,
+        "shortcut_confirmed": true,
+        "cross_leaf_merge": true,
+        "cross_leaf_path": true,
+        "PQ": 0.8386
+      },
+      "V2": {
+        "shortcut_ratio": 0.8851,
+        "shortcut_confirmed": true,
+        "cross_leaf_merge": true,
+        "cross_leaf_path": true,
+        "PQ": 0.8658
+      },
+      "V3": {
+        "shortcut_ratio": 0.9065,
+        "shortcut_confirmed": true,
+        "cross_leaf_merge": true,
+        "cross_leaf_path": true,
+        "PQ": 0.8965
+      },
+      "V4": {
+        "shortcut_ratio": 0.9039,
+        "shortcut_confirmed": true,
+        "cross_leaf_merge": true,
+        "cross_leaf_path": true,
+        "PQ": 0.8666
+      }
+    },
+    "plant7_black_pearl_pepper_pair_4_8": {
+      "V0": {
+        "shortcut_ratio": 1.0,
+        "shortcut_confirmed": false,
+        "cross_leaf_merge": false,
+        "cross_leaf_path": false,
+        "PQ": 1.0
+      },
+      "V1": {
+        "shortcut_ratio": 0.9708,
+        "shortcut_confirmed": true,
+        "cross_leaf_merge": true,
+        "cross_leaf_path": true,
+        "PQ": 0.9223
+      },
+      "V2": {
+        "shortcut_ratio": 0.9716,
+        "shortcut_confirmed": true,
+        "cross_leaf_merge": true,
+        "cross_leaf_path": true,
+        "PQ": 0.9227
+      },
+      "V3": {
+        "shortcut_ratio": 0.977,
+        "shortcut_confirmed": true,
+        "cross_leaf_merge": true,
+        "cross_leaf_path": true,
+        "PQ": 0.9182
+      },
+      "V4": {
+        "shortcut_ratio": 0.9775,
+        "shortcut_confirmed": true,
+        "cross_leaf_merge": true,
+        "cross_leaf_path": true,
+        "PQ": 0.9229
+      }
+    }
+  },
+  "pass_criterion": ">=2 independent pairs from >=2 plants showing systematic failure",
   "overall_verdict": "PASS",
   "assessment": {
-    "horizontal_pairs_failed": 3,
-    "horizontal_total_pairs": 3,
-    "vertical_pairs_failed": 3,
-    "vertical_total_pairs": 3,
+    "horizontal_pairs_failed": "3/3",
+    "vertical_pairs_failed": "3/3",
+    "vertical_pairs_shortcut_confirmed": "3/3",
     "horizontal_pass": true,
     "vertical_pass": true,
-    "conclusion": "Both mechanisms reproduced across 3/3 (horizontal) and 3/3 (vertical) pairs from 3 plants. PASS criterion met: >=2 independent pairs from >=2 plants show systematic failure."
+    "conclusion": "Horizontal: 3/3 pairs show premature merge (Fig.13a) — PASS.\nVertical: 3/3 pairs show confirmed shortcut (shortcut_ratio<1.0 + cross_leaf_merge + cross_leaf_path) (Fig.13b) — PASS.\nOverall: PASS — both Figure 13 mechanisms reproduced across >=2 plants."
   },
-  "key_observations": [
-    "Horizontal: All 3 pairs show merge_level>=1 at H1 or later severity levels",
-    "Vertical: All 3 pairs show merge_level>=1 at V1 severity level",
-    "PQ drops significantly under horizontal overlap (e.g., plant1 H1 PQ=0.629, plant7 H4 PQ=0.571)",
-    "mIoU remains high (>0.94) because segmentation is largely correct; failure is in apex grouping",
-    "Contact fraction is the primary geometric driver for horizontal failures",
-    "apex_gap_ratio drives vertical proximity, leading to cross-leaf geodesic shortcuts"
-  ],
-  "tests_passed": [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G"
-  ],
-  "test_results": "All 7 tests (A-G) pass successfully"
+  "tests": {
+    "test_file": "tests/test_overlap_benchmark.py",
+    "test_count": 7,
+    "tests_passed": true,
+    "test_names": [
+      "A_identity_labels_match_baseline",
+      "B_gaussian_data_integrity",
+      "C_transform_pivot_and_translation",
+      "D_root_index_unchanged",
+      "E_construction_gt_equals_baseline",
+      "F_evaluator_iou_threshold",
+      "G_pre_grouping_replay_consistency"
+    ]
+  },
+  "artifacts": {
+    "benchmark_transforms": "outputs/task2/benchmark_transforms.json",
+    "benchmark_summary": "outputs/task2/benchmark_summary.csv",
+    "failure_curves": "outputs/task2/figures/horizontal_failure_curve.png, outputs/task2/figures/vertical_failure_curve.png",
+    "final_audit": "scripts/final_audit_table.py",
+    "final_summary": "outputs/task2/task2_summary.json"
+  }
 }

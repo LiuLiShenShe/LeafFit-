@@ -16,13 +16,27 @@
     "fn_rate": 0.0
   },
   "geodesic": {
-    "apex_recall": 1.0,
-    "detected_apex_count": 1,
+    "reference_apex_recall": 1.0,
+    "wrong_grouping": false,
     "merge_level": 0,
     "pred_instances_covering_a": 1,
-    "pred_instances_covering_b": 1
+    "pred_instances_covering_b": 1,
+    "apex_detail": {
+      "leaf_8": {
+        "found": true,
+        "gt_apex_idx": 5043,
+        "pred_instance": 8
+      },
+      "leaf_4": {
+        "found": true,
+        "gt_apex_idx": 28890,
+        "pred_instance": 4
+      }
+    },
+    "new_unmatched_apex_count": 8
   },
   "first_failure_stage": "NONE",
+  "dominant_failure_stage": "NONE",
   "construction": {
     "projected_overlap_fraction": 0.0,
     "contact_fraction": 0.0,
@@ -34,7 +48,27 @@
     "leaf_b_count": 5888.0
   },
   "shortcut": {
-    "shortcut_ratio": null,
-    "reason": "upper_apex_not_found"
+    "shortcut_ratio": 1.0,
+    "shortcut_evidence": {
+      "d_case": 3.2053180099208896,
+      "d_v0": 3.2053180099208896,
+      "distance_shortened": false,
+      "upper_pred_instances": [
+        8
+      ],
+      "lower_pred_instances": [
+        4
+      ],
+      "shared_instances": [],
+      "cross_leaf_merge": false,
+      "upper_points_below_lower_median": 2659,
+      "upper_total_points": 47340,
+      "upper_below_lower_ratio": 0.05616814533164343,
+      "cross_leaf_path_detected": false
+    },
+    "shortcut_confirmed": false,
+    "upper_apex_idx": 5043,
+    "pred_instance": 8,
+    "reason": "ok"
   }
 }

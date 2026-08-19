@@ -111,6 +111,8 @@ def run_phase3():
     print(f"Phase 3: Analyzing {len(cases)} cases")
 
     summary = []
+    shortcut_evidence = {}
+
     for pk, mode, sev in cases:
         case_dir = os.path.join(_OUTROOT, "controlled", pk, mode, sev)
         metrics_path = os.path.join(case_dir, "failure_metrics.json")
@@ -125,21 +127,46 @@ def run_phase3():
             "mIoU": m["instance"]["mIoU"],
             "PQ": m["instance"]["PQ"],
             "merge_level": m["geodesic"]["merge_level"],
-            "apex_recall": m["geodesic"]["apex_recall"],
+            "apex_recall": m["geodesic"]["reference_apex_recall"],
             "first_failure": m["first_failure_stage"],
+            "dominant_failure": m["dominant_failure_stage"],
             "contact": m["construction"]["contact_fraction"],
             "gap_ratio": m["construction"].get("projected_overlap_fraction", None),
+            "shortcut_ratio": m.get("shortcut", {}).get("shortcut_ratio", None),
+            "shortcut_confirmed": m.get("shortcut", {}).get("shortcut_confirmed", False),
+            "cross_leaf_merge": m.get("shortcut", {}).get("shortcut_evidence", {}).get("cross_leaf_merge", False),
+            "cross_leaf_path": m.get("shortcut", {}).get("shortcut_evidence", {}).get("cross_leaf_path_detected", False),
         })
+
+        # Collect vertical shortcut evidence
+        if mode == "vertical":
+            if pk not in shortcut_evidence:
+                shortcut_evidence[pk] = {}
+            sc = m.get("shortcut", {})
+            ev = sc.get("shortcut_evidence", {})
+            shortcut_evidence[pk][sev] = {
+                "shortcut_ratio": sc.get("shortcut_ratio"),
+                "shortcut_confirmed": sc.get("shortcut_confirmed", False),
+                "distance_shortened": ev.get("distance_shortened", False),
+                "cross_leaf_merge": ev.get("cross_leaf_merge", False),
+                "shared_instances": ev.get("shared_instances", []),
+                "cross_leaf_path_detected": ev.get("cross_leaf_path_detected", False),
+            }
 
     # Save summary CSV
     csv_path = os.path.join(_OUTROOT, "benchmark_summary.csv")
     with open(csv_path, "w") as f:
-        f.write("pair_key,mode,severity,mIoU,PQ,merge_level,apex_recall,first_failure,contact,overlap\n")
+        f.write("pair_key,mode,severity,mIoU,PQ,merge_level,apex_recall,first_failure,dominant_failure,contact,overlap,shortcut_ratio,shortcut_confirmed,cross_leaf_merge,cross_leaf_path\n")
         for row in summary:
+            sr = row.get("shortcut_ratio")
+            sr_str = f"{sr:.4f}" if sr is not None else "None"
+            sc = row.get("shortcut_confirmed", False)
+            clm = row.get("cross_leaf_merge", False)
+            clp = row.get("cross_leaf_path", False)
             f.write(f"{row['pair_key']},{row['mode']},{row['severity']},"
                     f"{row['mIoU']:.4f},{row['PQ']:.4f},{row['merge_level']},"
-                    f"{row['apex_recall']:.4f},{row['first_failure']},"
-                    f"{row['contact']:.4f},{row['gap_ratio']:.4f}\n")
+                    f"{row['apex_recall']:.4f},{row['first_failure']},{row['dominant_failure']},"
+                    f"{row['contact']:.4f},{row['gap_ratio']:.4f},{sr_str},{sc},{clm},{clp}\n")
 
     print(f"\nSummary saved to {csv_path}")
     print(f"\n{'='*70}")

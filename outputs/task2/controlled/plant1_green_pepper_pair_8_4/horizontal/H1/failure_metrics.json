@@ -16,13 +16,27 @@
     "fn_rate": 0.0
   },
   "geodesic": {
-    "apex_recall": 1.0,
-    "detected_apex_count": 3,
+    "reference_apex_recall": 1.0,
+    "wrong_grouping": true,
     "merge_level": 2,
     "pred_instances_covering_a": 2,
-    "pred_instances_covering_b": 2
+    "pred_instances_covering_b": 2,
+    "apex_detail": {
+      "leaf_8": {
+        "found": true,
+        "gt_apex_idx": 5043,
+        "pred_instance": 4
+      },
+      "leaf_4": {
+        "found": true,
+        "gt_apex_idx": 28890,
+        "pred_instance": 4
+      }
+    },
+    "new_unmatched_apex_count": 8
   },
   "first_failure_stage": "GROUPING",
+  "dominant_failure_stage": "GROUPING",
   "construction": {
     "projected_overlap_fraction": 0.03946997462644488,
     "contact_fraction": 0.04009098663633779,

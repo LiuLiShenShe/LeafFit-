@@ -173,16 +173,16 @@ def save_case_outputs(
     with open(os.path.join(outdir, "construction_metrics.json"), "w") as f:
         json.dump(construction_metrics, f, indent=2, ensure_ascii=False)
 
-    # Save apexes
+    # Save apexes (matching baseline format: gaussian_index = dense index)
     dtos = hs.build_dense_to_sparse_map(result)
     apexes_out = []
     for i, c in enumerate(result.final_cluster_results):
         tip = int(c["selected_tip"])
-        dense_idx = int(result.sparse_indices[tip]) if tip < len(result.sparse_indices) else -1
         apexes_out.append({
             "id": i + 1,
-            "selected_tip_sparse": tip,
-            "gaussian_index": dense_idx,
+            "selected_tip_sparse": int(dtos[tip]) if tip < len(dtos) else -1,
+            "gaussian_index": tip,          # dense Gaussian index (matches baseline)
+            "sample_index": int(dtos[tip]) if tip < len(dtos) else -1,
             "type": c.get("type", "unknown"),
             "base_gaussian_index": c.get("base_gaussian_index"),
         })
