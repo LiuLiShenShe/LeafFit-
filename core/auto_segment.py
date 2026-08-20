@@ -15,7 +15,8 @@ from petiole_detection import find_base_idx_by_geodesic_density, find_base_idx_b
     
 def fix_plant_root_direction_legacy(gaussians: GaussianData,
                                     opacity_threshold: float = 0.1,
-                                    given_root_idx = None):
+                                    given_root_idx = None,
+                                    solver_factory=None):
     if opacity_threshold > 0:
         opacity_mask = (gaussians.opacity > np.percentile(gaussians.opacity, opacity_threshold * 100)).flatten()
         new_gaussians = GaussianData(
@@ -29,10 +30,14 @@ def fix_plant_root_direction_legacy(gaussians: GaussianData,
         )
     else:
         new_gaussians = gaussians
-    
+
     points = new_gaussians.xyz
     try:
-        solver = pp3d.PointCloudHeatSolver(points, t_coef=1e+8)
+        if solver_factory is not None:
+            # injected backend (e.g. surface-aware / euclidean graph) -- drop-in for heat solver
+            solver = solver_factory(points, new_gaussians)
+        else:
+            solver = pp3d.PointCloudHeatSolver(points, t_coef=1e+8)
     except Exception as e:
         raise e
     

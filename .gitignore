@@ -13,3 +13,9 @@ __pycache__/
 
 # Large point-cloud segmentation results (regenerable; keep repo lean)
 *.ply
+
+# J-Space controller working directory (internal tooling state)
+.jspace/
+
+# Task3 generated evaluation outputs (regenerable, ~6.6GB)
+outputs/task3/

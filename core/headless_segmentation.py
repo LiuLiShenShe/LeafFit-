@@ -210,6 +210,8 @@ def run_headless_segmentation(
     *,
     seed: Optional[int] = None,
     method: str = BASELINE_METHOD,
+    solver_factory=None,
+    frozen_root_basin_indices: Optional[np.ndarray] = None,
 ) -> HeadlessResult:
     """Run the official LeafFit segmentation headlessly on a loaded GaussianData.
 
@@ -225,6 +227,18 @@ def run_headless_segmentation(
         see determinism notes).
     method : str
         Petiole detection method; frozen to the upstream default "geodesic_tip_graph".
+    solver_factory : callable | None
+        If provided, called as ``solver_factory(points, new_gaussians)`` to build a
+        geodesic backend (e.g. surface-aware or euclidean graph) that is a drop-in
+        replacement for ``pp3d.PointCloudHeatSolver``.  When ``None`` the original
+        potpourri3d heat solver is used (byte-identical baseline behaviour).
+    frozen_root_basin_indices : np.ndarray | None
+        Precomputed root-basin dense indices.  When given, the multisource root
+        field is seeded from ``solver.compute_distance_multisource(basin)`` using
+        these exact indices (the basin is the *same source set* used for the heat
+        baseline), ensuring a fair topology comparison rather than re-deriving the
+        basin from a different distance scale.  When ``None`` the basin is derived
+        from ``root_geodesic_single <= BASELINE_ROOT_BASIN`` (baseline behaviour).
 
     Returns
     -------
@@ -246,7 +260,8 @@ def run_headless_segmentation(
     # 2) root selection + dense heat solver
     t0 = time.time()
     corrected, root_idx, heat_solver = fix_plant_root_direction_legacy(
-        cg, opacity_threshold=BASELINE_OPACITY_THRESHOLD, given_root_idx=root_index)
+        cg, opacity_threshold=BASELINE_OPACITY_THRESHOLD, given_root_idx=root_index,
+        solver_factory=solver_factory)
     # index-preservation guard (baseline: no opacity filtering). Compare corrected
     # against the PRE-CENTER original `g` so the only allowed difference is centering.
     assert_index_preserved(g, corrected, BASELINE_OPACITY_THRESHOLD)
@@ -269,7 +284,10 @@ def run_headless_segmentation(
     # 4) root geodesic fields (single -> basin -> multi-source), official order
     t0 = time.time()
     root_geodesic_single = np.asarray(heat_solver.compute_distance(root_idx), dtype=np.float64)
-    root_basin_indices = np.where(root_geodesic_single <= BASELINE_ROOT_BASIN)[0].astype(np.int64)
+    if frozen_root_basin_indices is not None:
+        root_basin_indices = np.asarray(frozen_root_basin_indices, dtype=np.int64).ravel()
+    else:
+        root_basin_indices = np.where(root_geodesic_single <= BASELINE_ROOT_BASIN)[0].astype(np.int64)
     root_geodesic_multisource = np.asarray(
         heat_solver.compute_distance_multisource(root_basin_indices), dtype=np.float64)
     phases["root_field"] = time.time() - t0
