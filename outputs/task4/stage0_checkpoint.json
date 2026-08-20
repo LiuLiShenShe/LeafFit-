@@ -1,0 +1,65 @@
+{
+  "stage": 0,
+  "verdict": "STOP",
+  "review_question": "Does synthetic multi-view consistency provide instance-discriminative connectivity for overlap resolution?",
+  "protocol": {
+    "plant": "plant1 (dev)",
+    "cases": [
+      "H0",
+      "H1",
+      "V0",
+      "V1"
+    ],
+    "visibility_models": [
+      "winner_take_all",
+      "transmittance_k2"
+    ],
+    "features": [
+      "c_vis (Jaccard)",
+      "c_app (cosine)",
+      "c_occ (1-occlusion_separation_rate)"
+    ],
+    "criterion": "clean H0/V0 within != cross c_mv, and H1/V1 (where cross edges exist) within > cross with margin >= 0.03"
+  },
+  "findings": {
+    "clean_levels_have_zero_cross_edges": {
+      "H0": "within=297586 cross=0",
+      "V0": "within=297586 cross=0",
+      "meaning": "clean selectivity guard is vacuous on clean levels; the real test is H1/V1"
+    },
+    "H1_within_vs_cross": {
+      "n_within": 281948,
+      "n_cross": 9767,
+      "winner_take_all": {
+        "c_vis_w": 0.0,
+        "c_vis_x": 0.0,
+        "c_app_w": 0.0,
+        "c_app_x": 0.0,
+        "c_occ_w": 1.0,
+        "c_occ_x": 1.0,
+        "c_mv_w": 0.3,
+        "c_mv_x": 0.3,
+        "margin": 0.0
+      },
+      "transmittance_k2": {
+        "c_vis_w": 0.0,
+        "c_vis_x": 0.0,
+        "c_app_w": 0.0,
+        "c_app_x": 0.0,
+        "c_occ_w": 0.972,
+        "c_occ_x": 1.0,
+        "c_mv_w": 0.3,
+        "c_mv_x": 0.3,
+        "margin": 0.0
+      }
+    },
+    "visibility_coverage": {
+      "winner_take_all_frac_visible_gt0_views": 0.264,
+      "transmittance_k2_frac_visible_gt0_views": 0.363,
+      "conclusion": "K=2 transmittance raises coverage but does not restore discriminability"
+    }
+  },
+  "root_cause": "Synthetic orbit cameras re-project the existing static splat cloud; no new information is introduced. 62-74% of a/b gaussians are visible in 0 views under either visibility model, so c_vis/c_app collapse to 0 for BOTH within-leaf and cross-leaf edges (both co-visibility sets are tiny). c_occ saturates to ~1.0 because neither endpoint is visible -> no occlusion separation to score. The remaining 0.3 'signal' is the constant c_occ contribution, identical within and cross.",
+  "conclusion": "STOP per plan: no parameter grid. View-synthesized evidence from a static 3DGS cloud cannot provide instance-discriminative connectivity for this benchmark. This matches the plan's designed honest-FAIL gate: 'no real cameras/images, synthetic multi-view itself cannot produce sufficient instance info'. Next stage must introduce real captured images / 2D multi-view instance cues rather than squeeze more from the PLY.",
+  "task3_parallel": "G4 surface gate also failed (c_t within~cross at V0); G6 identity gate fails the same way at H1/V1. Both confirm overlap failures are not due to insufficient local geometry estimation."
+}

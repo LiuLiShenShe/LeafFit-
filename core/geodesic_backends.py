@@ -221,6 +221,98 @@ def _build_knn_edges(xyz: np.ndarray, k: int, mutual: bool = False):
 
 
 # ---------------------------------------------------------------------------
+# Multi-view identity edge features (G6/G7)
+# ---------------------------------------------------------------------------
+def _mv_edge_features(rows: np.ndarray, cols: np.ndarray,
+                      visible: np.ndarray, appear: np.ndarray,
+                      depth: np.ndarray, uv: np.ndarray,
+                      n_views: int,
+                      mv_eps: float = 1e-6):
+    """Per-edge multi-view consistency scores for G6/G7 gates.
+
+    Args:
+        rows, cols: undirected edge endpoints (aligned arrays).
+        visible: (n_views, N) uint8 visibility mask.
+        appear:  (N, 3) appearance signature (mean RGB over visible views).
+        depth:   (n_views, N) camera-space depth.
+        uv:      (n_views, N, 2) NDC projection.
+        n_views: number of synthesized orbit cameras.
+
+    Returns (c_vis, c_app, c_occ), each (E,) float32 in [0, 1]:
+
+    c_vis — Jaccard similarity of per-gaussian visibility sets
+        |V_i ∩ V_j| / |V_i ∪ V_j| + eps  (NOT raw co-visibility; M5).
+    c_app — cosine similarity of appearance signatures
+        appear_i . appear_j / (||·|| ||·||)   (clamped to [0,1]).
+    c_occ — occlusion/depth-order consistency among views where the two
+        gaussians' projections are close (< 0.15 NDC) or both visible:
+        rate at which their relative depth order is STABLE (does not flip)
+        minus the rate at which one is visible while the other is hidden
+        (occlusion separation). Higher = more consistent (same leaf).
+    """
+    V = visible.astype(bool)
+    vi = V[:, rows]  # (n_views, E)
+    vj = V[:, cols]
+    # Jaccard
+    inter = (vi & vj).sum(axis=0).astype(np.float32)
+    union = (vi | vj).sum(axis=0).astype(np.float32)
+    c_vis = inter / (union + mv_eps)
+
+    # appearance cosine (A1 mean-rendered RGB)
+    ai = appear[rows]
+    aj = appear[cols]
+    num = (ai * aj).sum(axis=1)
+    den = np.maximum(np.linalg.norm(ai, axis=1) * np.linalg.norm(aj, axis=1), mv_eps)
+    c_app = np.clip(num / den, 0.0, 1.0)
+
+    # occlusion/depth-order consistency
+    di = depth[:, rows]          # (n_views, E)
+    dj = depth[:, cols]
+    duv = np.linalg.norm(uv[:, rows] - uv[:, cols], axis=2)  # (n_views, E)
+    close = duv < 0.15
+    both_vis = vi & vj
+    occl = vi ^ vj               # exactly one visible (occlusion separation)
+    # occlusion-consistency = 1 - (rate at which one occludes the other among
+    # views where they are close OR both visible). Same-leaf: both visible, no
+    # occlusion -> occ_rate ~ 0 -> c_occ ~ 1. Cross-leaf (front occludes back):
+    # exactly-one-visible is common -> occ_rate high -> c_occ low.
+    rel = close | both_vis
+    den2 = np.maximum(rel.sum(axis=0).astype(np.float32), 1.0)
+    # per-edge count of "exactly one visible" among rel views. NB: must be
+    # `(occl & rel)` NOT `occl[rel]` — boolean indexing flattens occl to 1D and
+    # .sum(axis=0) then collapses across ALL edges into one scalar, corrupting
+    # every per-edge occ_rate.
+    occ_rate = (occl & rel).sum(axis=0).astype(np.float32) / den2
+    c_occ = np.clip(1.0 - occ_rate, 0.0, 1.0)
+    return (c_vis.astype(np.float32), c_app.astype(np.float32),
+            c_occ.astype(np.float32))
+
+
+def _reinject_nn_edges(isolated: np.ndarray,
+                       e_rows: np.ndarray, e_cols: np.ndarray,
+                       e_d: np.ndarray) -> np.ndarray:
+    """Pick the nearest candidate edge for each isolated node.
+
+    ``isolated``: node ids whose degree dropped to 0 after the identity gate.
+    ``e_rows/e_cols/e_d``: the candidate edge set aligned with the boolean ``keep``
+    mask this function's result will be OR'd into. For each isolated node returns a
+    boolean mask marking its smallest-euclidean incident candidate edge. The mask is
+    OR'd into the keep mask so Dijkstra stays defined (connectivity safety net).
+
+    Returns (E,) bool aligned with e_rows/e_cols.
+    """
+    E = len(e_rows)
+    out = np.zeros(E, dtype=bool)
+    for nid in isolated:
+        inc = (e_rows == nid) | (e_cols == nid)
+        if not inc.any():
+            continue
+        best = int(np.argmin(np.where(inc, e_d, np.inf)))
+        out[best] = True
+    return out
+
+
+# ---------------------------------------------------------------------------
 # Euclidean baseline (G0)
 # ---------------------------------------------------------------------------
 class EuclideanGraphBackend(GeodesicBackend):
@@ -343,6 +435,8 @@ _FEATURE_SETS = {
     "G3": dict(penalty_normal=1.0, penalty_tangent=1.0, gate=False),
     "G4": dict(penalty_normal=0.0, penalty_tangent=0.0, gate=True),   # gate-only, w=d (surface gate)
     "G5": dict(penalty_normal=1.0, penalty_tangent=1.0, gate=True),   # gate + soft penalty
+    "G6": dict(penalty_normal=0.0, penalty_tangent=0.0, gate=False, mv=True),   # identity-only gate, w=d
+    "G7": dict(penalty_normal=0.0, penalty_tangent=0.0, gate=True,  mv=True),   # surface gate AND identity gate
 }
 
 
@@ -354,12 +448,26 @@ class SurfaceAwareGraphBackend(GeodesicBackend):
     Locality gate (for G4 / G5):
         surviving edge iff c_d <= tau_d  AND  c_t <= tau_t
     Surviving edges keep weight = d_ij when soft penalty is disabled (G4).
+
+    G6/G7 multi-view identity gate: when ``view_signature`` is given, edges also
+    survive the identity gate ``c_mv >= tau_mv`` where c_mv is a weighted sum of
+    visibility (Jaccard), appearance (cosine), and occlusion-consistency scores.
+    G6 = identity-only gate (no surface gate); G7 = surface AND identity.
+    Surviving edges keep weight = d_ij (gate-only; soft penalty forbidden for
+    identity methods due to Task 3 G5 METRIC_INCOMPATIBLE).
+
+    ``view_signature`` is a ``multiview_identity.ViewSignature`` (or dict with the
+    same keys) computed from the SAME (transformed) GaussianData the graph is built
+    on — see ``run_task4_case.py`` for the per-transformed-case cache.
     """
 
     def __init__(self, points: np.ndarray, gaussians: GaussianData, k: int = 32,
                  lambda_n: float = 1.0, lambda_t: float = 2.0, p: float = 2.0,
                  tau_d: float = 3.0, tau_t: float = 0.5, mutual: bool = False,
-                 feature_set: str = "G5"):
+                 feature_set: str = "G5",
+                 view_signature=None, tau_mv: float = 0.7,
+                 w_vis: float = 0.4, w_app: float = 0.3, w_occ: float = 0.3,
+                 mask_never_visible: bool = True):
         self.N = len(points)
         self.k = k
         self.lambda_n = float(lambda_n)
@@ -418,11 +526,79 @@ class SurfaceAwareGraphBackend(GeodesicBackend):
         # (g_ij ~ 1).  Thin structures (petioles/stems, cylindrical covariances) have
         # a_i ~ 0 -> g_ij ~ 0 -> the gate never prunes them, keeping the graph
         # connected (do NOT cut the whole graph).
+        #
         if fs["gate"]:
             keep = (c_d <= self.tau_d) & (c_t * g_ij <= self.tau_t)
             if not keep.all():
                 rows, cols, w = rows[keep], cols[keep], w[keep]
                 d_ij, c_n, c_t, c_d = d_ij[keep], c_n[keep], c_t[keep], c_d[keep]
+
+        # ---- G6/G7: multi-view identity gate (gate-only, w stays = d) ----
+        self._c_vis = None
+        self._c_app = None
+        self._c_occ = None
+        self._c_mv = None
+        self._fvis = None
+        if fs.get("mv"):
+            if view_signature is None:
+                raise ValueError(
+                    f"feature_set={feature_set} requires view_signature (G6/G7)")
+            vs = view_signature
+            # unpack dict or ViewSignature-like object
+            visible = np.asarray(vs["visible"] if isinstance(vs, dict) else vs.visible,
+                                 dtype=np.uint8)          # (n_views, N)
+            appear = np.asarray(vs["appear_sig"] if isinstance(vs, dict) else vs.appear_sig,
+                                dtype=np.float32)         # (N, 3)
+            vis_frac = np.asarray(vs["visibility_fraction"] if isinstance(vs, dict)
+                                  else vs.visibility_fraction, dtype=np.float32)  # (N,)
+            n_views = visible.shape[0]
+            depth = np.asarray(vs["depth"] if isinstance(vs, dict) else vs.depth,
+                               dtype=np.float32)          # (n_views, N)
+            uv = np.asarray(vs["uv"] if isinstance(vs, dict) else vs.uv,
+                            dtype=np.float32)             # (n_views, N, 2)
+
+            self._c_vis, self._c_app, self._c_occ = _mv_edge_features(
+                rows, cols, visible, appear, depth, uv, n_views)
+            c_mv = w_vis * self._c_vis + w_app * self._c_app + w_occ * self._c_occ
+
+            # never-visible masked: gaussians with ~zero visibility get a distinct
+            # gate so edges among them don't spuriously pass identity consistency.
+            fvis = vis_frac
+            if mask_never_visible:
+                fvis = np.where(vis_frac < 0.01, 0.0, 1.0)
+                # treat both-endpoint-never-visible equivalently to a shortcut
+                c_mv = c_mv * (0.5 + 0.5 * fvis[rows] * fvis[cols])
+            self._fvis = fvis
+
+            keep_mv = c_mv >= tau_mv
+            # For G7 the surface gate above already subset rows/cols to the
+            # surface-kept edges; the identity gate then applies over the CURRENT
+            # edge set (AND semantics via subsetting, not via mask intersection —
+            # the old `keep & keep_mv` mixed an original-length mask with a
+            # subset-length mask and corrupted both G7 gating and the safety net).
+            # For G6 no prior subset happened, so keep_mv is over the full set.
+            keep = keep_mv
+            # connectivity safety net: if the mv gate prunes edges so aggressively
+            # that a node loses ALL its kNN edges — which would disconnect the graph
+            # and break Dijkstra — reinject that node's nearest candidate edge.
+            # Mirrors the anisotropy-gate philosophy: never cut thin/isolated
+            # structures wholesale.
+            degree = np.zeros(self.N, dtype=np.int64)
+            np.add.at(degree, rows[keep], 1)
+            np.add.at(degree, cols[keep], 1)
+            isolated = np.where(degree == 0)[0]
+            if len(isolated) > 0:
+                # reinject the nearest edge among the CURRENT candidate set (rows/cols
+                # after any surface-gate subset) — the mask must align with keep.
+                reinj = _reinject_nn_edges(isolated, rows, cols, d_ij)
+                keep = keep | reinj
+            if not keep.all():
+                rows, cols, w = rows[keep], cols[keep], w[keep]
+                d_ij = d_ij[keep]
+                c_n, c_t, c_d = c_n[keep], c_t[keep], c_d[keep]
+                self._c_vis, self._c_app, self._c_occ = (
+                    self._c_vis[keep], self._c_app[keep], self._c_occ[keep])
+            self._c_mv = c_mv[keep]
 
         self._graph = csr_matrix((np.concatenate([w, w]),
                                   (np.concatenate([rows, cols]),
@@ -497,7 +673,7 @@ class SurfaceAwareGraphBackend(GeodesicBackend):
     @property
     def edge_features(self) -> dict:
         """Raw edge arrays for cross-leaf diagnostics (undirected edges)."""
-        return {
+        out = {
             "rows": self._rows,
             "cols": self._cols,
             "edge_weight": self._w,
@@ -506,6 +682,14 @@ class SurfaceAwareGraphBackend(GeodesicBackend):
             "tangent_consistency": self._c_t,
             "local_scale_distance": self._c_d,
         }
+        if self._c_mv is not None:
+            out.update({
+                "mv_consistency": self._c_mv,
+                "c_vis": self._c_vis,
+                "c_app": self._c_app,
+                "c_occ": self._c_occ,
+            })
+        return out
 
     def crossleaf_diagnostics(self, labels: np.ndarray) -> dict:
         """Post-hoc: within-leaf vs cross-leaf edge feature distributions."""
@@ -518,7 +702,7 @@ class SurfaceAwareGraphBackend(GeodesicBackend):
                 return {"count": 0, "median": None}
             return {"count": int(mask.sum()),
                     "median": float(np.median(arr[mask]))}
-        return {
+        out = {
             "n_within_leaf_edges": int(same.sum()),
             "n_cross_leaf_edges": int(diff.sum()),
             "median_c_n_within": _stats(same, self._c_n),
@@ -528,3 +712,15 @@ class SurfaceAwareGraphBackend(GeodesicBackend):
             "median_c_d_within": _stats(same, self._c_d),
             "median_c_d_cross": _stats(diff, self._c_d),
         }
+        if self._c_mv is not None:
+            out.update({
+                "median_c_vis_within": _stats(same, self._c_vis),
+                "median_c_vis_cross": _stats(diff, self._c_vis),
+                "median_c_app_within": _stats(same, self._c_app),
+                "median_c_app_cross": _stats(diff, self._c_app),
+                "median_c_occ_within": _stats(same, self._c_occ),
+                "median_c_occ_cross": _stats(diff, self._c_occ),
+                "median_c_mv_within": _stats(same, self._c_mv),
+                "median_c_mv_cross": _stats(diff, self._c_mv),
+            })
+        return out

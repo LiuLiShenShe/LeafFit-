@@ -1,0 +1,24 @@
+{
+  "task": "Task 4 — Multi-view Consistent Gaussian Identity Graph for LeafFit Overlap Resolution",
+  "verdict": "FAIL (honest, per designed Stage-0 gate)",
+  "date": "2026-08-20",
+  "scope": "dev plant1 only (plant2/7 held-out never touched)",
+  "methods_built": {
+    "core/multiview_identity.py": "orbit cameras + ellipse-aware visibility (winner_take_all / transmittance_k2) + SH-eval appearance + ViewSignature + per-case cache hash",
+    "core/geodesic_backends.py": "G6 (identity-only gate) + G7 (surface AND identity gate), gate-only w=d, connectivity safety net, crossleaf c_vis/c_app/c_occ/c_mv diagnostics",
+    "tests/test_multiview_identity.py": "17 unit tests PASS (incl. ellipse occlusion, Jaccard c_vis, c_occ within>cross on two-plane fixture, G6 prunes cross>within, determinism, cache hash)",
+    "scripts/run_task4_case.py": "per-transformed-case viewsig cache (M3), --mv-* camera args",
+    "scripts/run_all_task4.py": "phase 0 Stage-0 gate / phase 1 sweep (refuses on STOP)"
+  },
+  "stage0_gate_result": "STOP",
+  "key_findings": {
+    "clean_levels_no_cross_edges": "H0/V0 have 0 cross kNN edges between leaf a/b; the clean-V0 selectivity guard is vacuous on clean levels",
+    "boundary_levels_collapse": "H1 (9767 cross) + V1 (13027 cross): within c_mv == cross c_mv == 0.30 (margin 0.000) under BOTH winner_take_all and transmittance_k2",
+    "c_vis_c_app_collapse": "62-74% of a/b gaussians visible in 0 views -> Jaccard c_vis and cosine c_app both 0.0 for within AND cross",
+    "c_occ_saturation": "c_occ ~1.0 because neither endpoint visible -> no occlusion separation to score",
+    "transmittance_k2": "raises coverage (0.264->0.363) but does NOT restore discriminability (margin still 0.000)"
+  },
+  "scientific_conclusion": "View-synthesized visibility/appearance/occlusion cues from a static 3DGS splat cloud do not provide instance-discriminative connectivity for overlap resolution: the synthetic cameras re-project the same static geometry and introduce no new information about leaf identity. This confirms the plan's designed honest-FAIL: overlap failures are not remediable by local geometry estimation (Task 3 G4 FAIL) NOR by synthetic multi-view reasoning (Task 4 FAIL). The bottleneck is missing real multi-view instance evidence (captured images / 2D instance masks).",
+  "no_retrain_no_foundation_no_semseg": "respected — all gates built from existing 3DGS params",
+  "benchmark_integrity": "plant1 dev only; held-out plant2/7 untouched; fine severities untouched"
+}
