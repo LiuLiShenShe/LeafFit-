@@ -19,3 +19,6 @@ __pycache__/
 
 # Task3 generated evaluation outputs (regenerable, ~6.6GB)
 outputs/task3/
+
+# Task5 generated evaluation outputs (regenerable, ~886MB)
+outputs/task5/

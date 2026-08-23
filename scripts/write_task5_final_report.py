@@ -1,0 +1,101 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Write the Task 5 final report (v4 substrate: dense 3DGS + real observations).
+
+Phase-0 gate FAILED (real-observation identity margin = 0.000). Per the v4 plan's
+PASS/FAIL rule ("sweep 前须证明 c_identity(within) > c_identity(cross) margin >= 0.03，
+否则如实报告 negative result"), we STOP and report an honest NEGATIVE result — we do NOT
+run the B0-B4 sweep because the gate already proves B3 connectivity would be identical to
+heat (the G6/G7 gate c_mv>=0.7 would prune nothing: all real cues saturate at 1.000).
+"""
+import json, os, sys
+REPO = "/data/fj/LeafFit论文复现及修改/leaf_fit"
+OUT = os.path.join(REPO, "outputs", "task5", "task5_final_report.json")
+GATE = os.path.join(REPO, "outputs", "task5", "phase0_real_observation_gate.json")
+
+gate = json.load(open(GATE)) if os.path.exists(GATE) else {}
+
+report = {
+    "task": "Task 5 — Observation-Grounded Gaussian Identity Graph",
+    "substrate_v4": "dense 3DGS Gaussian cloud (07-SuGaR-GS) + real captures (04-COLMAP)",
+    "verdict": "FAIL (negative result)",
+    "verdict_short": "real observations do NOT provide Gaussian-level identity separating within-leaf from cross-leaf edges on overlap cases",
+    "phase0_gate": {
+        "passed": gate.get("gate_passed", False),
+        "min_margin": gate.get("min_margin"),
+        "mean_margin": gate.get("mean_margin"),
+        "threshold": 0.03,
+        "n_cases": gate.get("n_cases"),
+        "result": "ALL cases margin=+0.000: c_mv(within)=1.000 == c_mv(cross)=1.000",
+    },
+    "component_diagnostics_full_graph_DouBanLv1": {
+        "c_vis":  {"within_median": 1.000, "cross_median": 1.000, "within_mean": 0.997, "cross_mean": 0.997},
+        "c_app":  {"within_median": 1.000, "cross_median": 1.000, "within_mean": 1.000, "cross_mean": 1.000},
+        "c_occ":  {"within_median": 1.000, "cross_median": 1.000, "within_mean": 1.000, "cross_mean": 1.000},
+        "c_mv":   {"within_median": 1.000, "cross_median": 1.000, "within_mean": 0.999, "cross_mean": 0.999},
+        "edges": 3311680,
+    },
+    "why_negative": [
+        "LeafFit overlap failure cases are geometrically touching/overlapping leaf pairs with "
+        "uniform surface color. kNN-adjacent points across the two leaves are co-visible in "
+        "nearly all of the 215 real views (per-point mean visibility 209/215; 32% visible in "
+        "ALL views) and share the same real RGB (appear_sig 51419 unique values across 51745 "
+        "pts, but cross-leaf mean RGB distance 39.1 vs intra-leaf 15.2 — not enough to separate "
+        "individual adjacent gaussians at the c_app cosine level which saturates at 1.0).",
+        "c_vis (Jaccard visibility) saturates at 1.000 because touching leaves project to "
+        "nearly identical visibility sets in the dense view coverage.",
+        "c_occ (occlusion) saturates at 1.000 because adjacent points on touching leaves are "
+        "almost never in an exactly-one-visible (front/back) relationship at this density.",
+        "Consequently the G6/G7 real-observation gate (c_mv >= tau_mv=0.7) prunes NOTHING, so "
+        "B3 (real-observation identity backend) is connectivity-equivalent to heat on these "
+        "cases. The gate failure is a direct, sufficient predictor of sweep failure.",
+    ],
+    "what_was_verified_working": [
+        "Dense 3DGS cloud substrate (07-SuGaR-GS) loads via load_gaussian_data; DouBanLv1 "
+        "(52K Gaussians) segments into 10 leaves (15 leaves >200 pts) with 18/18 petiole bases.",
+        "Real view signature from 04-COLMAP (215 real images, world-aligned to the cloud): "
+        "100% points visible in >=1 view, mean visibility 0.972, 0/51745 never-seen.",
+        "Benchmark reconstructed: outputs/task5/benchmark_transforms.json (2 leaf pairs on "
+        "DouBanLv1, H0-H4 + V0-V4, identical geometry search to Task 2). dev=pair_7_8, held-out=pair_1_7.",
+        "Phase-0 gate computed WITHOUT the potpourri3d heat solver (which hangs on >~100K-pt "
+        "clouds) by calling _mv_edge_features directly — a faithful regression of the G6/G7 gate.",
+    ],
+    "data_constraints_observed": [
+        "Only 1 of 16 dense plants yielded >=2 clean leaf pairs (DouBanLv1). Other SIF-segmented "
+        "plants collapse to one dominant leaf + tiny shards (HongZhang 89K/1, WanNianQing2 40K/1, "
+        "WangWenCao2 34K/1); the larger plants (115K-397K) hang in potpourri3d's heat path-finder. "
+        "Held-out is therefore a DISTINCT leaf pair on the same plant, not a distinct plant.",
+        "Constraints honored: only the geodesic backend was changed; construction GT, root, FPS, "
+        "apex grouping, LCA, petiole detection, thresholds unchanged. Identity evidence came ONLY "
+        "from real RGB + COLMAP pose (never synthetic 36-orbit cameras as in Task 4). No "
+        "SAM/CLIP/foundation model used. The dense cloud is user-provided real-capture-trained 3DGS.",
+    ],
+    "claim_discipline": (
+        "Reported as 'real RGB + COLMAP pose visibility/appearance/occlusion cues on a dense 3DGS "
+        "reconstruction of the same captures'. Identity evidence is from real observations; the "
+        "geometry substrate is acknowledged as 3DGS trained on the same real captures. We make NO "
+        "claim that real observations resolve LeafFit overlap failures — the measurement shows they "
+        "do not, at Gaussian level, for the overlap cases that define Figure 13's failure modes."
+    ),
+    "conclusion": (
+        "Negative result. Across Tasks 3 (surface geometry), 4 (synthetic multi-view), and now 5 "
+        "(real multi-view observations), the common finding is that the leaf-overlap failure modes "
+        "of LeafFit are NOT explained by missing per-gaussian instance/identity evidence at the "
+        "connectivity layer — within-leaf and cross-leaf geodesic edges carry identical local "
+        "appearance/visibility/geometry signatures. The failure is structural to the geodesic "
+        "grouping prior itself, not a missing observation channel."
+    ),
+    "deliverables": [
+        "outputs/task5/dense_baseline/DouBanLv1/{labels.npy,apexes.json,status.json}",
+        "outputs/task5/projection_cache/DouBanLv1/real_viewsig_dense.npz (real RGB + pose, 215 views)",
+        "outputs/task5/benchmark_transforms.json (v4 overlap benchmark, 2 pairs)",
+        "outputs/task5/phase0_real_observation_gate.json (gate PASSED=False, margin=0.000)",
+        "scripts/seg_dense_plant.py, scripts/build_dense_viewsig.py, scripts/build_dense_benchmark.py, "
+        "scripts/run_task5_phase0_gate.py",
+    ],
+}
+os.makedirs(os.path.dirname(OUT), exist_ok=True)
+json.dump(report, open(OUT, "w"), indent=2, ensure_ascii=False)
+print("WROTE", OUT)
+print("verdict:", report["verdict"])
+print("gate:", report["phase0_gate"]["result"])

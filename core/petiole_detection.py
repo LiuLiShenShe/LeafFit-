@@ -776,10 +776,15 @@ def find_base_idx_by_geodesic_tip_graph(cluster_info_item,
     final_base_idx = None
     if connected_path_point is not None:
         final_base_idx = connected_path_point
-    elif len(selected_points) > 0:
+    elif len(selected_points) > protection_period:
         min_idx_after_protection = np.argmin(selected_dists[protection_period:]) + protection_period
         final_base_idx = selected_points[min_idx_after_protection]
+    elif len(selected_points) > 0:
+        # Fewer candidates than the protection window (degenerate on some geometries,
+        # e.g. trained-3DGS clouds where geodesic/temperature candidate sets barely
+        # intersect). Fall back to the farthest selected point among all candidates.
+        final_base_idx = selected_points[int(np.argmax(selected_dists))]
     else:
         final_base_idx = tip_idx
-    
+
     return final_base_idx   

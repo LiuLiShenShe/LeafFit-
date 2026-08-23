@@ -128,7 +128,12 @@ def load_gaussian_data(ply_path: str) -> GaussianData:
     rots = rots / np.linalg.norm(rots, axis=-1, keepdims=True)
     rots = rots.astype(np.float32)
 
-    filter_3Ds = np.asarray(el["filter_3D"])[..., None].astype(np.float32)
+    # filter_3D is present on the released LeafFit plants but absent on some
+    # vanilla-GS / SuGaR exports; default to all-ones (no filtering) when missing.
+    if "filter_3D" in [p.name for p in el.properties]:
+        filter_3Ds = np.asarray(el["filter_3D"])[..., None].astype(np.float32)
+    else:
+        filter_3Ds = np.ones((len(xyz), 1), dtype=np.float32)
 
     return GaussianData(xyz, rots, scales, opacities, shs, nxnynz, filter_3Ds)
 
