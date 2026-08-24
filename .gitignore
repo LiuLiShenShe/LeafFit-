@@ -20,3 +20,6 @@ __pycache__/
 
 # J-Space controller working directory (internal tooling state)
 .jspace/
+# Task5R-v3: heavy review crops and projection caches stay local
+outputs/task5r_v3/review_crops/
+outputs/task5r_v3/projection_cache/

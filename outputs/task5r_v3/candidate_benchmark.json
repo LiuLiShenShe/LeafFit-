@@ -1,0 +1,228 @@
+{
+  "tier": "PROPOSER_DIAGNOSTIC",
+  "human_verified": false,
+  "note": "Candidate labels from the frozen independent proposer. NOT Gold. Requires manual review of benchmark_review_queue.csv.",
+  "proposer_params": {
+    "k": 16,
+    "sin_thr": 0.35,
+    "lin_thr": 0.6,
+    "plan_thr": 0.25,
+    "color_thr": 30.0
+  },
+  "near_contact_m": 0.08,
+  "min_component_points": 500,
+  "viewsig_version": "task5r-alpha-v3-ellipseblock",
+  "git_commit": "cac1f49ed6805ca5406b83353aa495032541a800",
+  "timestamp": "2026-08-24T16:32:10+0800",
+  "plant_summaries": {
+    "DouBanLv1": {
+      "n_components": 10562,
+      "n_leaf_scale_components": 8,
+      "n_candidate_pairs": 5,
+      "n_review_crops": 30
+    },
+    "XianKeLai2": {
+      "n_components": 14998,
+      "n_leaf_scale_components": 1,
+      "n_candidate_pairs": 0,
+      "n_review_crops": 0
+    },
+    "WanNianQing2": {
+      "n_components": 8752,
+      "n_leaf_scale_components": 2,
+      "n_candidate_pairs": 0,
+      "n_review_crops": 0
+    },
+    "HongZhang": {
+      "n_components": 19610,
+      "n_leaf_scale_components": 6,
+      "n_candidate_pairs": 3,
+      "n_review_crops": 18
+    },
+    "WangWenCao2": {
+      "n_components": 6588,
+      "n_leaf_scale_components": 2,
+      "n_candidate_pairs": 1,
+      "n_review_crops": 6
+    },
+    "CaoMei1": {
+      "n_components": 8089,
+      "n_leaf_scale_components": 2,
+      "n_candidate_pairs": 0,
+      "n_review_crops": 0
+    }
+  },
+  "cases": [
+    {
+      "plant": "DouBanLv1",
+      "component_a": 2,
+      "component_b": 11,
+      "n_points_a": 14474,
+      "n_points_b": 2799,
+      "min_gap_m": 0.0415,
+      "rgb_dist": 33.014506235248504,
+      "case_id": "DouBanLv1_c2_c11",
+      "proposer_rank": 0,
+      "review_crops": [
+        "DouBanLv1_c2_c11_v0000.jpg",
+        "DouBanLv1_c2_c11_v0009.jpg",
+        "DouBanLv1_c2_c11_v0018.jpg",
+        "DouBanLv1_c2_c11_v0027.jpg",
+        "DouBanLv1_c2_c11_v0037.jpg",
+        "DouBanLv1_c2_c11_v0046.jpg"
+      ]
+    },
+    {
+      "plant": "DouBanLv1",
+      "component_a": 2,
+      "component_b": 3,
+      "n_points_a": 14474,
+      "n_points_b": 12658,
+      "min_gap_m": 0.0427,
+      "rgb_dist": 3.1701935922177826,
+      "case_id": "DouBanLv1_c2_c3",
+      "proposer_rank": 1,
+      "review_crops": [
+        "DouBanLv1_c2_c3_v0000.jpg",
+        "DouBanLv1_c2_c3_v0009.jpg",
+        "DouBanLv1_c2_c3_v0018.jpg",
+        "DouBanLv1_c2_c3_v0027.jpg",
+        "DouBanLv1_c2_c3_v0037.jpg",
+        "DouBanLv1_c2_c3_v0046.jpg"
+      ]
+    },
+    {
+      "plant": "DouBanLv1",
+      "component_a": 3,
+      "component_b": 520,
+      "n_points_a": 12658,
+      "n_points_b": 1017,
+      "min_gap_m": 0.065,
+      "rgb_dist": 7.676195252138409,
+      "case_id": "DouBanLv1_c3_c520",
+      "proposer_rank": 2,
+      "review_crops": [
+        "DouBanLv1_c3_c520_v0000.jpg",
+        "DouBanLv1_c3_c520_v0009.jpg",
+        "DouBanLv1_c3_c520_v0018.jpg",
+        "DouBanLv1_c3_c520_v0027.jpg",
+        "DouBanLv1_c3_c520_v0037.jpg",
+        "DouBanLv1_c3_c520_v0046.jpg"
+      ]
+    },
+    {
+      "plant": "DouBanLv1",
+      "component_a": 67,
+      "component_b": 2439,
+      "n_points_a": 3926,
+      "n_points_b": 691,
+      "min_gap_m": 0.0701,
+      "rgb_dist": 14.47144245028818,
+      "case_id": "DouBanLv1_c67_c2439",
+      "proposer_rank": 3,
+      "review_crops": [
+        "DouBanLv1_c67_c2439_v0000.jpg",
+        "DouBanLv1_c67_c2439_v0009.jpg",
+        "DouBanLv1_c67_c2439_v0018.jpg",
+        "DouBanLv1_c67_c2439_v0027.jpg",
+        "DouBanLv1_c67_c2439_v0037.jpg",
+        "DouBanLv1_c67_c2439_v0046.jpg"
+      ]
+    },
+    {
+      "plant": "DouBanLv1",
+      "component_a": 3,
+      "component_b": 67,
+      "n_points_a": 12658,
+      "n_points_b": 3926,
+      "min_gap_m": 0.0724,
+      "rgb_dist": 8.465618891697446,
+      "case_id": "DouBanLv1_c3_c67",
+      "proposer_rank": 4,
+      "review_crops": [
+        "DouBanLv1_c3_c67_v0000.jpg",
+        "DouBanLv1_c3_c67_v0009.jpg",
+        "DouBanLv1_c3_c67_v0018.jpg",
+        "DouBanLv1_c3_c67_v0027.jpg",
+        "DouBanLv1_c3_c67_v0037.jpg",
+        "DouBanLv1_c3_c67_v0046.jpg"
+      ]
+    },
+    {
+      "plant": "HongZhang",
+      "component_a": 1,
+      "component_b": 0,
+      "n_points_a": 12483,
+      "n_points_b": 1280,
+      "min_gap_m": 0.0377,
+      "rgb_dist": 9.595633956129591,
+      "case_id": "HongZhang_c1_c0",
+      "proposer_rank": 0,
+      "review_crops": [
+        "HongZhang_c1_c0_v0000.jpg",
+        "HongZhang_c1_c0_v0009.jpg",
+        "HongZhang_c1_c0_v0018.jpg",
+        "HongZhang_c1_c0_v0027.jpg",
+        "HongZhang_c1_c0_v0036.jpg",
+        "HongZhang_c1_c0_v0045.jpg"
+      ]
+    },
+    {
+      "plant": "HongZhang",
+      "component_a": 2,
+      "component_b": 1,
+      "n_points_a": 48765,
+      "n_points_b": 12483,
+      "min_gap_m": 0.0643,
+      "rgb_dist": 12.750861389165873,
+      "case_id": "HongZhang_c2_c1",
+      "proposer_rank": 1,
+      "review_crops": [
+        "HongZhang_c2_c1_v0000.jpg",
+        "HongZhang_c2_c1_v0009.jpg",
+        "HongZhang_c2_c1_v0018.jpg",
+        "HongZhang_c2_c1_v0027.jpg",
+        "HongZhang_c2_c1_v0036.jpg",
+        "HongZhang_c2_c1_v0045.jpg"
+      ]
+    },
+    {
+      "plant": "HongZhang",
+      "component_a": 2,
+      "component_b": 97,
+      "n_points_a": 48765,
+      "n_points_b": 2276,
+      "min_gap_m": 0.0719,
+      "rgb_dist": 2.499789863973956,
+      "case_id": "HongZhang_c2_c97",
+      "proposer_rank": 2,
+      "review_crops": [
+        "HongZhang_c2_c97_v0000.jpg",
+        "HongZhang_c2_c97_v0018.jpg",
+        "HongZhang_c2_c97_v0027.jpg",
+        "HongZhang_c2_c97_v0036.jpg",
+        "HongZhang_c2_c97_v0045.jpg",
+        "HongZhang_c2_c97_v0055.jpg"
+      ]
+    },
+    {
+      "plant": "WangWenCao2",
+      "component_a": 0,
+      "component_b": 54,
+      "n_points_a": 25203,
+      "n_points_b": 875,
+      "min_gap_m": 0.0762,
+      "rgb_dist": 60.26129858532893,
+      "case_id": "WangWenCao2_c0_c54",
+      "proposer_rank": 0,
+      "review_crops": [
+        "WangWenCao2_c0_c54_v0000.jpg",
+        "WangWenCao2_c0_c54_v0011.jpg",
+        "WangWenCao2_c0_c54_v0023.jpg",
+        "WangWenCao2_c0_c54_v0040.jpg",
+        "WangWenCao2_c0_c54_v0056.jpg",
+        "WangWenCao2_c0_c54_v0067.jpg"
+      ]
+    }
+  ]
+}
