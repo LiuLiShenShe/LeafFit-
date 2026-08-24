@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-08-24T15:30:47+0800",
+  "checks": {
+    "exclusive_transmittance_golden": {
+      "passed": true,
+      "two_layer": [
+        0.9,
+        0.09
+      ],
+      "three_layer": [
+        0.9,
+        0.09,
+        0.009
+      ]
+    },
+    "covariance_radius_golden": {
+      "passed": true,
+      "diag44_radius": 4.0,
+      "diag91_radius": 6.0
+    },
+    "ellipse_block_vs_bruteforce": {
+      "passed": true,
+      "n_gaussians": 40,
+      "delta_max": 1.6653345369377348e-16,
+      "delta_acc": 2.220446049250313e-16
+    },
+    "matcher_determinism": {
+      "passed": true,
+      "matched_rows": 1000
+    },
+    "cliffs_delta_identity": {
+      "passed": true,
+      "max_deviation": 0.0
+    }
+  },
+  "all_passed": true,
+  "source_commit": "f24f9ae2037fba8da0e9a903bc598ad79dc9cba0",
+  "source_tree_dirty": true
+}

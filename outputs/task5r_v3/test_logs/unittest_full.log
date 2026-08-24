@@ -1,0 +1,66 @@
+test_C_lower_foreground_opacity_raises_rear_contribution (tests.test_real_observation_task5r.TestAlphaMonotonicity) ... ok
+test_H_points3D_reproject_into_their_own_images (tests.test_real_observation_task5r.TestCOLMAPReprojection)
+Project recorded COLMAP points into their observing images via our ... ok
+test_I_same_input_byte_identical_metrics (tests.test_real_observation_task5r.TestDeterminism) ... ok
+test_A_frustum_true_but_visible_false_for_occluded_rear (tests.test_real_observation_task5r.TestOcclusionSemantics)
+A rear point fully covered by an opaque front layer is in_frustum=True ... ok
+test_B_oblique_view_changes_visibility_relationship (tests.test_real_observation_task5r.TestOcclusionSemantics)
+An oblique camera (45 deg) must reveal part of the rear layer that the ... ok
+test_D_occluded_red_gaussian_never_gets_blue_rgb (tests.test_real_observation_task5r.TestRGBNoContamination)
+A FULLY occluded red rear Gaussian (visible=False in the view) must ... ok
+test_E_pixel_and_ndc_give_equivalent_neighbour_decisions (tests.test_real_observation_task5r.TestUVUnits) ... ok
+test_F_camera_pose_change_invalidates (tests.test_task5r_cache_and_units.TestCacheInvalidation) ... ok
+test_F_downscale_change_invalidates (tests.test_task5r_cache_and_units.TestCacheInvalidation) ... ok
+test_F_image_list_change_invalidates (tests.test_task5r_cache_and_units.TestCacheInvalidation) ... ok
+test_F_image_order_change_invalidates (tests.test_task5r_cache_and_units.TestCacheInvalidation) ... ok
+test_F_intrinsics_change_invalidates (tests.test_task5r_cache_and_units.TestCacheInvalidation) ... ok
+test_F_opacity_change_invalidates (tests.test_task5r_cache_and_units.TestCacheInvalidation) ... ok
+test_F_rot_change_invalidates (tests.test_task5r_cache_and_units.TestCacheInvalidation) ... ok
+test_F_scale_change_invalidates (tests.test_task5r_cache_and_units.TestCacheInvalidation) ... ok
+test_F_version_change_invalidates (tests.test_task5r_cache_and_units.TestCacheInvalidation) ... ok
+test_F_xyz_change_invalidates (tests.test_task5r_cache_and_units.TestCacheInvalidation) ... ok
+test_baseline_key_is_stable (tests.test_task5r_cache_and_units.TestCacheInvalidation) ... ok
+test_G_decoded_image_cache_path_is_plant_scoped (tests.test_task5r_cache_and_units.TestCrossPlantIsolation) ... ok
+test_G_two_plants_same_view_count_different_keys (tests.test_task5r_cache_and_units.TestCrossPlantIsolation) ... ok
+test_ndc_bounds (tests.test_task5r_cache_and_units.TestUnitConvention) ... ok
+test_uv_pixel_to_ndc_roundtrip (tests.test_task5r_cache_and_units.TestUnitConvention) ... ok
+test_6_isotropic_radius (tests.test_task5r_v3_semantics.TestCovarianceRadius) ... ok
+test_7_anisotropic_radius (tests.test_task5r_v3_semantics.TestCovarianceRadius) ... ok
+test_lambda_max_formula_matches_eigh (tests.test_task5r_v3_semantics.TestCovarianceRadius) ... ok
+test_10_occluded_gaussian_inherits_no_rgb (tests.test_task5r_v3_semantics.TestEllipseFootprintOcclusion) ... ok
+test_11_pixel_ndc_explicit_conversion (tests.test_task5r_v3_semantics.TestEllipseFootprintOcclusion) ... ok
+test_8_cross_block_boundary_overlap_occludes (tests.test_task5r_v3_semantics.TestEllipseFootprintOcclusion)
+A rear Gaussian whose CENTER sits in a neighboring block but whose ... ok
+test_9_no_footprint_overlap_no_false_occlusion (tests.test_task5r_v3_semantics.TestEllipseFootprintOcclusion)
+Two same-depth gaussians far apart (disjoint footprints, different ... ok
+test_1_two_layer_exact_alpha (tests.test_task5r_v3_semantics.TestExactCompositing) ... ok
+test_2_three_layer_exact_alpha (tests.test_task5r_v3_semantics.TestExactCompositing) ... ok
+test_3_multi_bucket_independence (tests.test_task5r_v3_semantics.TestExactCompositing) ... ok
+test_4_contributions_bounded (tests.test_task5r_v3_semantics.TestExactCompositing) ... ok
+test_5_monotonicity_under_opacity_drop (tests.test_task5r_v3_semantics.TestExactCompositing) ... ok
+test_algorithm_extra_changes_with_version_constants (tests.test_task5r_statistics.TestCacheKeyCompleteness) ... ok
+test_every_frozen_constant_change_invalidates (tests.test_task5r_statistics.TestCacheKeyCompleteness) ... ok
+test_matches_2aucrocm1_with_ties (tests.test_task5r_statistics.TestCliffsDeltaIdentity) ... ok
+test_pure_ties_give_zero (tests.test_task5r_statistics.TestCliffsDeltaIdentity) ... ok
+test_cluster_bootstrap_resamples_pairs_not_edges (tests.test_task5r_statistics.TestClusterBootstrap) ... ok
+test_deterministic_given_seed (tests.test_task5r_statistics.TestClusterBootstrap) ... ok
+test_few_clusters_flagged_descriptive_only (tests.test_task5r_statistics.TestClusterBootstrap) ... ok
+test_dirty_or_unknown_tree_is_not_clean (tests.test_task5r_statistics.TestDirtyTreeGate) ... ok
+test_verdict_script_has_no_hardcoded_verdict_constant (tests.test_task5r_statistics.TestDirtyTreeGate) ... ok
+test_exact_cache_lookup_rejects_wrong_keys (tests.test_task5r_statistics.TestExactKeyLoading)
+Manifest-based loader must match the EXACT key — never glob[-1]. ... ok
+test_control_gate_fails_when_distance_leaks (tests.test_task5r_statistics.TestMatcher) ... ok
+test_matcher_score_blind_and_deterministic (tests.test_task5r_statistics.TestMatcher) ... ok
+test_prevalence_half_after_matching (tests.test_task5r_statistics.TestMatcher) ... ok
+test_sample_floor_flags_small_units (tests.test_task5r_statistics.TestMatcher) ... ok
+test_dense_root_override_controls_path (tests.test_task5r_statistics.TestRootOverrideContract) ... ok
+test_loaders_accept_root_kwargs (tests.test_task5r_statistics.TestRootOverrideContract) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 1.261s
+
+OK
+
+[H] reprojection error px: median=1.17 p90=2.50 n=4441
+
+[B] rear visibility frontal=0.000 oblique=0.009

@@ -199,8 +199,7 @@ class TestUVUnits(unittest.TestCase):
         dpx2 = np.linalg.norm(back_to_pix - Q[None], axis=2)
         self.assertTrue(np.allclose(dpx, dpx2, atol=1e-6),
                         "pixel<->NDC roundtrip must preserve distances")
-        self.assertTrue((close_pix == close_ndc).mean() > 0.999 or True)
-        # the REAL invariant: explicit conversion before comparison makes both identical
+        # explicit-conversion invariant: pixel threshold == scaled NDC test
         self.assertTrue(np.array_equal(close_pix, dpx2 < thr_pix_x))
 
 

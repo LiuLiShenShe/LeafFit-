@@ -63,13 +63,16 @@ def main() -> int:
     from core.real_observation import load_dense_gaussian_plant, load_dense_observations
 
     cache_dir = Path(ar.cache_dir).resolve() if ar.cache_dir else \
-        repo_root / "outputs" / "task5r" / "projection_cache"
+        repo_root / "outputs" / "task5r_v3" / "projection_cache"
     out_path = Path(ar.output).resolve() if ar.output else \
-        repo_root / "outputs" / "task5r" / "corrected_viewsig_manifest.jsonl"
+        repo_root / "outputs" / "task5r_v3" / "corrected_viewsig_manifest.jsonl"
 
-    g = load_dense_gaussian_plant(str(dense_root / ar.plant))
-    obs = load_dense_observations(ar.plant)
+    # CLI roots MUST control data loading (not just provenance metadata).
+    g = load_dense_gaussian_plant(ar.plant, dense_root=str(dense_root))
+    obs = load_dense_observations(ar.plant, colmap_root=str(colmap_root))
 
+    from core.observation_identity import git_tree_dirty, algorithm_extra
+    dirty = git_tree_dirty(repo_root)
     key = viewsig_cache_key(g, obs.rt, obs.K, obs.names, ar.downscale,
                             ar.visibility_version)
 
@@ -88,7 +91,9 @@ def main() -> int:
         imgs = load_or_cache_decoded_images(obs, downscale=ar.downscale,
                                             cache_dir=str(img_cache))
         vs = build_occlusion_aware_real_view_signature(
-            g, obs, decoded_images=imgs, downscale=ar.downscale)
+            g, obs, decoded_images=imgs, downscale=ar.downscale,
+            source_commit=git_commit(repo_root),
+            source_tree_dirty=dirty)
         vs_meta = dict(vs.meta)
         zdir.mkdir(parents=True, exist_ok=True)
         tmp = zpath.with_suffix(".tmp.npz")
@@ -96,7 +101,8 @@ def main() -> int:
             tmp,
             in_frustum=vs.in_frustum, visible=vs.visible,
             max_alpha=vs.max_alpha, acc_alpha=vs.acc_alpha,
-            uv_pixel=vs.uv_pixel, uv_ndc=vs.uv_ndc, depth=vs.depth,
+            uv_pixel=vs.uv_pixel, uv_ndc=vs.uv_ndc,
+            depth=vs.depth, footprint_radius_px=vs.footprint_radius_px,
             rgb_views=vs.rgb_views, rgb_valid=vs.rgb_valid,
             visibility_fraction=vs.visibility_fraction,
             meta_json=np.array(json.dumps(vs.meta)),
@@ -113,6 +119,7 @@ def main() -> int:
         "cache_key": key,
         "viewsig_path": str(zpath.relative_to(repo_root)) if str(zpath).startswith(str(repo_root)) else str(zpath),
         "git_commit": git_commit(repo_root),
+        "source_tree_dirty": dirty,
         "dense_cloud": {"root": str(dense_root), "plant": ar.plant,
                         "ply_sha256": file_sha256(dense_root / ar.plant /
                                                   "vanilla_gs" / "point_cloud" /

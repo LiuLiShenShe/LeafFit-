@@ -172,33 +172,43 @@ def load_real_observations(plant_dir: str) -> RealObservations:
     )
 
 
-def dense_gaussian_ply_path(plant_name: str) -> str:
+def dense_gaussian_ply_path(plant_name: str, dense_root: Optional[str] = None) -> str:
     """Absolute path to the dense 3DGS Gaussian PLY for a plant (v4 substrate)."""
-    return os.path.join(_DENSE_ROOT, plant_name, _DENSE_PLY)
+    root = dense_root if dense_root else _DENSE_ROOT
+    return os.path.join(root, plant_name, _DENSE_PLY)
 
 
-def observation_dir_for(plant_name: str) -> str:
+def observation_dir_for(plant_name: str, colmap_root: Optional[str] = None) -> str:
     """COLMAP capture dir (poses/RGB) for a plant — SAME world frame as the dense cloud."""
-    return os.path.join(_COLMAP_ROOT, plant_name)
+    root = colmap_root if colmap_root else _COLMAP_ROOT
+    return os.path.join(root, plant_name)
 
 
-def load_dense_gaussian_plant(plant_name: str) -> GaussianData:
+def load_dense_gaussian_plant(plant_name: str,
+                              dense_root: Optional[str] = None) -> GaussianData:
     """Load a plant's DENSE 3DGS Gaussian cloud (07-SuGaR-GS) as a GaussianData.
 
     This is the v4 geometry substrate: a 3DGS trained on the real COLMAP captures
     (task.md: 'use COLMAP 04-COLMAP to train 3DGS'). It is byte-identical schema to
     the released LeafFit baseline plants and segments into 8-28 leaves. The
     identity evidence still comes ONLY from real RGB+pose, never from this geometry.
+    `dense_root` overrides the module default dataset root (CLI --dense-root must
+    actually flow into loading, not only into provenance metadata).
     """
-    ply = dense_gaussian_ply_path(plant_name)
+    ply = dense_gaussian_ply_path(plant_name, dense_root)
     if not os.path.exists(ply):
         raise FileNotFoundError(f"dense Gaussian PLY not found: {ply}")
     return _hs.load_gaussian_data(ply)
 
 
-def load_dense_observations(plant_name: str) -> RealObservations:
-    """Real RGB + COLMAP pose bundle for a plant, in the dense cloud's world frame."""
-    return load_real_observations(observation_dir_for(plant_name))
+def load_dense_observations(plant_name: str,
+                            colmap_root: Optional[str] = None) -> RealObservations:
+    """Real RGB + COLMAP pose bundle for a plant, in the dense cloud's world frame.
+
+    `colmap_root` overrides the module default dataset root (CLI --colmap-root
+    must actually control which poses/images are loaded).
+    """
+    return load_real_observations(observation_dir_for(plant_name, colmap_root))
 
 
 def load_or_cache_decoded_images(obs: RealObservations,
