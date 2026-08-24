@@ -71,7 +71,9 @@ def main() -> int:
     from core import task_stats as ts
     from core import edge_matching as em
     sys.path.insert(0, str(Path(__file__).resolve().parent))
-    from run_task5r_separability import local_pca_normals, surface_coherence
+    import run_task5r_separability as _v2
+    local_pca_normals = _v2.local_pca_normals
+    surface_coherence = _v2.surface_coherence
     from scripts.audit_real_overlap_cases import (
         propose_leaf_labels_independent)
     from scipy.spatial import cKDTree
@@ -106,6 +108,7 @@ def main() -> int:
         uv = np.nan_to_num(z["uv_ndc"].astype(np.float32), nan=0.0)
         xyz = np.asarray(g.xyz, dtype=np.float64)
         nrm = local_pca_normals(xyz)
+        _v2._XYZ = xyz          # surface_coherence reads the v2 module global
         lab, _ = propose_leaf_labels_independent(
             g, z["visibility_fraction"], col=col, **cand["proposer_params"])
 
@@ -176,6 +179,12 @@ def main() -> int:
         me = em.match_within_for_cross(d_all, l_all, cid, ga, gb,
                                        seed=ar.seed, ratio=ratio)
         gates = em.matching_gates(me, -me.distance_m, me.distance_m)
+        # prevalence band applies to the FORMAL 1:1 variant; 1:N sensitivity
+        # variants legitimately have prevalence N/(N+1) — record but don't gate
+        if ratio != 1:
+            gates["gates_passed"] = None      # sensitivity-only, not gated
+            gates["note"] = ("1:N sensitivity variant: prevalence band is a "
+                             "1:1-formal gate; control-AUROC still reported")
         gates_report[f"1:{ratio}"] = {
             **gates,
             "matched_csv_sha256_pending": True,
@@ -190,9 +199,19 @@ def main() -> int:
                             me.gauss_b, me.distance_m, me.dist_bin_lo,
                             me.match_group, me.variant))
         gates_report[f"1:{ratio}"]["matched_csv"] = str(mpath)
+    # per-split analysis-unit counts for the verdict gate's sample floors,
+    # recomputed from the formal 1:1 match (last loop iteration, ratio=1
+    # is last only if ordered so; recompute explicitly to be safe)
+    me1 = me if ar.ratio[-1] == 1 else em.match_within_for_cross(
+        d_all, l_all, cid, ga, gb, seed=ar.seed, ratio=1)
+    dev_prefixes = tuple(f"{p}_" for p in DEV_PLANTS)
+    is_dev = np.char.startswith(np.array(me1.case_id), dev_prefixes)
+    units = {"dev:ALL": {"n_cross": int(((~me1.label) & is_dev).sum())},
+             "heldout:ALL": {"n_cross": int(((~me1.label) & ~is_dev).sum())}}
     (out_dir / "matched_edges_gates.json").write_text(
         json.dumps({"matcher_version": em.MATCHER_VERSION,
-                    "seed": ar.seed, "gates": gates_report}, indent=2))
+                    "seed": ar.seed, "gates": gates_report,
+                    "units": units}, indent=2))
     print(f"WROTE {csv_path} ({len(pair_scores)} edges) + matched edges")
     return 0
 

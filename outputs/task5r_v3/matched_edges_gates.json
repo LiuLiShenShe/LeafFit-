@@ -1,0 +1,45 @@
+{
+  "matcher_version": "task5r-v3-distmatch-1v1",
+  "seed": 0,
+  "gates": {
+    "1:1": {
+      "n_within": 649,
+      "n_cross": 649,
+      "prevalence": 0.5,
+      "control_auroc_negdist": 0.5149655390181884,
+      "control_auroc_dist": 0.4850344609818115,
+      "unmatchable_cross_count": 0,
+      "merged_bin_event_count": 0,
+      "gates_passed": true,
+      "prevalence_gate_passed": true,
+      "control_gate_passed": true,
+      "unmatchable_frac": 0.0,
+      "matched_csv_sha256_pending": true,
+      "matched_csv": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/matched_edges_1to1.csv"
+    },
+    "1:5": {
+      "n_within": 3245,
+      "n_cross": 649,
+      "prevalence": 0.8333333333333334,
+      "control_auroc_negdist": 0.5130989717498297,
+      "control_auroc_dist": 0.48690102825017034,
+      "unmatchable_cross_count": 0,
+      "merged_bin_event_count": 0,
+      "gates_passed": null,
+      "prevalence_gate_passed": false,
+      "control_gate_passed": true,
+      "unmatchable_frac": 0.0,
+      "note": "1:N sensitivity variant: prevalence band is a 1:1-formal gate; control-AUROC still reported",
+      "matched_csv_sha256_pending": true,
+      "matched_csv": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/matched_edges_1to5.csv"
+    }
+  },
+  "units": {
+    "dev:ALL": {
+      "n_cross": 298
+    },
+    "heldout:ALL": {
+      "n_cross": 351
+    }
+  }
+}

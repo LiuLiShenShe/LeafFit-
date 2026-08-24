@@ -1,0 +1,13 @@
+{
+  "approved": true,
+  "reviewer": "user (session verbal approval)",
+  "date": "2026-08-24",
+  "method": "用户在会话中直接告知：有图像的三个文件夹(DouBanLv1/HongZhang/WangWenCao2)全部通过；未逐行填写CSV，由系统按KEEP落盘",
+  "queue_csv_sha256": "dc509261f48209064cb75896bf6b7138ff6407fe5337049479d333b2ad0d3f9e",
+  "decisions_summary": {
+    "KEEP": 9,
+    "REJECT": 0,
+    "RELABEL": 0,
+    "UNCERTAIN": 0
+  }
+}
