@@ -1,5 +1,5 @@
 {
-  "verdict": "IMPLEMENTATION_INVALID",
+  "verdict": "SEPARABILITY_FAIL",
   "task6_allowed": false,
   "checks": [
     {
@@ -12,15 +12,56 @@
     {
       "order": 2,
       "name": "source_tree_clean",
-      "status": "FAIL",
+      "status": "PASS",
       "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/.git",
       "details": {
-        "dirty": true,
-        "recorded_commit": null,
-        "current_commit": "b35c0ccd317bba25d94bebe5a360e0f47863ec1e"
+        "commit": "cd728529d60a5a4ea99bcccdff959e4905108396"
+      }
+    },
+    {
+      "order": 3,
+      "name": "viewsig_cache_consistency",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/corrected_viewsig_manifest.jsonl",
+      "details": {
+        "n_plants": 6
+      }
+    },
+    {
+      "order": 4,
+      "name": "dense_alignment",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/dense_alignment.json",
+      "details": {}
+    },
+    {
+      "order": 5,
+      "name": "human_verification",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/human_verification.json",
+      "details": {}
+    },
+    {
+      "order": 6,
+      "name": "matching_gates",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/matched_edges_gates.json",
+      "details": {
+        "insufficient_pairs_excluded": [],
+        "formal_variant": "1:1"
+      }
+    },
+    {
+      "order": 7,
+      "name": "dev_gate_no_signal",
+      "status": "FAIL",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/edge_separability_summary_v3.json",
+      "details": {
+        "R4_c_mv": 0.4634,
+        "delta_min": 0.05
       }
     }
   ],
-  "first_failure": "source_tree_clean",
-  "timestamp": "2026-08-24T17:57:07+0800"
+  "first_failure": "dev_gate_no_signal",
+  "timestamp": "2026-08-24T17:57:21+0800"
 }
