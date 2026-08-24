@@ -1,0 +1,49 @@
+{
+  "verdict": "BENCHMARK_NOT_HUMAN_VERIFIED",
+  "task6_allowed": false,
+  "checks": [
+    {
+      "order": 1,
+      "name": "implementation_selftest",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/selftest.json",
+      "details": {}
+    },
+    {
+      "order": 2,
+      "name": "source_tree_clean",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/.git",
+      "details": {
+        "commit": "e3da605c554d65eb3dc44cd98ce54dfcc3570f6d"
+      }
+    },
+    {
+      "order": 3,
+      "name": "viewsig_cache_consistency",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/corrected_viewsig_manifest.jsonl",
+      "details": {
+        "n_plants": 6
+      }
+    },
+    {
+      "order": 4,
+      "name": "dense_alignment",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/dense_alignment.json",
+      "details": {}
+    },
+    {
+      "order": 5,
+      "name": "human_verification",
+      "status": "PENDING",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/human_verification.json",
+      "details": {
+        "note": "proposer labels are PROPOSER_DIAGNOSTIC until a human reviewer fills human_verification.json"
+      }
+    }
+  ],
+  "first_failure": "human_verification",
+  "timestamp": "2026-08-24T16:37:23+0800"
+}
