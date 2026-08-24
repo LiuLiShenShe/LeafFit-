@@ -63,3 +63,53 @@ npy/json 大文件）按用户要求本次不清理，仅在此记录。
 形态融叶，非数据缺失），不参与本轮 benchmark；复核范围锁定
 **DouBanLv1(5对) / HongZhang(3对) / WangWenCao2(1对，组件54疑茎样重点审)**。
 若未来要覆盖丛生型植物，须开新一轮提案（修改并重新冻结提议器参数）。
+
+---
+
+# 最终判决（2026-08-24，全流程完成）
+
+## verdict = SEPARABILITY_FAIL, task6_allowed = false
+（first_failure: dev_gate_no_signal — 判决由 write_task5r_verdict.py 从测量产物自动产生）
+
+## 完整门控链（verdict.json）
+1. implementation_selftest PASS（51/51 测试 + selftest brute-force 对照<1e-9）
+2. source_tree_clean PASS
+3. viewsig_cache_consistency PASS（6 植物 v3 精确 key）
+4. dense_alignment PASS
+5. human_verification PASS（用户口头复核 9/9 KEEP，来源如实记录）
+6. matching_gates PASS（1:1 formal: prev=0.500, 控制 AUROC=0.515, 无不可匹配；
+   units dev:ALL n_cross=298 / heldout:ALL n_cross=351 ≥ 30 下限）
+7. dev_gate_no_signal **FAIL** → SEPARABILITY_FAIL
+
+## 科学结论（如实）
+距离匹配协议成功去除了 v2 的距离混杂（R0 控制 AUROC：dev 0.528 /
+heldout 0.512，均落入 [0.45,0.55] 零带）。去混杂后：
+
+| 消融 | dev AUROC | heldout AUROC |
+|---|---|---|
+| R0_dist(控制) | 0.528 | 0.512 |
+| R1_c_vis | 0.473 | 0.494 |
+| R2_c_app | 0.453 | 0.540 |
+| R3_c_occ | **0.626** | 0.493 |
+| R4_c_mv | 0.463 | 0.505 |
+| R5_surface | 0.477 | 0.592 |
+| R6_mv_and_surface | 0.471 | 0.538 |
+
+- **预设方向门（dev 上 R4/R6 |AUROC−0.5|≥0.05）未通过**：R4=0.463、R6=0.471，
+  多视角复合特征在匹配后的边集上无信号；
+- 唯一 dev 有信号的是 R3_c_occ（0.626，Cliff's δ=0.25），但 held-out 反转
+  （0.493）——不构成可靠证据；heldout 的 R5_surface 0.592 因 CI 仅
+  descriptive_only（n_clusters=4）不作 PASS 依据；
+- cluster bootstrap 以接触对为单位（dev 5 对 / heldout 4 对）。
+
+**多视角身份证据（c_vis/c_app/c_occ 及其组合）在真实数据、去距离混杂的
+条件下不足以分离 within/cross 接触边。** 与 Task4（合成 MV 门控 FAIL）、
+Task5（真实观测 Phase-0 饱和 FAIL）形成三重独立证据链：该方向在当前
+数据/方法下不成立。task6 不允许启动。
+
+## 样本量与统计效力声明
+本轮有效样本为 9 个接触对（DouBanLv1×5 + HongZhang×3 + WangWenCao2×1，
+其中 WWC2 对疑茎样碎片但经人工 KEEP）。CaoMei1/XianKeLai2/WanNianQing2 因
+提议器融叶无候选对。此样本量下即使存在弱信号也可能检出不足——但预设方向
+门在 dev 上即无信号（非边缘失败），且 held-out 未消耗（判决在第7关短路，
+第8关 held-out once 未执行，保留其一次有效性）。
