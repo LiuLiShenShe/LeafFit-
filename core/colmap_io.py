@@ -68,6 +68,9 @@ class ImagePose:
     R: np.ndarray = None
     t: np.ndarray = None
     rt: np.ndarray = None  # 4x4 world->cam
+    # Optional 2D observations (only when read with read_tracks=True):
+    point_uv: np.ndarray = None      # (npts, 2) float64 pixel coords
+    point_idxs: np.ndarray = None    # (npts,) int64 point3D ids (-1 = unassigned)
 
 
 def read_cameras_bin(path: str) -> Dict[int, Camera]:
@@ -87,8 +90,12 @@ def read_cameras_bin(path: str) -> Dict[int, Camera]:
     return out
 
 
-def read_images_bin(path: str) -> List[ImagePose]:
-    """Read COLMAP images.bin -> list[ImagePose] (qw,qx,qy,qz wxyz order)."""
+def read_images_bin(path: str, read_tracks: bool = False) -> List[ImagePose]:
+    """Read COLMAP images.bin -> list[ImagePose] (qw,qx,qy,qz wxyz order).
+
+    read_tracks=True additionally parses each image's 2D observations into
+    point_uv / point_idxs (needed for reprojection validation; Task5R test H).
+    """
     out: List[ImagePose] = []
     with open(path, "rb") as f:
         num = struct.unpack("<Q", f.read(8))[0]
@@ -105,8 +112,18 @@ def read_images_bin(path: str) -> List[ImagePose]:
                 name += ch
             npts = struct.unpack("<Q", f.read(8))[0]
             # each 2D point: x (double), y (double), point3d_id (int64) = 24 bytes
-            f.seek(24 * npts, os.SEEK_CUR)
-            out.append(ImagePose(iid, q, t, cid, name.decode("latin-1", errors="replace")))
+            if read_tracks and npts:
+                raw = np.frombuffer(
+                    f.read(24 * npts),
+                    dtype=np.dtype([("x", "<f8"), ("y", "<f8"), ("pid", "<i8")]))
+                img = ImagePose(iid, q, t, cid, name.decode("latin-1", errors="replace"))
+                img.point_uv = np.stack([raw["x"], raw["y"]], axis=1).copy()
+                img.point_idxs = raw["pid"].copy()
+                out.append(img)
+            else:
+                if npts:
+                    f.seek(24 * npts, os.SEEK_CUR)
+                out.append(ImagePose(iid, q, t, cid, name.decode("latin-1", errors="replace")))
     return out
 
 
