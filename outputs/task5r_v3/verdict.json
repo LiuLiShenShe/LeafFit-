@@ -1,5 +1,5 @@
 {
-  "verdict": "BENCHMARK_NOT_HUMAN_VERIFIED",
+  "verdict": "IMPLEMENTATION_INVALID",
   "task6_allowed": false,
   "checks": [
     {
@@ -12,38 +12,15 @@
     {
       "order": 2,
       "name": "source_tree_clean",
-      "status": "PASS",
+      "status": "FAIL",
       "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/.git",
       "details": {
-        "commit": "ea6d7d7dccb28dcb05af8d5ff9deb45b518466e9"
-      }
-    },
-    {
-      "order": 3,
-      "name": "viewsig_cache_consistency",
-      "status": "PASS",
-      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/corrected_viewsig_manifest.jsonl",
-      "details": {
-        "n_plants": 6
-      }
-    },
-    {
-      "order": 4,
-      "name": "dense_alignment",
-      "status": "PASS",
-      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/dense_alignment.json",
-      "details": {}
-    },
-    {
-      "order": 5,
-      "name": "human_verification",
-      "status": "PENDING",
-      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/human_verification.json",
-      "details": {
-        "note": "proposer labels are PROPOSER_DIAGNOSTIC until a human reviewer fills human_verification.json"
+        "dirty": true,
+        "recorded_commit": null,
+        "current_commit": "6457f04d8d37a14fea45d1cea054cf3debe6d23b"
       }
     }
   ],
-  "first_failure": "human_verification",
-  "timestamp": "2026-08-24T17:20:34+0800"
+  "first_failure": "source_tree_clean",
+  "timestamp": "2026-08-24T17:55:45+0800"
 }
