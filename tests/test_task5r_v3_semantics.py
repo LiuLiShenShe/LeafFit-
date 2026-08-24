@@ -24,6 +24,7 @@ from core.observation_identity import (  # noqa: E402
     exclusive_transmittance,
     build_occlusion_aware_real_view_signature,
     _project_cov2d, cov2d_lambda_max, cov2d_radius_px,
+    _ellipse_block_pairs,
     ELLIPSE_SIGMA, BLOCK_PX,
 )
 from gaussian_utils import GaussianData  # noqa: E402
@@ -233,3 +234,26 @@ class TestEllipseFootprintOcclusion(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
+
+class TestChunkedPairGeneration(unittest.TestCase):
+    def test_12_chunked_pairs_match_single_chunk(self):
+        """Regression: _ellipse_block_pairs chunk slicing must not reference
+        unsliced nbx_i/nby_i (found on real 92k-point frustums; synthetic
+        single-chunk tests never crossed a chunk boundary)."""
+        rng = np.random.default_rng(42)
+        M = 5000
+        pxd = rng.uniform(4, 600, M); pyd = rng.uniform(4, 600, M)
+        opac = rng.uniform(.3, 1, M)
+        A = rng.normal(size=(M, 2, 2))
+        c00 = A[:, 0, 0] ** 2 + A[:, 0, 1] ** 2 + 4
+        c11 = A[:, 1, 0] ** 2 + A[:, 1, 1] ** 2 + 4
+        c01 = A[:, 0, 0] * A[:, 1, 0] + A[:, 0, 1] * A[:, 1, 1]
+        g1, b1, d1 = _ellipse_block_pairs(pxd, pyd, None, opac, c00, c01,
+                                          c11, nbx=150, nby=150, chunk=16384)
+        g2, b2, d2 = _ellipse_block_pairs(pxd, pyd, None, opac, c00, c01,
+                                          c11, nbx=150, nby=150, chunk=997)
+        o1 = np.lexsort((d1, g1)); o2 = np.lexsort((d2, g2))
+        self.assertTrue(np.array_equal(g1[o1], g2[o2]))
+        self.assertTrue(np.array_equal(b1[o1], b2[o2]))
+        self.assertTrue(np.allclose(d1[o1], d2[o2]))

@@ -313,8 +313,8 @@ def _ellipse_block_pairs(pxd, pyd, zd, opac, c00, c01, c11,
         gi = np.repeat(np.arange(s, e, dtype=np.int64), nb_i)
         offs = np.arange(P, dtype=np.int64) - np.repeat(
             np.concatenate([[0], np.cumsum(nb_i)[:-1]]), nb_i)
-        kx = offs % np.repeat(nbx_i, nb_i)
-        ky = offs // np.repeat(nbx_i, nb_i)
+        kx = offs % np.repeat(nbx_i[s:e], nb_i)
+        ky = offs // np.repeat(nbx_i[s:e], nb_i)
         bxp = np.repeat(bx_lo[s:e], nb_i) + kx
         byp = np.repeat(by_lo[s:e], nb_i) + ky
         bid = byp * nbx + bxp
