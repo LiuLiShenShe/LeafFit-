@@ -1,0 +1,63 @@
+{
+  "pair_key": "plant7_black_pearl_pepper_pair_4_8",
+  "mode": "vertical",
+  "severity": "V2",
+  "instance": {
+    "mIoU": 0.9648416002710096,
+    "PQ": 0.7146974816822294,
+    "matched_pairs": 10,
+    "false_positives": 5,
+    "false_negatives": 2
+  },
+  "pair_local": {
+    "matched_pred_a": 2,
+    "matched_pred_b": 1,
+    "fp_leakage": 0.0,
+    "fn_rate": 0.10189409650214296
+  },
+  "geodesic": {
+    "reference_apex_recall": 1.0,
+    "wrong_grouping": true,
+    "merge_level": 1,
+    "pred_instances_covering_a": 2,
+    "pred_instances_covering_b": 1,
+    "apex_detail": {
+      "leaf_4": {
+        "found": true,
+        "gt_apex_idx": 3698,
+        "pred_instance": 8
+      },
+      "leaf_8": {
+        "found": true,
+        "gt_apex_idx": 1,
+        "pred_instance": 8
+      }
+    },
+    "new_unmatched_apex_count": 13
+  },
+  "first_failure_stage": "GROUPING",
+  "dominant_failure_stage": "GROUPING",
+  "construction": {
+    "projected_overlap_fraction": 0.04452359750667854,
+    "contact_fraction": 0.0471311475409836,
+    "min_cross_leaf_distance_ratio": 0.09085005879217319,
+    "spacing_a": 0.010077274678851219,
+    "spacing_b": 0.010500276683144273,
+    "centroid_dist": 0.28176980565336246,
+    "leaf_a_count": 2440.0,
+    "leaf_b_count": 4793.0
+  },
+  "shortcut": {
+    "shortcut_ratio": 0.9599021402079918,
+    "shortcut_confirmed": true,
+    "cross_leaf_path": false,
+    "cross_leaf_merge": true,
+    "shared_instances": [
+      8
+    ],
+    "upper_apex_idx": 3698,
+    "upper_below_lower_ratio": 0.02997800793680046,
+    "d_case": 3.7735081895485796,
+    "d_v0": 3.931138427018128
+  }
+}

@@ -11,17 +11,12 @@ __pycache__/
 *.mtl
 *.obj
 
-# Large point-cloud segmentation results (regenerable; keep repo lean)
+# Only oversized binaries are ignored — everything else (tables, json, figures,
+# npy labels, code) stays tracked.
+# - *.ply: point clouds, up to 30MB each (~6.4GB total across tasks)
+# - *.npz: projection/view-signature caches, 20MB-817MB each (~5GB total)
 *.ply
+*.npz
 
 # J-Space controller working directory (internal tooling state)
 .jspace/
-
-# Task3 generated evaluation outputs (regenerable, ~6.6GB)
-outputs/task3/
-
-# Task5 generated evaluation outputs (regenerable, ~886MB)
-outputs/task5/
-
-# Task5r large npz caches (regenerable); keep tables/json/figures tracked
-outputs/task5r/projection_cache/

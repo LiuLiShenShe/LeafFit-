@@ -1,0 +1,57 @@
+{
+  "severity": "V0",
+  "mode": "vertical",
+  "leaf_a_transform": {
+    "pivot": null,
+    "R": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "t": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "angle_deg": 0.0
+  },
+  "leaf_b_transform": {
+    "pivot": null,
+    "R": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "t": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "angle_deg": 0.0
+  },
+  "case_type": "identity_control"
+}

@@ -1,0 +1,675 @@
+{
+  "stage1_dev_pair": "plant1_green_pepper_pair_8_4",
+  "selected": {
+    "horizontal": {
+      "backend": "G4",
+      "cfg": {
+        "feature_set": "G4",
+        "tau_d": 3.0,
+        "tau_t": 0.5,
+        "k": 256,
+        "mutual": false
+      },
+      "clean_pq": 0.8891494719802526,
+      "mechanism_onset": "HF1",
+      "final_instance_failure": "HF1",
+      "n_levels": 6
+    },
+    "vertical": {
+      "backend": "G4",
+      "cfg": {
+        "feature_set": "G4",
+        "tau_d": 3.0,
+        "tau_t": 0.5,
+        "k": 256,
+        "mutual": false
+      },
+      "clean_pq": 0.8891494719802526,
+      "mechanism_onset": "VF1",
+      "final_instance_failure": "VF1",
+      "n_levels": 6
+    }
+  },
+  "baseline_heat_boundaries": {
+    "horizontal": {
+      "onset": "HF1",
+      "final": "HF1"
+    },
+    "vertical": {
+      "onset": "VF1",
+      "final": "VF1"
+    }
+  },
+  "policy": {
+    "g4": "Ours primary (metric-safe, weight=d, gate-only)",
+    "g0": "Euclidean graph control",
+    "g5": "Diagnostic ablation only; METRIC_INCOMPATIBLE recorded where it crashes",
+    "pass_basis": "PASS/FAIL determined by G4 alone"
+  },
+  "report": {
+    "horizontal": [
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 3.0,
+          "tau_t": 0.5,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.8891494719802526,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 3.0,
+          "tau_t": 0.5,
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8648234978262964,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 3.0,
+          "tau_t": 0.75,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.88797587631404,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 5
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 3.0,
+          "tau_t": 0.75,
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8142970670873486,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 3.0,
+          "tau_t": Infinity,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.88797587631404,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 5
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 3.0,
+          "tau_t": Infinity,
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8142970670873486,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 4.0,
+          "tau_t": 0.5,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.8891494719802526,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 4.0,
+          "tau_t": 0.5,
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8648234978262964,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 4.0,
+          "tau_t": 0.75,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.88797587631404,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 5
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 4.0,
+          "tau_t": 0.75,
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8142970670873486,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 4.0,
+          "tau_t": Infinity,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.88797587631404,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 5
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 4.0,
+          "tau_t": Infinity,
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8142970670873486,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": Infinity,
+          "tau_t": 0.5,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.8891494719802526,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": Infinity,
+          "tau_t": 0.5,
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8648234978262964,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": Infinity,
+          "tau_t": 0.75,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.88797587631404,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 5
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": Infinity,
+          "tau_t": 0.75,
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8142970670873486,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": Infinity,
+          "tau_t": Infinity,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.88797587631404,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 5
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": Infinity,
+          "tau_t": Infinity,
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8142970670873486,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G0",
+        "cfg": {
+          "feature_set": "G0",
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.88797587631404,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 5
+      },
+      {
+        "backend": "G0",
+        "cfg": {
+          "feature_set": "G0",
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8142970670873486,
+        "mechanism_onset": "HF1",
+        "final_instance_failure": "HF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G5",
+        "cfg": {
+          "feature_set": "G5",
+          "lambda_n": 0.5,
+          "lambda_t": 1.0,
+          "p": 2.0,
+          "tau_d": 3.0,
+          "tau_t": 0.5,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.4958287762816627,
+        "mechanism_onset": "H1",
+        "final_instance_failure": "H1",
+        "n_levels": 2
+      }
+    ],
+    "vertical": [
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 3.0,
+          "tau_t": 0.5,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.8891494719802526,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 3.0,
+          "tau_t": 0.5,
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8648234978262964,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 3.0,
+          "tau_t": 0.75,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.88797587631404,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 3.0,
+          "tau_t": 0.75,
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8142970670873486,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 3.0,
+          "tau_t": Infinity,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.88797587631404,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 3.0,
+          "tau_t": Infinity,
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8142970670873486,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 4.0,
+          "tau_t": 0.5,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.8891494719802526,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 4.0,
+          "tau_t": 0.5,
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8648234978262964,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 4.0,
+          "tau_t": 0.75,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.88797587631404,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 4.0,
+          "tau_t": 0.75,
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8142970670873486,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 4.0,
+          "tau_t": Infinity,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.88797587631404,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": 4.0,
+          "tau_t": Infinity,
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8142970670873486,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": Infinity,
+          "tau_t": 0.5,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.8891494719802526,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": Infinity,
+          "tau_t": 0.5,
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8648234978262964,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": Infinity,
+          "tau_t": 0.75,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.88797587631404,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": Infinity,
+          "tau_t": 0.75,
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8142970670873486,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": Infinity,
+          "tau_t": Infinity,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.88797587631404,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G4",
+        "cfg": {
+          "feature_set": "G4",
+          "tau_d": Infinity,
+          "tau_t": Infinity,
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8142970670873486,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G0",
+        "cfg": {
+          "feature_set": "G0",
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.88797587631404,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G0",
+        "cfg": {
+          "feature_set": "G0",
+          "k": 256,
+          "mutual": true
+        },
+        "clean_pq": 0.8142970670873486,
+        "mechanism_onset": "VF1",
+        "final_instance_failure": "VF1",
+        "n_levels": 6
+      },
+      {
+        "backend": "G5",
+        "cfg": {
+          "feature_set": "G5",
+          "lambda_n": 0.5,
+          "lambda_t": 1.0,
+          "p": 2.0,
+          "tau_d": 3.0,
+          "tau_t": 0.5,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": 0.4958287762816627,
+        "mechanism_onset": "V1",
+        "final_instance_failure": "V1",
+        "n_levels": 2
+      },
+      {
+        "backend": "G5",
+        "cfg": {
+          "feature_set": "G5",
+          "lambda_n": 1.0,
+          "lambda_t": 2.0,
+          "p": 2.0,
+          "tau_d": 3.0,
+          "tau_t": 0.5,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": null,
+        "mechanism_onset": "V1",
+        "final_instance_failure": "V1",
+        "n_levels": 1
+      },
+      {
+        "backend": "G5",
+        "cfg": {
+          "feature_set": "G5",
+          "lambda_n": 0.0,
+          "lambda_t": 4.0,
+          "p": 2.0,
+          "tau_d": 3.0,
+          "tau_t": 0.5,
+          "k": 256,
+          "mutual": false
+        },
+        "clean_pq": null,
+        "mechanism_onset": "V1",
+        "final_instance_failure": "V1",
+        "n_levels": 1
+      }
+    ]
+  }
+}

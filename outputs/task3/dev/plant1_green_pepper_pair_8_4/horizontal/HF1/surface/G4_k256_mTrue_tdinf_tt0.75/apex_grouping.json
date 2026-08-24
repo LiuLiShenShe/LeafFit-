@@ -1,0 +1,1371 @@
+{
+  "num_apexes": 14,
+  "pairs": [
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "tip_1": 41603,
+      "tip_2": 43627,
+      "direct_geodesic": 3.894683,
+      "tree_path_distance": 4.697884,
+      "margin": -0.8032,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 0,
+      "cluster_2": 1
+    },
+    {
+      "pair": [
+        0,
+        2
+      ],
+      "tip_1": 41603,
+      "tip_2": 26651,
+      "direct_geodesic": 1.424841,
+      "tree_path_distance": 2.446212,
+      "margin": -1.021371,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 0,
+      "cluster_2": 2
+    },
+    {
+      "pair": [
+        0,
+        3
+      ],
+      "tip_1": 41603,
+      "tip_2": 27402,
+      "direct_geodesic": 1.693455,
+      "tree_path_distance": 2.375353,
+      "margin": -0.681898,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 0,
+      "cluster_2": 3
+    },
+    {
+      "pair": [
+        0,
+        4
+      ],
+      "tip_1": 41603,
+      "tip_2": 23237,
+      "direct_geodesic": 4.213107,
+      "tree_path_distance": 4.37665,
+      "margin": -0.163542,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 0,
+      "cluster_2": 4
+    },
+    {
+      "pair": [
+        0,
+        5
+      ],
+      "tip_1": 41603,
+      "tip_2": 28289,
+      "direct_geodesic": 1.325262,
+      "tree_path_distance": 1.837391,
+      "margin": -0.512129,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 0,
+      "cluster_2": 5
+    },
+    {
+      "pair": [
+        0,
+        6
+      ],
+      "tip_1": 41603,
+      "tip_2": 28891,
+      "direct_geodesic": 0.881512,
+      "tree_path_distance": 2.228968,
+      "margin": -1.347456,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 0,
+      "cluster_2": 6
+    },
+    {
+      "pair": [
+        0,
+        7
+      ],
+      "tip_1": 41603,
+      "tip_2": 37732,
+      "direct_geodesic": 4.03489,
+      "tree_path_distance": 4.358761,
+      "margin": -0.323871,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 0,
+      "cluster_2": 7
+    },
+    {
+      "pair": [
+        0,
+        8
+      ],
+      "tip_1": 41603,
+      "tip_2": 72,
+      "direct_geodesic": 2.790826,
+      "tree_path_distance": 3.255034,
+      "margin": -0.464208,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 0,
+      "cluster_2": 8
+    },
+    {
+      "pair": [
+        0,
+        9
+      ],
+      "tip_1": 41603,
+      "tip_2": 3460,
+      "direct_geodesic": 2.256558,
+      "tree_path_distance": 2.723152,
+      "margin": -0.466594,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 0,
+      "cluster_2": 9
+    },
+    {
+      "pair": [
+        0,
+        10
+      ],
+      "tip_1": 41603,
+      "tip_2": 5043,
+      "direct_geodesic": 2.392941,
+      "tree_path_distance": 3.011861,
+      "margin": -0.61892,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 0,
+      "cluster_2": 10
+    },
+    {
+      "pair": [
+        0,
+        11
+      ],
+      "tip_1": 41603,
+      "tip_2": 37218,
+      "direct_geodesic": 4.418974,
+      "tree_path_distance": 4.742845,
+      "margin": -0.323871,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 0,
+      "cluster_2": 11
+    },
+    {
+      "pair": [
+        0,
+        12
+      ],
+      "tip_1": 41603,
+      "tip_2": 21596,
+      "direct_geodesic": 3.707543,
+      "tree_path_distance": 3.8381,
+      "margin": -0.130557,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 0,
+      "cluster_2": 12
+    },
+    {
+      "pair": [
+        0,
+        13
+      ],
+      "tip_1": 41603,
+      "tip_2": 36823,
+      "direct_geodesic": 3.927599,
+      "tree_path_distance": 4.324558,
+      "margin": -0.396959,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 0,
+      "cluster_2": 13
+    },
+    {
+      "pair": [
+        1,
+        2
+      ],
+      "tip_1": 43627,
+      "tip_2": 26651,
+      "direct_geodesic": 2.793483,
+      "tree_path_distance": 3.596682,
+      "margin": -0.803199,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 1,
+      "cluster_2": 2
+    },
+    {
+      "pair": [
+        1,
+        3
+      ],
+      "tip_1": 43627,
+      "tip_2": 27402,
+      "direct_geodesic": 2.722624,
+      "tree_path_distance": 3.525824,
+      "margin": -0.803199,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 1,
+      "cluster_2": 3
+    },
+    {
+      "pair": [
+        1,
+        4
+      ],
+      "tip_1": 43627,
+      "tip_2": 23237,
+      "direct_geodesic": 2.564094,
+      "tree_path_distance": 3.22514,
+      "margin": -0.661046,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 1,
+      "cluster_2": 4
+    },
+    {
+      "pair": [
+        1,
+        5
+      ],
+      "tip_1": 43627,
+      "tip_2": 28289,
+      "direct_geodesic": 2.865761,
+      "tree_path_distance": 3.668961,
+      "margin": -0.803199,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 1,
+      "cluster_2": 5
+    },
+    {
+      "pair": [
+        1,
+        6
+      ],
+      "tip_1": 43627,
+      "tip_2": 28891,
+      "direct_geodesic": 3.257337,
+      "tree_path_distance": 4.060538,
+      "margin": -0.8032,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 1,
+      "cluster_2": 6
+    },
+    {
+      "pair": [
+        1,
+        7
+      ],
+      "tip_1": 43627,
+      "tip_2": 37732,
+      "direct_geodesic": 2.977899,
+      "tree_path_distance": 3.784837,
+      "margin": -0.806938,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 1,
+      "cluster_2": 7
+    },
+    {
+      "pair": [
+        1,
+        8
+      ],
+      "tip_1": 43627,
+      "tip_2": 72,
+      "direct_geodesic": 3.602305,
+      "tree_path_distance": 4.405505,
+      "margin": -0.803199,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 1,
+      "cluster_2": 8
+    },
+    {
+      "pair": [
+        1,
+        9
+      ],
+      "tip_1": 43627,
+      "tip_2": 3460,
+      "direct_geodesic": 3.070423,
+      "tree_path_distance": 3.873622,
+      "margin": -0.803199,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 1,
+      "cluster_2": 9
+    },
+    {
+      "pair": [
+        1,
+        10
+      ],
+      "tip_1": 43627,
+      "tip_2": 5043,
+      "direct_geodesic": 3.359132,
+      "tree_path_distance": 4.162332,
+      "margin": -0.803199,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 1,
+      "cluster_2": 10
+    },
+    {
+      "pair": [
+        1,
+        11
+      ],
+      "tip_1": 43627,
+      "tip_2": 37218,
+      "direct_geodesic": 3.361983,
+      "tree_path_distance": 4.168921,
+      "margin": -0.806938,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 1,
+      "cluster_2": 11
+    },
+    {
+      "pair": [
+        1,
+        12
+      ],
+      "tip_1": 43627,
+      "tip_2": 21596,
+      "direct_geodesic": 3.910313,
+      "tree_path_distance": 4.713513,
+      "margin": -0.803199,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 1,
+      "cluster_2": 12
+    },
+    {
+      "pair": [
+        1,
+        13
+      ],
+      "tip_1": 43627,
+      "tip_2": 36823,
+      "direct_geodesic": 3.567245,
+      "tree_path_distance": 4.369615,
+      "margin": -0.80237,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 1,
+      "cluster_2": 13
+    },
+    {
+      "pair": [
+        2,
+        3
+      ],
+      "tip_1": 26651,
+      "tip_2": 27402,
+      "direct_geodesic": 0.278002,
+      "tree_path_distance": 0.627382,
+      "margin": -0.349379,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 2,
+      "cluster_2": 3
+    },
+    {
+      "pair": [
+        2,
+        4
+      ],
+      "tip_1": 26651,
+      "tip_2": 23237,
+      "direct_geodesic": 3.111906,
+      "tree_path_distance": 3.275449,
+      "margin": -0.163542,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 2,
+      "cluster_2": 4
+    },
+    {
+      "pair": [
+        2,
+        5
+      ],
+      "tip_1": 26651,
+      "tip_2": 28289,
+      "direct_geodesic": 0.635484,
+      "tree_path_distance": 1.417289,
+      "margin": -0.781805,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 2,
+      "cluster_2": 5
+    },
+    {
+      "pair": [
+        2,
+        6
+      ],
+      "tip_1": 26651,
+      "tip_2": 28891,
+      "direct_geodesic": 0.916672,
+      "tree_path_distance": 1.808866,
+      "margin": -0.892194,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 2,
+      "cluster_2": 6
+    },
+    {
+      "pair": [
+        2,
+        7
+      ],
+      "tip_1": 26651,
+      "tip_2": 37732,
+      "direct_geodesic": 2.934383,
+      "tree_path_distance": 3.25756,
+      "margin": -0.323177,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 2,
+      "cluster_2": 7
+    },
+    {
+      "pair": [
+        2,
+        8
+      ],
+      "tip_1": 26651,
+      "tip_2": 72,
+      "direct_geodesic": 1.610498,
+      "tree_path_distance": 2.084617,
+      "margin": -0.474119,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 2,
+      "cluster_2": 8
+    },
+    {
+      "pair": [
+        2,
+        9
+      ],
+      "tip_1": 26651,
+      "tip_2": 3460,
+      "direct_geodesic": 0.921594,
+      "tree_path_distance": 1.142319,
+      "margin": -0.220725,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 2,
+      "cluster_2": 9
+    },
+    {
+      "pair": [
+        2,
+        10
+      ],
+      "tip_1": 26651,
+      "tip_2": 5043,
+      "direct_geodesic": 1.085202,
+      "tree_path_distance": 1.431028,
+      "margin": -0.345826,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 2,
+      "cluster_2": 10
+    },
+    {
+      "pair": [
+        2,
+        11
+      ],
+      "tip_1": 26651,
+      "tip_2": 37218,
+      "direct_geodesic": 3.318467,
+      "tree_path_distance": 3.641644,
+      "margin": -0.323177,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 2,
+      "cluster_2": 11
+    },
+    {
+      "pair": [
+        2,
+        12
+      ],
+      "tip_1": 26651,
+      "tip_2": 21596,
+      "direct_geodesic": 2.55225,
+      "tree_path_distance": 2.736899,
+      "margin": -0.184649,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 2,
+      "cluster_2": 12
+    },
+    {
+      "pair": [
+        2,
+        13
+      ],
+      "tip_1": 26651,
+      "tip_2": 36823,
+      "direct_geodesic": 2.827373,
+      "tree_path_distance": 3.223357,
+      "margin": -0.395984,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 2,
+      "cluster_2": 13
+    },
+    {
+      "pair": [
+        3,
+        4
+      ],
+      "tip_1": 27402,
+      "tip_2": 23237,
+      "direct_geodesic": 3.041047,
+      "tree_path_distance": 3.20459,
+      "margin": -0.163542,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 3,
+      "cluster_2": 4
+    },
+    {
+      "pair": [
+        3,
+        5
+      ],
+      "tip_1": 27402,
+      "tip_2": 28289,
+      "direct_geodesic": 0.802165,
+      "tree_path_distance": 1.34643,
+      "margin": -0.544265,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 3,
+      "cluster_2": 5
+    },
+    {
+      "pair": [
+        3,
+        6
+      ],
+      "tip_1": 27402,
+      "tip_2": 28891,
+      "direct_geodesic": 1.145883,
+      "tree_path_distance": 1.738007,
+      "margin": -0.592124,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 3,
+      "cluster_2": 6
+    },
+    {
+      "pair": [
+        3,
+        7
+      ],
+      "tip_1": 27402,
+      "tip_2": 37732,
+      "direct_geodesic": 2.863524,
+      "tree_path_distance": 3.186701,
+      "margin": -0.323177,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 3,
+      "cluster_2": 7
+    },
+    {
+      "pair": [
+        3,
+        8
+      ],
+      "tip_1": 27402,
+      "tip_2": 72,
+      "direct_geodesic": 1.494072,
+      "tree_path_distance": 2.013758,
+      "margin": -0.519685,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 3,
+      "cluster_2": 8
+    },
+    {
+      "pair": [
+        3,
+        9
+      ],
+      "tip_1": 27402,
+      "tip_2": 3460,
+      "direct_geodesic": 0.80491,
+      "tree_path_distance": 1.07146,
+      "margin": -0.26655,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 3,
+      "cluster_2": 9
+    },
+    {
+      "pair": [
+        3,
+        10
+      ],
+      "tip_1": 27402,
+      "tip_2": 5043,
+      "direct_geodesic": 0.985739,
+      "tree_path_distance": 1.360169,
+      "margin": -0.37443,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 3,
+      "cluster_2": 10
+    },
+    {
+      "pair": [
+        3,
+        11
+      ],
+      "tip_1": 27402,
+      "tip_2": 37218,
+      "direct_geodesic": 3.247608,
+      "tree_path_distance": 3.570785,
+      "margin": -0.323177,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 3,
+      "cluster_2": 11
+    },
+    {
+      "pair": [
+        3,
+        12
+      ],
+      "tip_1": 27402,
+      "tip_2": 21596,
+      "direct_geodesic": 2.481391,
+      "tree_path_distance": 2.66604,
+      "margin": -0.184649,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 3,
+      "cluster_2": 12
+    },
+    {
+      "pair": [
+        3,
+        13
+      ],
+      "tip_1": 27402,
+      "tip_2": 36823,
+      "direct_geodesic": 2.758328,
+      "tree_path_distance": 3.152498,
+      "margin": -0.39417,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 3,
+      "cluster_2": 13
+    },
+    {
+      "pair": [
+        4,
+        5
+      ],
+      "tip_1": 23237,
+      "tip_2": 28289,
+      "direct_geodesic": 3.184184,
+      "tree_path_distance": 3.347727,
+      "margin": -0.163542,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 4,
+      "cluster_2": 5
+    },
+    {
+      "pair": [
+        4,
+        6
+      ],
+      "tip_1": 23237,
+      "tip_2": 28891,
+      "direct_geodesic": 3.575762,
+      "tree_path_distance": 3.739304,
+      "margin": -0.163542,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 4,
+      "cluster_2": 6
+    },
+    {
+      "pair": [
+        4,
+        7
+      ],
+      "tip_1": 23237,
+      "tip_2": 37732,
+      "direct_geodesic": 3.311298,
+      "tree_path_distance": 3.463603,
+      "margin": -0.152305,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 4,
+      "cluster_2": 7
+    },
+    {
+      "pair": [
+        4,
+        8
+      ],
+      "tip_1": 23237,
+      "tip_2": 72,
+      "direct_geodesic": 3.920729,
+      "tree_path_distance": 4.084271,
+      "margin": -0.163542,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 4,
+      "cluster_2": 8
+    },
+    {
+      "pair": [
+        4,
+        9
+      ],
+      "tip_1": 23237,
+      "tip_2": 3460,
+      "direct_geodesic": 3.388846,
+      "tree_path_distance": 3.552389,
+      "margin": -0.163542,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 4,
+      "cluster_2": 9
+    },
+    {
+      "pair": [
+        4,
+        10
+      ],
+      "tip_1": 23237,
+      "tip_2": 5043,
+      "direct_geodesic": 3.677556,
+      "tree_path_distance": 3.841098,
+      "margin": -0.163542,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 4,
+      "cluster_2": 10
+    },
+    {
+      "pair": [
+        4,
+        11
+      ],
+      "tip_1": 23237,
+      "tip_2": 37218,
+      "direct_geodesic": 3.695382,
+      "tree_path_distance": 3.847687,
+      "margin": -0.152305,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 4,
+      "cluster_2": 11
+    },
+    {
+      "pair": [
+        4,
+        12
+      ],
+      "tip_1": 23237,
+      "tip_2": 21596,
+      "direct_geodesic": 4.228737,
+      "tree_path_distance": 4.392279,
+      "margin": -0.163542,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 4,
+      "cluster_2": 12
+    },
+    {
+      "pair": [
+        4,
+        13
+      ],
+      "tip_1": 23237,
+      "tip_2": 36823,
+      "direct_geodesic": 3.885188,
+      "tree_path_distance": 4.048381,
+      "margin": -0.163193,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 4,
+      "cluster_2": 13
+    },
+    {
+      "pair": [
+        5,
+        6
+      ],
+      "tip_1": 28289,
+      "tip_2": 28891,
+      "direct_geodesic": 0.544105,
+      "tree_path_distance": 1.11463,
+      "margin": -0.570526,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 5,
+      "cluster_2": 6
+    },
+    {
+      "pair": [
+        5,
+        7
+      ],
+      "tip_1": 28289,
+      "tip_2": 37732,
+      "direct_geodesic": 3.006447,
+      "tree_path_distance": 3.329838,
+      "margin": -0.323391,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 5,
+      "cluster_2": 7
+    },
+    {
+      "pair": [
+        5,
+        8
+      ],
+      "tip_1": 28289,
+      "tip_2": 72,
+      "direct_geodesic": 1.635007,
+      "tree_path_distance": 2.226111,
+      "margin": -0.591104,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 5,
+      "cluster_2": 8
+    },
+    {
+      "pair": [
+        5,
+        9
+      ],
+      "tip_1": 28289,
+      "tip_2": 3460,
+      "direct_geodesic": 1.19912,
+      "tree_path_distance": 1.694229,
+      "margin": -0.495109,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 5,
+      "cluster_2": 9
+    },
+    {
+      "pair": [
+        5,
+        10
+      ],
+      "tip_1": 28289,
+      "tip_2": 5043,
+      "direct_geodesic": 1.385288,
+      "tree_path_distance": 1.982938,
+      "margin": -0.59765,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 5,
+      "cluster_2": 10
+    },
+    {
+      "pair": [
+        5,
+        11
+      ],
+      "tip_1": 28289,
+      "tip_2": 37218,
+      "direct_geodesic": 3.390531,
+      "tree_path_distance": 3.713922,
+      "margin": -0.323391,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 5,
+      "cluster_2": 11
+    },
+    {
+      "pair": [
+        5,
+        12
+      ],
+      "tip_1": 28289,
+      "tip_2": 21596,
+      "direct_geodesic": 2.619003,
+      "tree_path_distance": 2.809177,
+      "margin": -0.190174,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 5,
+      "cluster_2": 12
+    },
+    {
+      "pair": [
+        5,
+        13
+      ],
+      "tip_1": 28289,
+      "tip_2": 36823,
+      "direct_geodesic": 2.900336,
+      "tree_path_distance": 3.295635,
+      "margin": -0.3953,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 5,
+      "cluster_2": 13
+    },
+    {
+      "pair": [
+        6,
+        7
+      ],
+      "tip_1": 28891,
+      "tip_2": 37732,
+      "direct_geodesic": 3.397544,
+      "tree_path_distance": 3.721415,
+      "margin": -0.323871,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 6,
+      "cluster_2": 7
+    },
+    {
+      "pair": [
+        6,
+        8
+      ],
+      "tip_1": 28891,
+      "tip_2": 72,
+      "direct_geodesic": 2.09136,
+      "tree_path_distance": 2.617688,
+      "margin": -0.526328,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 6,
+      "cluster_2": 8
+    },
+    {
+      "pair": [
+        6,
+        9
+      ],
+      "tip_1": 28891,
+      "tip_2": 3460,
+      "direct_geodesic": 1.628755,
+      "tree_path_distance": 2.085806,
+      "margin": -0.457051,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 6,
+      "cluster_2": 9
+    },
+    {
+      "pair": [
+        6,
+        10
+      ],
+      "tip_1": 28891,
+      "tip_2": 5043,
+      "direct_geodesic": 1.762862,
+      "tree_path_distance": 2.374515,
+      "margin": -0.611654,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 6,
+      "cluster_2": 10
+    },
+    {
+      "pair": [
+        6,
+        11
+      ],
+      "tip_1": 28891,
+      "tip_2": 37218,
+      "direct_geodesic": 3.781628,
+      "tree_path_distance": 4.105499,
+      "margin": -0.323871,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 6,
+      "cluster_2": 11
+    },
+    {
+      "pair": [
+        6,
+        12
+      ],
+      "tip_1": 28891,
+      "tip_2": 21596,
+      "direct_geodesic": 3.069267,
+      "tree_path_distance": 3.200754,
+      "margin": -0.131487,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 6,
+      "cluster_2": 12
+    },
+    {
+      "pair": [
+        6,
+        13
+      ],
+      "tip_1": 28891,
+      "tip_2": 36823,
+      "direct_geodesic": 3.290254,
+      "tree_path_distance": 3.687213,
+      "margin": -0.396959,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 6,
+      "cluster_2": 13
+    },
+    {
+      "pair": [
+        7,
+        8
+      ],
+      "tip_1": 37732,
+      "tip_2": 72,
+      "direct_geodesic": 3.742991,
+      "tree_path_distance": 4.066382,
+      "margin": -0.323391,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 7,
+      "cluster_2": 8
+    },
+    {
+      "pair": [
+        7,
+        9
+      ],
+      "tip_1": 37732,
+      "tip_2": 3460,
+      "direct_geodesic": 3.2114,
+      "tree_path_distance": 3.5345,
+      "margin": -0.323099,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 7,
+      "cluster_2": 9
+    },
+    {
+      "pair": [
+        7,
+        10
+      ],
+      "tip_1": 37732,
+      "tip_2": 5043,
+      "direct_geodesic": 3.50011,
+      "tree_path_distance": 3.823209,
+      "margin": -0.323099,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 7,
+      "cluster_2": 10
+    },
+    {
+      "pair": [
+        7,
+        11
+      ],
+      "tip_1": 37732,
+      "tip_2": 37218,
+      "direct_geodesic": 0.501963,
+      "tree_path_distance": 1.374939,
+      "margin": -0.872976,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 7,
+      "cluster_2": 11
+    },
+    {
+      "pair": [
+        7,
+        12
+      ],
+      "tip_1": 37732,
+      "tip_2": 21596,
+      "direct_geodesic": 4.051325,
+      "tree_path_distance": 4.37439,
+      "margin": -0.323065,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 7,
+      "cluster_2": 12
+    },
+    {
+      "pair": [
+        7,
+        13
+      ],
+      "tip_1": 37732,
+      "tip_2": 36823,
+      "direct_geodesic": 3.732635,
+      "tree_path_distance": 4.030492,
+      "margin": -0.297858,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 7,
+      "cluster_2": 13
+    },
+    {
+      "pair": [
+        8,
+        9
+      ],
+      "tip_1": 72,
+      "tip_2": 3460,
+      "direct_geodesic": 1.531788,
+      "tree_path_distance": 2.361557,
+      "margin": -0.829769,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 8,
+      "cluster_2": 9
+    },
+    {
+      "pair": [
+        8,
+        10
+      ],
+      "tip_1": 72,
+      "tip_2": 5043,
+      "direct_geodesic": 1.858378,
+      "tree_path_distance": 2.650266,
+      "margin": -0.791888,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 8,
+      "cluster_2": 10
+    },
+    {
+      "pair": [
+        8,
+        11
+      ],
+      "tip_1": 72,
+      "tip_2": 37218,
+      "direct_geodesic": 4.127075,
+      "tree_path_distance": 4.450466,
+      "margin": -0.323391,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 8,
+      "cluster_2": 11
+    },
+    {
+      "pair": [
+        8,
+        12
+      ],
+      "tip_1": 72,
+      "tip_2": 21596,
+      "direct_geodesic": 3.355548,
+      "tree_path_distance": 3.545721,
+      "margin": -0.190174,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 8,
+      "cluster_2": 12
+    },
+    {
+      "pair": [
+        8,
+        13
+      ],
+      "tip_1": 72,
+      "tip_2": 36823,
+      "direct_geodesic": 3.641726,
+      "tree_path_distance": 4.03218,
+      "margin": -0.390453,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 8,
+      "cluster_2": 13
+    },
+    {
+      "pair": [
+        9,
+        10
+      ],
+      "tip_1": 3460,
+      "tip_2": 5043,
+      "direct_geodesic": 0.846215,
+      "tree_path_distance": 1.300538,
+      "margin": -0.454323,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 9,
+      "cluster_2": 10
+    },
+    {
+      "pair": [
+        9,
+        11
+      ],
+      "tip_1": 3460,
+      "tip_2": 37218,
+      "direct_geodesic": 3.595484,
+      "tree_path_distance": 3.918584,
+      "margin": -0.323099,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 9,
+      "cluster_2": 11
+    },
+    {
+      "pair": [
+        9,
+        12
+      ],
+      "tip_1": 3460,
+      "tip_2": 21596,
+      "direct_geodesic": 2.825464,
+      "tree_path_distance": 3.013839,
+      "margin": -0.188375,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 9,
+      "cluster_2": 12
+    },
+    {
+      "pair": [
+        9,
+        13
+      ],
+      "tip_1": 3460,
+      "tip_2": 36823,
+      "direct_geodesic": 3.1078,
+      "tree_path_distance": 3.500297,
+      "margin": -0.392497,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 9,
+      "cluster_2": 13
+    },
+    {
+      "pair": [
+        10,
+        11
+      ],
+      "tip_1": 5043,
+      "tip_2": 37218,
+      "direct_geodesic": 3.884194,
+      "tree_path_distance": 4.207293,
+      "margin": -0.323099,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 10,
+      "cluster_2": 11
+    },
+    {
+      "pair": [
+        10,
+        12
+      ],
+      "tip_1": 5043,
+      "tip_2": 21596,
+      "direct_geodesic": 3.114174,
+      "tree_path_distance": 3.302548,
+      "margin": -0.188375,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 10,
+      "cluster_2": 12
+    },
+    {
+      "pair": [
+        10,
+        13
+      ],
+      "tip_1": 5043,
+      "tip_2": 36823,
+      "direct_geodesic": 3.39651,
+      "tree_path_distance": 3.789007,
+      "margin": -0.392497,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 10,
+      "cluster_2": 13
+    },
+    {
+      "pair": [
+        11,
+        12
+      ],
+      "tip_1": 37218,
+      "tip_2": 21596,
+      "direct_geodesic": 4.435409,
+      "tree_path_distance": 4.758474,
+      "margin": -0.323065,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 11,
+      "cluster_2": 12
+    },
+    {
+      "pair": [
+        11,
+        13
+      ],
+      "tip_1": 37218,
+      "tip_2": 36823,
+      "direct_geodesic": 4.116719,
+      "tree_path_distance": 4.414576,
+      "margin": -0.297858,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 11,
+      "cluster_2": 13
+    },
+    {
+      "pair": [
+        12,
+        13
+      ],
+      "tip_1": 21596,
+      "tip_2": 36823,
+      "direct_geodesic": 3.964415,
+      "tree_path_distance": 4.340188,
+      "margin": -0.375772,
+      "tau": 0.62,
+      "same_leaf": false,
+      "cluster_1": 12,
+      "cluster_2": 13
+    }
+  ],
+  "provenance": "post-hoc derived from official geodesics and final clusters; does not alter grouping"
+}

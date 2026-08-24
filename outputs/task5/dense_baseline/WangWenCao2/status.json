@@ -1,0 +1,15 @@
+{
+  "plant": "WangWenCao2",
+  "n_points": 34761,
+  "n_leaves_total": 3,
+  "n_leaves_gt": 3,
+  "leaf_sizes_gt": [
+    33797,
+    474,
+    450
+  ],
+  "n_with_base": 3,
+  "segmentation_seconds": 6.1,
+  "status": "ok",
+  "root_index": null
+}

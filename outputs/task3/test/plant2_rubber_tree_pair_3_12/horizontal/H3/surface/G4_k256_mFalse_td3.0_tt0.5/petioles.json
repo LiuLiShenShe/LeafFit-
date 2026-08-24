@@ -1,0 +1,276 @@
+[
+  {
+    "leaf_id": 1,
+    "primary_apex": 109766,
+    "tips": [
+      109766
+    ],
+    "type": "single_tip",
+    "base_gaussian_index": 79430,
+    "base_xyz": [
+      0.48076868057250977,
+      0.13644874095916748,
+      0.34425899386405945
+    ],
+    "path_position": 21,
+    "provenance": "official calculate_cluster_base_indices output"
+  },
+  {
+    "leaf_id": 2,
+    "primary_apex": 70152,
+    "tips": [
+      70152
+    ],
+    "type": "single_tip",
+    "base_gaussian_index": 66075,
+    "base_xyz": [
+      0.7990450859069824,
+      -0.5295889377593994,
+      0.2571626603603363
+    ],
+    "path_position": 18,
+    "provenance": "official calculate_cluster_base_indices output"
+  },
+  {
+    "leaf_id": 3,
+    "primary_apex": 4620,
+    "tips": [
+      4620
+    ],
+    "type": "single_tip",
+    "base_gaussian_index": 7341,
+    "base_xyz": [
+      -0.0227847620844841,
+      -0.46400630474090576,
+      -0.33080989122390747
+    ],
+    "path_position": null,
+    "provenance": "official calculate_cluster_base_indices output"
+  },
+  {
+    "leaf_id": 4,
+    "primary_apex": 56625,
+    "tips": [
+      56625
+    ],
+    "type": "single_tip",
+    "base_gaussian_index": 55603,
+    "base_xyz": [
+      0.2659143805503845,
+      -0.47831642627716064,
+      -0.5794765949249268
+    ],
+    "path_position": null,
+    "provenance": "official calculate_cluster_base_indices output"
+  },
+  {
+    "leaf_id": 5,
+    "primary_apex": 1148,
+    "tips": [
+      1148
+    ],
+    "type": "single_tip",
+    "base_gaussian_index": 33941,
+    "base_xyz": [
+      -0.39417970180511475,
+      -0.6835830807685852,
+      -0.29895174503326416
+    ],
+    "path_position": 9,
+    "provenance": "official calculate_cluster_base_indices output"
+  },
+  {
+    "leaf_id": 6,
+    "primary_apex": 63001,
+    "tips": [
+      63001
+    ],
+    "type": "single_tip",
+    "base_gaussian_index": 30381,
+    "base_xyz": [
+      -0.20671816170215607,
+      -0.707493245601654,
+      -0.18822652101516724
+    ],
+    "path_position": 11,
+    "provenance": "official calculate_cluster_base_indices output"
+  },
+  {
+    "leaf_id": 7,
+    "primary_apex": 8754,
+    "tips": [
+      8754,
+      22511,
+      110250
+    ],
+    "type": "multi_tips",
+    "base_gaussian_index": 20406,
+    "base_xyz": [
+      -0.3221811056137085,
+      0.04980766028165817,
+      0.13015280663967133
+    ],
+    "path_position": null,
+    "provenance": "official calculate_cluster_base_indices output"
+  },
+  {
+    "leaf_id": 8,
+    "primary_apex": 16301,
+    "tips": [
+      16301
+    ],
+    "type": "single_tip",
+    "base_gaussian_index": 43915,
+    "base_xyz": [
+      -0.6285593509674072,
+      0.4457065761089325,
+      -0.2546148896217346
+    ],
+    "path_position": null,
+    "provenance": "official calculate_cluster_base_indices output"
+  },
+  {
+    "leaf_id": 9,
+    "primary_apex": 90079,
+    "tips": [
+      90079
+    ],
+    "type": "single_tip",
+    "base_gaussian_index": 17394,
+    "base_xyz": [
+      -0.640720009803772,
+      0.5724365711212158,
+      -0.4624512493610382
+    ],
+    "path_position": null,
+    "provenance": "official calculate_cluster_base_indices output"
+  },
+  {
+    "leaf_id": 10,
+    "primary_apex": 24926,
+    "tips": [
+      24926
+    ],
+    "type": "single_tip",
+    "base_gaussian_index": 23617,
+    "base_xyz": [
+      -0.2625998854637146,
+      0.22216874361038208,
+      0.199386864900589
+    ],
+    "path_position": 2,
+    "provenance": "official calculate_cluster_base_indices output"
+  },
+  {
+    "leaf_id": 11,
+    "primary_apex": 110628,
+    "tips": [
+      110628
+    ],
+    "type": "single_tip",
+    "base_gaussian_index": 65649,
+    "base_xyz": [
+      0.5762801170349121,
+      -0.538436770439148,
+      0.32327166199684143
+    ],
+    "path_position": 15,
+    "provenance": "official calculate_cluster_base_indices output"
+  },
+  {
+    "leaf_id": 12,
+    "primary_apex": 107435,
+    "tips": [
+      107435
+    ],
+    "type": "single_tip",
+    "base_gaussian_index": 54507,
+    "base_xyz": [
+      0.1598721593618393,
+      0.6232348680496216,
+      0.35626891255378723
+    ],
+    "path_position": 15,
+    "provenance": "official calculate_cluster_base_indices output"
+  },
+  {
+    "leaf_id": 13,
+    "primary_apex": 91763,
+    "tips": [
+      91763
+    ],
+    "type": "single_tip",
+    "base_gaussian_index": 98973,
+    "base_xyz": [
+      -0.2251814305782318,
+      0.8234304785728455,
+      -0.23323357105255127
+    ],
+    "path_position": 15,
+    "provenance": "official calculate_cluster_base_indices output"
+  },
+  {
+    "leaf_id": 14,
+    "primary_apex": 122437,
+    "tips": [
+      122437
+    ],
+    "type": "single_tip",
+    "base_gaussian_index": 105152,
+    "base_xyz": [
+      -0.23058423399925232,
+      1.2708204984664917,
+      0.4892888367176056
+    ],
+    "path_position": null,
+    "provenance": "official calculate_cluster_base_indices output"
+  },
+  {
+    "leaf_id": 15,
+    "primary_apex": 112630,
+    "tips": [
+      112630
+    ],
+    "type": "single_tip",
+    "base_gaussian_index": 112477,
+    "base_xyz": [
+      0.030633561313152313,
+      0.06411121785640717,
+      0.5825538635253906
+    ],
+    "path_position": null,
+    "provenance": "official calculate_cluster_base_indices output"
+  },
+  {
+    "leaf_id": 16,
+    "primary_apex": 58282,
+    "tips": [
+      58282
+    ],
+    "type": "single_tip",
+    "base_gaussian_index": 67947,
+    "base_xyz": [
+      0.6623130440711975,
+      -0.2822311222553253,
+      0.18666920065879822
+    ],
+    "path_position": 15,
+    "provenance": "official calculate_cluster_base_indices output"
+  },
+  {
+    "leaf_id": 17,
+    "primary_apex": 96059,
+    "tips": [
+      96059
+    ],
+    "type": "single_tip",
+    "base_gaussian_index": 100268,
+    "base_xyz": [
+      -0.33560502529144287,
+      0.9051079154014587,
+      -0.01723465695977211
+    ],
+    "path_position": 13,
+    "provenance": "official calculate_cluster_base_indices output"
+  }
+]

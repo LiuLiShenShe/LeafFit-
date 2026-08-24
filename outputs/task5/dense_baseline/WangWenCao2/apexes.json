@@ -1,0 +1,17 @@
+[
+  {
+    "gaussian_index": 33105,
+    "base_gaussian_index": 24846,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 32659,
+    "base_gaussian_index": 25965,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 34679,
+    "base_gaussian_index": 28692,
+    "type": "single_tip"
+  }
+]

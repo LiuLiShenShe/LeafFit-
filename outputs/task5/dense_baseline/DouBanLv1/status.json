@@ -1,0 +1,24 @@
+{
+  "plant": "DouBanLv1",
+  "n_points": 51745,
+  "n_leaves_total": 18,
+  "n_leaves_gt": 10,
+  "leaf_sizes_gt": [
+    12741,
+    12765,
+    617,
+    205,
+    2197,
+    2444,
+    4622,
+    675,
+    1109,
+    841
+  ],
+  "n_with_base": 18,
+  "segmentation_seconds": 12.6,
+  "status": "ok",
+  "root_index": null,
+  "superseded_by": "Task5R validity audit",
+  "superseded_note": "Pre-audit artifact; see outputs/task5r/task5_validity_audit.json. Retained unmodified otherwise."
+}

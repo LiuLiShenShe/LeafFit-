@@ -1,0 +1,99 @@
+{
+  "gate_passed": false,
+  "min_margin": 1.0073184967041016e-05,
+  "mean_margin": 3.8817524909973145e-05,
+  "n_cases": 8,
+  "threshold": 0.03,
+  "cases": [
+    {
+      "pair_key": "DouBanLv1_pair_7_8",
+      "mode": "horizontal",
+      "severity": "H0",
+      "n_edges": 3311680,
+      "n_within": 2371849,
+      "n_cross": 43734,
+      "median_cmv_within": 0.9999611377716064,
+      "median_cmv_cross": 0.9999269843101501,
+      "margin": 3.415346145629883e-05
+    },
+    {
+      "pair_key": "DouBanLv1_pair_7_8",
+      "mode": "horizontal",
+      "severity": "H1",
+      "n_edges": 3311680,
+      "n_within": 2385593,
+      "n_cross": 36960,
+      "median_cmv_within": 0.9999603629112244,
+      "median_cmv_cross": 0.9999502897262573,
+      "margin": 1.0073184967041016e-05
+    },
+    {
+      "pair_key": "DouBanLv1_pair_7_8",
+      "mode": "vertical",
+      "severity": "V0",
+      "n_edges": 3311680,
+      "n_within": 2371849,
+      "n_cross": 43734,
+      "median_cmv_within": 0.9999611377716064,
+      "median_cmv_cross": 0.9999269843101501,
+      "margin": 3.415346145629883e-05
+    },
+    {
+      "pair_key": "DouBanLv1_pair_7_8",
+      "mode": "vertical",
+      "severity": "V1",
+      "n_edges": 3311680,
+      "n_within": 2381330,
+      "n_cross": 38062,
+      "median_cmv_within": 0.9999606013298035,
+      "median_cmv_cross": 0.9999473094940186,
+      "margin": 1.329183578491211e-05
+    },
+    {
+      "pair_key": "DouBanLv1_pair_1_7",
+      "mode": "horizontal",
+      "severity": "H0",
+      "n_edges": 3311680,
+      "n_within": 2371849,
+      "n_cross": 43734,
+      "median_cmv_within": 0.9999611377716064,
+      "median_cmv_cross": 0.9999269843101501,
+      "margin": 3.415346145629883e-05
+    },
+    {
+      "pair_key": "DouBanLv1_pair_1_7",
+      "mode": "horizontal",
+      "severity": "H1",
+      "n_edges": 3311680,
+      "n_within": 2414037,
+      "n_cross": 9936,
+      "median_cmv_within": 0.9999595284461975,
+      "median_cmv_cross": 0.9998955130577087,
+      "margin": 6.401538848876953e-05
+    },
+    {
+      "pair_key": "DouBanLv1_pair_1_7",
+      "mode": "vertical",
+      "severity": "V0",
+      "n_edges": 3311680,
+      "n_within": 2371849,
+      "n_cross": 43734,
+      "median_cmv_within": 0.9999611377716064,
+      "median_cmv_cross": 0.9999269843101501,
+      "margin": 3.415346145629883e-05
+    },
+    {
+      "pair_key": "DouBanLv1_pair_1_7",
+      "mode": "vertical",
+      "severity": "V1",
+      "n_edges": 3311680,
+      "n_within": 2409774,
+      "n_cross": 11038,
+      "median_cmv_within": 0.9999598264694214,
+      "median_cmv_cross": 0.9998732805252075,
+      "margin": 8.654594421386719e-05
+    }
+  ],
+  "superseded_by": "Task5R validity audit",
+  "superseded_note": "Pre-audit artifact; see outputs/task5r/task5_validity_audit.json. Retained unmodified otherwise."
+}

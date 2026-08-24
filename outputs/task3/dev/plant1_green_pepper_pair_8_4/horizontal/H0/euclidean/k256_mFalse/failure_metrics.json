@@ -1,0 +1,50 @@
+{
+  "pair_key": "plant1_green_pepper_pair_8_4",
+  "mode": "horizontal",
+  "severity": "H0",
+  "instance": {
+    "mIoU": 0.9866398625711555,
+    "PQ": 0.88797587631404,
+    "matched_pairs": 9,
+    "false_positives": 1,
+    "false_negatives": 1
+  },
+  "pair_local": {
+    "matched_pred_a": 1,
+    "matched_pred_b": 1,
+    "fp_leakage": 0.00832981864192324,
+    "fn_rate": 0.0
+  },
+  "geodesic": {
+    "reference_apex_recall": 1.0,
+    "wrong_grouping": false,
+    "merge_level": 0,
+    "pred_instances_covering_a": 1,
+    "pred_instances_covering_b": 1,
+    "apex_detail": {
+      "leaf_8": {
+        "found": true,
+        "gt_apex_idx": 5043,
+        "pred_instance": 8
+      },
+      "leaf_4": {
+        "found": true,
+        "gt_apex_idx": 28890,
+        "pred_instance": 4
+      }
+    },
+    "new_unmatched_apex_count": 8
+  },
+  "first_failure_stage": "NONE",
+  "dominant_failure_stage": "NONE",
+  "construction": {
+    "projected_overlap_fraction": 0.0,
+    "contact_fraction": 0.0,
+    "min_cross_leaf_distance_ratio": 11.61221747033045,
+    "spacing_a": 0.010151536867659166,
+    "spacing_b": 0.010984536965178973,
+    "centroid_dist": 0.8210988544251365,
+    "leaf_a_count": 3517.0,
+    "leaf_b_count": 5888.0
+  }
+}

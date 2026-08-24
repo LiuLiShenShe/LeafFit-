@@ -1,0 +1,186 @@
+{
+  "lambda_n": [
+    0.0,
+    0.5,
+    1.0,
+    2.0,
+    4.0
+  ],
+  "lambda_t": [
+    0.0,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "p": 2.0,
+  "tau_grid": {
+    "tau_d": [
+      3.0,
+      4.0,
+      Infinity
+    ],
+    "tau_t": [
+      0.5,
+      0.75,
+      Infinity
+    ]
+  },
+  "k_grid": [
+    128,
+    256,
+    320
+  ],
+  "mutual_grid": [
+    false,
+    true
+  ],
+  "euclidean_k": [
+    128,
+    256,
+    320
+  ],
+  "stage1": {
+    "k": 64,
+    "tau_d": 3.0,
+    "tau_t": 0.5
+  },
+  "configs": [],
+  "lambda_configs": {
+    "G5": {
+      "feature_set": "G5",
+      "lambda_configs": [
+        {
+          "lambda_n": 0.0,
+          "lambda_t": 0.0
+        },
+        {
+          "lambda_n": 0.0,
+          "lambda_t": 0.5
+        },
+        {
+          "lambda_n": 0.0,
+          "lambda_t": 1.0
+        },
+        {
+          "lambda_n": 0.0,
+          "lambda_t": 2.0
+        },
+        {
+          "lambda_n": 0.0,
+          "lambda_t": 4.0
+        },
+        {
+          "lambda_n": 0.0,
+          "lambda_t": 8.0
+        },
+        {
+          "lambda_n": 0.5,
+          "lambda_t": 0.0
+        },
+        {
+          "lambda_n": 0.5,
+          "lambda_t": 0.5
+        },
+        {
+          "lambda_n": 0.5,
+          "lambda_t": 1.0
+        },
+        {
+          "lambda_n": 0.5,
+          "lambda_t": 2.0
+        },
+        {
+          "lambda_n": 0.5,
+          "lambda_t": 4.0
+        },
+        {
+          "lambda_n": 0.5,
+          "lambda_t": 8.0
+        },
+        {
+          "lambda_n": 1.0,
+          "lambda_t": 0.0
+        },
+        {
+          "lambda_n": 1.0,
+          "lambda_t": 0.5
+        },
+        {
+          "lambda_n": 1.0,
+          "lambda_t": 1.0
+        },
+        {
+          "lambda_n": 1.0,
+          "lambda_t": 2.0
+        },
+        {
+          "lambda_n": 1.0,
+          "lambda_t": 4.0
+        },
+        {
+          "lambda_n": 1.0,
+          "lambda_t": 8.0
+        },
+        {
+          "lambda_n": 2.0,
+          "lambda_t": 0.0
+        },
+        {
+          "lambda_n": 2.0,
+          "lambda_t": 0.5
+        },
+        {
+          "lambda_n": 2.0,
+          "lambda_t": 1.0
+        },
+        {
+          "lambda_n": 2.0,
+          "lambda_t": 2.0
+        },
+        {
+          "lambda_n": 2.0,
+          "lambda_t": 4.0
+        },
+        {
+          "lambda_n": 2.0,
+          "lambda_t": 8.0
+        },
+        {
+          "lambda_n": 4.0,
+          "lambda_t": 0.0
+        },
+        {
+          "lambda_n": 4.0,
+          "lambda_t": 0.5
+        },
+        {
+          "lambda_n": 4.0,
+          "lambda_t": 1.0
+        },
+        {
+          "lambda_n": 4.0,
+          "lambda_t": 2.0
+        },
+        {
+          "lambda_n": 4.0,
+          "lambda_t": 4.0
+        },
+        {
+          "lambda_n": 4.0,
+          "lambda_t": 8.0
+        }
+      ]
+    },
+    "G4": {
+      "feature_set": "G4",
+      "lambda_configs": [
+        {
+          "lambda_n": 1.0,
+          "lambda_t": 2.0
+        }
+      ]
+    }
+  }
+}

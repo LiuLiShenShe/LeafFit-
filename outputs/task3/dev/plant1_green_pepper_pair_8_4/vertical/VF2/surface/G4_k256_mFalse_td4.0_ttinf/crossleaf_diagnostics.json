@@ -1,0 +1,28 @@
+{
+  "n_within_leaf_edges": 5871615,
+  "n_cross_leaf_edges": 213912,
+  "median_c_n_within": {
+    "count": 5871615,
+    "median": 0.037729652952213755
+  },
+  "median_c_n_cross": {
+    "count": 213912,
+    "median": 0.27740311804385737
+  },
+  "median_c_t_within": {
+    "count": 5871615,
+    "median": 0.104616029883211
+  },
+  "median_c_t_cross": {
+    "count": 213912,
+    "median": 0.47417044502684774
+  },
+  "median_c_d_within": {
+    "count": 5871615,
+    "median": 1.0073547844003463
+  },
+  "median_c_d_cross": {
+    "count": 213912,
+    "median": 1.2079057880663133
+  }
+}

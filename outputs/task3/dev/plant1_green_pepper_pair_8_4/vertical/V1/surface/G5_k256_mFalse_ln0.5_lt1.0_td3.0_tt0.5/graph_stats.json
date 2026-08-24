@@ -1,0 +1,21 @@
+{
+  "num_nodes": 47340,
+  "num_edges": 5967471,
+  "connected_components": 1,
+  "largest_component_size": 47340,
+  "largest_component_fraction": 1.0,
+  "mean_degree": 252.1111533586819,
+  "median_degree": 256.0,
+  "isolated_nodes": 0,
+  "backend": "surface",
+  "cfg": {
+    "feature_set": "G5",
+    "lambda_n": 0.5,
+    "lambda_t": 1.0,
+    "p": 2.0,
+    "tau_d": 3.0,
+    "tau_t": 0.5,
+    "k": 256,
+    "mutual": false
+  }
+}

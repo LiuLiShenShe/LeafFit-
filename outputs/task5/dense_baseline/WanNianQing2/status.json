@@ -1,0 +1,14 @@
+{
+  "plant": "WanNianQing2",
+  "n_points": 40757,
+  "n_leaves_total": 39,
+  "n_leaves_gt": 2,
+  "leaf_sizes_gt": [
+    40044,
+    280
+  ],
+  "n_with_base": 39,
+  "segmentation_seconds": 16.9,
+  "status": "ok",
+  "root_index": null
+}

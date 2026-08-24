@@ -1,0 +1,16 @@
+{
+  "plant": "HongZhang",
+  "n_points": 93043,
+  "n_leaves_total": 40,
+  "n_leaves_gt": 3,
+  "leaf_sizes_gt": [
+    3024,
+    89373,
+    531
+  ],
+  "n_with_base": 40,
+  "segmentation_seconds": 39.2,
+  "status": "ok",
+  "root_index": 819,
+  "root_source": "auto"
+}

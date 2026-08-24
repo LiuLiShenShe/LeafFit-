@@ -1,0 +1,418 @@
+{
+  "num_images": 3601,
+  "image_resolution": "real captures present under datasets/04-COLMAP (PINHOLE ~2-4K px)",
+  "camera_source": "colmap",
+  "pose_available": true,
+  "intrinsics_available": true,
+  "gaussian_projection_possible": true,
+  "audit_evidence": {
+    "repo_root": "/data/fj/LeafFit论文复现及修改/leaf_fit",
+    "data_dir": "data",
+    "data_dir_exists": true,
+    "data_files": [
+      {
+        "name": "plant1_green_pepper.ply",
+        "path": "data/plant1_green_pepper.ply",
+        "size": 11931235,
+        "num_bytes": 11931235,
+        "has_camera_metadata": false,
+        "num_vertex_properties": 37
+      },
+      {
+        "name": "plant2_rubber_tree.ply",
+        "path": "data/plant2_rubber_tree.ply",
+        "size": 30882896,
+        "num_bytes": 30882896,
+        "has_camera_metadata": false,
+        "num_vertex_properties": 37
+      },
+      {
+        "name": "plant3_cotton_rose.ply",
+        "path": "data/plant3_cotton_rose.ply",
+        "size": 26776556,
+        "num_bytes": 26776556,
+        "has_camera_metadata": false,
+        "num_vertex_properties": 37
+      },
+      {
+        "name": "plant4_golden_pothos.ply",
+        "path": "data/plant4_golden_pothos.ply",
+        "size": 13730263,
+        "num_bytes": 13730263,
+        "has_camera_metadata": false,
+        "num_vertex_properties": 37
+      },
+      {
+        "name": "plant5_white_flag_bush.ply",
+        "path": "data/plant5_white_flag_bush.ply",
+        "size": 24906211,
+        "num_bytes": 24906211,
+        "has_camera_metadata": false,
+        "num_vertex_properties": 37
+      },
+      {
+        "name": "plant6_lucky_bamboo.ply",
+        "path": "data/plant6_lucky_bamboo.ply",
+        "size": 19932487,
+        "num_bytes": 19932487,
+        "has_camera_metadata": false,
+        "num_vertex_properties": 37
+      },
+      {
+        "name": "plant7_black_pearl_pepper.ply",
+        "path": "data/plant7_black_pearl_pepper.ply",
+        "size": 20512591,
+        "num_bytes": 20512591,
+        "has_camera_metadata": false,
+        "num_vertex_properties": 37
+      },
+      {
+        "name": "plant8_ruby_leaf.ply",
+        "path": "data/plant8_ruby_leaf.ply",
+        "size": 8581147,
+        "num_bytes": 8581147,
+        "has_camera_metadata": false,
+        "num_vertex_properties": 37
+      }
+    ],
+    "data_total_bytes": 157253386,
+    "data_total_files": 8,
+    "ply_camera_metadata_found": false,
+    "image_files_found": [],
+    "image_dirs_found": [],
+    "pose_files_found": [],
+    "colmap_sparse_dirs": [],
+    "colmap_bin_probes": {},
+    "viewer_camera_note": "viewer/camera.py defines an interactive orbit camera for the GUI; it is never loaded from / written to disk as a captured pose and is therefore NOT a real observation source.",
+    "datasets_colmap": {
+      "datasets_dir_exists": true,
+      "datasets_dir_rel": "../datasets",
+      "n_colmap_plants": 40,
+      "plants": [
+        {
+          "plant": "BaiZhang",
+          "sparse0": "../datasets/04-COLMAP/BaiZhang/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 199
+        },
+        {
+          "plant": "CaoMei1",
+          "sparse0": "../datasets/04-COLMAP/CaoMei1/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 210
+        },
+        {
+          "plant": "CaoMei2",
+          "sparse0": "../datasets/04-COLMAP/CaoMei2/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 106
+        },
+        {
+          "plant": "ChangShouHua1",
+          "sparse0": "../datasets/04-COLMAP/ChangShouHua1/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 2
+        },
+        {
+          "plant": "ChangShouHua2",
+          "sparse0": "../datasets/04-COLMAP/ChangShouHua2/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 212
+        },
+        {
+          "plant": "DouBanLv1",
+          "sparse0": "../datasets/04-COLMAP/DouBanLv1/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 215
+        },
+        {
+          "plant": "DouBanLv2",
+          "sparse0": "../datasets/04-COLMAP/DouBanLv2/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 210
+        },
+        {
+          "plant": "DouBanLv3",
+          "sparse0": "../datasets/04-COLMAP/DouBanLv3/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 207
+        },
+        {
+          "plant": "DouBanLv3_undist_pinhole_20260305b",
+          "sparse0": "../datasets/04-COLMAP/DouBanLv3_undist_pinhole_20260305b/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 200
+        },
+        {
+          "plant": "HongZhang",
+          "sparse0": "../datasets/04-COLMAP/HongZhang/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 213
+        },
+        {
+          "plant": "KongQueZhuYu",
+          "sparse0": "../datasets/04-COLMAP/KongQueZhuYu/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 210
+        },
+        {
+          "plant": "KongQueZhuYu_undist_pinhole",
+          "sparse0": "../datasets/04-COLMAP/KongQueZhuYu_undist_pinhole/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 3
+        },
+        {
+          "plant": "WanNianQing1",
+          "sparse0": "../datasets/04-COLMAP/WanNianQing1/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 213
+        },
+        {
+          "plant": "WanNianQing2",
+          "sparse0": "../datasets/04-COLMAP/WanNianQing2/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 215
+        },
+        {
+          "plant": "WangWenCao1",
+          "sparse0": "../datasets/04-COLMAP/WangWenCao1/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 149
+        },
+        {
+          "plant": "WangWenCao2",
+          "sparse0": "../datasets/04-COLMAP/WangWenCao2/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 210
+        },
+        {
+          "plant": "XianKeLai1",
+          "sparse0": "../datasets/04-COLMAP/XianKeLai1/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 208
+        },
+        {
+          "plant": "XianKeLai2",
+          "sparse0": "../datasets/04-COLMAP/XianKeLai2/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 208
+        },
+        {
+          "plant": "XianKeLai3",
+          "sparse0": "../datasets/04-COLMAP/XianKeLai3/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 206
+        },
+        {
+          "plant": "XiangPiShu1",
+          "sparse0": "../datasets/04-COLMAP/XiangPiShu1/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 203
+        },
+        {
+          "plant": "XiangPiShu2",
+          "sparse0": "../datasets/04-COLMAP/XiangPiShu2/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 2
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/DouBanLv1/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/WangWenCao2/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/DouBanLv2/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/BaiZhang/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/XianKeLai2/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/XianKeLai3/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/WanNianQing2/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/XiangPiShu2/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/CaoMei2/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/ChangShouHua1/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/XiangPiShu1/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/DouBanLv3/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/KongQueZhuYu/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/WanNianQing1/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/HongZhang/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/XianKeLai1/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/WangWenCao1/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/CaoMei1/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        },
+        {
+          "plant": "distorted",
+          "sparse0": "../datasets/04-COLMAP/ChangShouHua2/distorted/sparse/0",
+          "has_points3D": true,
+          "has_images_bin": true,
+          "has_cameras_bin": true,
+          "n_rgb_images": 0
+        }
+      ]
+    },
+    "note": "Phase-0 PIVOT (2026-08-22): real source captures DO exist under datasets/04-COLMAP/<Plant>/{sparse/0/{cameras,images,points3D}.bin, images/}. These are the genuine original observations. The observation-grounded identity INGEST pipeline (core/colmap_io.py + core/real_observation.py) is built and VERIFIED: 100% of SfM points project into >=1 of the real RGB views, mean visibility 0.97, real-pixel appearance cue is coherent. However, the Option-C RECONSTRUCTED BENCHMARK is INFEASIBLE: the COLMAP sparse points3D clouds (10K-26K pts/plant) collapse LeafFit's segmentation to a single merged leaf for almost every plant (only CaoMei1 yields >1 leaf, DouBanLv3 yields 3 — all lopsided, no genuine leaf-leaf overlap pair), so no controlled-overlap case can be constructed. Dense MVS is blocked: the installed `colmap` is built without CUDA (patch_match_stereo errors), no fused.ply on disk. Per the plan's Option-C feasibility rule this is a STOP."
+  },
+  "phase0_verdict": "STOP_RECONSTRUCTED_BENCHMARK_INFEASIBLE",
+  "phase0_reason": "Real observations (RGB + COLMAP pose + intrinsics) ARE present under datasets/04-COLMAP, and the observation-grounded identity ingest pipeline is verified working. BUT the Task-5 Option-C reconstructed benchmark on COLMAP plants cannot be built: sparse SfM points (10K-26K) collapse LeafFit segmentation to one merged leaf for ~all plants (no multi-leaf overlap pair), and dense MVS is blocked by CPU-only COLMAP. Therefore observation-grounded identity CANNOT be evaluated as a replacement for the geodesic backend on a reconstructed COLMAP benchmark."
+}

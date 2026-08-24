@@ -1,0 +1,61 @@
+{
+  "pair_key": "plant2_rubber_tree_pair_3_12",
+  "mode": "vertical",
+  "severity": "V0",
+  "instance": {
+    "mIoU": 0.9901882324482584,
+    "PQ": 0.7201368963260061,
+    "matched_pairs": 12,
+    "false_positives": 6,
+    "false_negatives": 3
+  },
+  "pair_local": {
+    "matched_pred_a": 1,
+    "matched_pred_b": 1,
+    "fp_leakage": 0.008387342737323675,
+    "fn_rate": 0.0
+  },
+  "geodesic": {
+    "reference_apex_recall": 1.0,
+    "wrong_grouping": false,
+    "merge_level": 0,
+    "pred_instances_covering_a": 1,
+    "pred_instances_covering_b": 1,
+    "apex_detail": {
+      "leaf_3": {
+        "found": true,
+        "gt_apex_idx": 110250,
+        "pred_instance": 11
+      },
+      "leaf_12": {
+        "found": true,
+        "gt_apex_idx": 24962,
+        "pred_instance": 8
+      }
+    },
+    "new_unmatched_apex_count": 16
+  },
+  "first_failure_stage": "NONE",
+  "dominant_failure_stage": "NONE",
+  "construction": {
+    "projected_overlap_fraction": 0.0,
+    "contact_fraction": 0.0,
+    "min_cross_leaf_distance_ratio": 30.929035922713794,
+    "spacing_a": 0.011705307638559063,
+    "spacing_b": 0.012120974671242284,
+    "centroid_dist": 0.5459113593099225,
+    "leaf_a_count": 6778.0,
+    "leaf_b_count": 6227.0
+  },
+  "shortcut": {
+    "shortcut_ratio": 1.0,
+    "shortcut_confirmed": false,
+    "cross_leaf_path": false,
+    "cross_leaf_merge": false,
+    "shared_instances": [],
+    "upper_apex_idx": 110250,
+    "upper_below_lower_ratio": 0.05531029417764903,
+    "d_case": 4.036442100108224,
+    "d_v0": 4.036442100108224
+  }
+}

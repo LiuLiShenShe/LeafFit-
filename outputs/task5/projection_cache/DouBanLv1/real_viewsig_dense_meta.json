@@ -1,0 +1,26 @@
+{
+  "plant": "DouBanLv1",
+  "n_points": 51745,
+  "n_views": 215,
+  "visible_mean": 0.9724390852278728,
+  "visibility_fraction_mean": 0.9724390852278729,
+  "never_seen": 0,
+  "build_seconds": 528.5,
+  "appear_sig_sample": [
+    [
+      105.6,
+      134.1,
+      72.7
+    ],
+    [
+      95.1,
+      121.5,
+      66.1
+    ],
+    [
+      90.2,
+      112.8,
+      62.9
+    ]
+  ]
+}

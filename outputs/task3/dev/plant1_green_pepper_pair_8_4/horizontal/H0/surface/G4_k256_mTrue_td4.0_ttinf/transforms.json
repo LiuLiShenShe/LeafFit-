@@ -1,0 +1,60 @@
+{
+  "severity": "H0",
+  "mode": "horizontal",
+  "leaf_a_transform": {
+    "pivot": null,
+    "R": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "t": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "angle_deg": 0.0
+  },
+  "leaf_b_transform": {
+    "pivot": null,
+    "R": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "t": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "angle_deg": 0.0
+  },
+  "case_type": "identity_control",
+  "achieved_projected_overlap": 0.0,
+  "achieved_contact_fraction": 0.0,
+  "achieved_min_cross_leaf_distance_ratio": null
+}

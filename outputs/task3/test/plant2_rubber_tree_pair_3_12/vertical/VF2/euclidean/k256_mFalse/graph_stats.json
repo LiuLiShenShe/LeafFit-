@@ -1,0 +1,16 @@
+{
+  "num_nodes": 122545,
+  "num_edges": 15662905,
+  "connected_components": 1,
+  "largest_component_size": 122545,
+  "largest_component_fraction": 1.0,
+  "mean_degree": 255.62699416540863,
+  "median_degree": 257.0,
+  "isolated_nodes": 0,
+  "root_reachable": true,
+  "backend": "euclidean",
+  "cfg": {
+    "k": 256,
+    "mutual": false
+  }
+}

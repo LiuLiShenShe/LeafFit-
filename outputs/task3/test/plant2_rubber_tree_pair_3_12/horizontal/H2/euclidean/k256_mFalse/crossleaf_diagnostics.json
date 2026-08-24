@@ -1,0 +1,14 @@
+{
+  "n_within_leaf_edges": 15215343,
+  "n_cross_leaf_edges": 464486,
+  "median_c_t_within": null,
+  "median_c_t_cross": null,
+  "median_c_n_within": null,
+  "median_c_n_cross": null,
+  "median_c_d_within": {
+    "count": 15215343
+  },
+  "median_c_d_cross": {
+    "count": 464486
+  }
+}

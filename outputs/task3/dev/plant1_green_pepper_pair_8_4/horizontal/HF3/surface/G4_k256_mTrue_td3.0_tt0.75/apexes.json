@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "selected_tip_sparse": 1,
+    "gaussian_index": 36847,
+    "sample_index": 1,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 2,
+    "selected_tip_sparse": 379,
+    "gaussian_index": 28891,
+    "sample_index": 379,
+    "type": "multi_tips",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 3,
+    "selected_tip_sparse": 640,
+    "gaussian_index": 26638,
+    "sample_index": 640,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 4,
+    "selected_tip_sparse": 5,
+    "gaussian_index": 43411,
+    "sample_index": 5,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 5,
+    "selected_tip_sparse": 9,
+    "gaussian_index": 3460,
+    "sample_index": 9,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 6,
+    "selected_tip_sparse": 18,
+    "gaussian_index": 23237,
+    "sample_index": 18,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 7,
+    "selected_tip_sparse": 144,
+    "gaussian_index": 69,
+    "sample_index": 144,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 8,
+    "selected_tip_sparse": 575,
+    "gaussian_index": 37732,
+    "sample_index": 575,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 9,
+    "selected_tip_sparse": 1019,
+    "gaussian_index": 21596,
+    "sample_index": 1019,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 10,
+    "selected_tip_sparse": 1461,
+    "gaussian_index": 37212,
+    "sample_index": 1461,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 11,
+    "selected_tip_sparse": 1473,
+    "gaussian_index": 5043,
+    "sample_index": 1473,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  },
+  {
+    "id": 12,
+    "selected_tip_sparse": 7207,
+    "gaussian_index": 27431,
+    "sample_index": 7207,
+    "type": "single_tip",
+    "base_gaussian_index": null
+  }
+]

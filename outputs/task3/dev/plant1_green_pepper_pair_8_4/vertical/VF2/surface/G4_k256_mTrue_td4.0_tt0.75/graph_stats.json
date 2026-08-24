@@ -1,0 +1,18 @@
+{
+  "num_nodes": 47340,
+  "num_edges": 5217764,
+  "connected_components": 1,
+  "largest_component_size": 47340,
+  "largest_component_fraction": 1.0,
+  "mean_degree": 220.43785382340516,
+  "median_degree": 231.0,
+  "isolated_nodes": 0,
+  "backend": "surface",
+  "cfg": {
+    "feature_set": "G4",
+    "tau_d": 4.0,
+    "tau_t": 0.75,
+    "k": 256,
+    "mutual": true
+  }
+}

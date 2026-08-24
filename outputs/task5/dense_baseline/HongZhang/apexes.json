@@ -1,0 +1,202 @@
+[
+  {
+    "gaussian_index": 91229,
+    "base_gaussian_index": 17627,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 30728,
+    "base_gaussian_index": 47130,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 66961,
+    "base_gaussian_index": 45283,
+    "type": "multi_tips"
+  },
+  {
+    "gaussian_index": 38113,
+    "base_gaussian_index": 27391,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 71295,
+    "base_gaussian_index": 20333,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 89623,
+    "base_gaussian_index": 29512,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 90831,
+    "base_gaussian_index": 45975,
+    "type": "multi_tips"
+  },
+  {
+    "gaussian_index": 90926,
+    "base_gaussian_index": 18941,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 72258,
+    "base_gaussian_index": 34153,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 46389,
+    "base_gaussian_index": 66685,
+    "type": "multi_tips"
+  },
+  {
+    "gaussian_index": 24686,
+    "base_gaussian_index": 74613,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 78546,
+    "base_gaussian_index": 85252,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 92558,
+    "base_gaussian_index": 10033,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 67589,
+    "base_gaussian_index": 51078,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 70896,
+    "base_gaussian_index": 77653,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 12430,
+    "base_gaussian_index": 8121,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 65879,
+    "base_gaussian_index": 5565,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 45300,
+    "base_gaussian_index": 64941,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 54689,
+    "base_gaussian_index": 79464,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 90936,
+    "base_gaussian_index": 81331,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 90646,
+    "base_gaussian_index": 85290,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 39730,
+    "base_gaussian_index": 7787,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 87190,
+    "base_gaussian_index": 86361,
+    "type": "multi_tips"
+  },
+  {
+    "gaussian_index": 64131,
+    "base_gaussian_index": 18331,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 76483,
+    "base_gaussian_index": 47130,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 65450,
+    "base_gaussian_index": 89603,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 76653,
+    "base_gaussian_index": 22093,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 93004,
+    "base_gaussian_index": 18318,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 78953,
+    "base_gaussian_index": 48510,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 85203,
+    "base_gaussian_index": 85630,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 63857,
+    "base_gaussian_index": 47130,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 90393,
+    "base_gaussian_index": 79386,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 79087,
+    "base_gaussian_index": 22407,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 46339,
+    "base_gaussian_index": 23193,
+    "type": "multi_tips"
+  },
+  {
+    "gaussian_index": 27262,
+    "base_gaussian_index": 47130,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 88464,
+    "base_gaussian_index": 54014,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 82832,
+    "base_gaussian_index": 18744,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 75074,
+    "base_gaussian_index": 17465,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 40281,
+    "base_gaussian_index": 86000,
+    "type": "single_tip"
+  },
+  {
+    "gaussian_index": 24693,
+    "base_gaussian_index": 68725,
+    "type": "single_tip"
+  }
+]

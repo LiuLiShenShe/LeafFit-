@@ -1,0 +1,10 @@
+{
+  "projected_overlap_fraction": 0.0,
+  "contact_fraction": 0.0,
+  "min_cross_leaf_distance_ratio": 11.61221747033045,
+  "spacing_a": 0.010151536867659166,
+  "spacing_b": 0.010984536965178973,
+  "centroid_dist": 0.8210988544251365,
+  "leaf_a_count": 3517,
+  "leaf_b_count": 5888
+}

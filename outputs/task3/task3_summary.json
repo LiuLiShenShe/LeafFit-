@@ -1,0 +1,38 @@
+{
+  "benchmark_summary.csv": 341,
+  "failure_boundary_summary.csv": 162,
+  "pairs": [
+    "plant1_green_pepper_pair_8_4",
+    "plant2_rubber_tree_pair_3_12",
+    "plant7_black_pearl_pepper_pair_4_8"
+  ],
+  "backends": [
+    "euclidean/k256_mFalse",
+    "euclidean/k256_mTrue",
+    "heat",
+    "surface/G4_k256_mFalse_td3.0_tt0.5",
+    "surface/G4_k256_mFalse_td3.0_tt0.75",
+    "surface/G4_k256_mFalse_td3.0_tt1.0",
+    "surface/G4_k256_mFalse_td3.0_ttinf",
+    "surface/G4_k256_mFalse_td4.0_tt0.5",
+    "surface/G4_k256_mFalse_td4.0_tt0.75",
+    "surface/G4_k256_mFalse_td4.0_tt1.0",
+    "surface/G4_k256_mFalse_td4.0_ttinf",
+    "surface/G4_k256_mFalse_td6.0_tt0.5",
+    "surface/G4_k256_mFalse_tdinf_tt0.5",
+    "surface/G4_k256_mFalse_tdinf_tt0.75",
+    "surface/G4_k256_mFalse_tdinf_ttinf",
+    "surface/G4_k256_mTrue_td3.0_tt0.5",
+    "surface/G4_k256_mTrue_td3.0_tt0.75",
+    "surface/G4_k256_mTrue_td3.0_ttinf",
+    "surface/G4_k256_mTrue_td4.0_tt0.5",
+    "surface/G4_k256_mTrue_td4.0_tt0.75",
+    "surface/G4_k256_mTrue_td4.0_ttinf",
+    "surface/G4_k256_mTrue_tdinf_tt0.5",
+    "surface/G4_k256_mTrue_tdinf_tt0.75",
+    "surface/G4_k256_mTrue_tdinf_ttinf",
+    "surface/G5_k256_mFalse_ln0.0_lt4.0_td3.0_tt0.5",
+    "surface/G5_k256_mFalse_ln0.5_lt1.0_td3.0_tt0.5",
+    "surface/G5_k256_mFalse_ln1.0_lt2.0_td3.0_tt0.5"
+  ]
+}
