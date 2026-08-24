@@ -57,3 +57,9 @@ $PY scripts/write_task5r_verdict.py
 `outputs/task5r_v3/projection_cache/`（viewsig npz + 解码图像缓存）、
 `outputs/task5r_v3/review_crops/`。历史膨胀（旧 outputs 已跟踪的 ~8127 个
 npy/json 大文件）按用户要求本次不清理，仅在此记录。
+
+## 复核范围决定（2026-08-24，用户确认）
+接受数据边界：CaoMei1 / XianKeLai2 / WanNianQing2 本轮无候选对（提议器在丛生
+形态融叶，非数据缺失），不参与本轮 benchmark；复核范围锁定
+**DouBanLv1(5对) / HongZhang(3对) / WangWenCao2(1对，组件54疑茎样重点审)**。
+若未来要覆盖丛生型植物，须开新一轮提案（修改并重新冻结提议器参数）。
