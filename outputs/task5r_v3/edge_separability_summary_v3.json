@@ -1,0 +1,347 @@
+{
+  "timestamp": "2026-08-24T17:49:03+0800",
+  "matcher": "task5r-v3-distmatch-1v1",
+  "n_matched_1v1": 1298,
+  "n_missing_in_scores": 0,
+  "splits": {
+    "dev": {
+      "by_ablation": {
+        "R0_dist": {
+          "n_edges": 596,
+          "n_within": 298,
+          "n_cross": 298,
+          "prevalence": 0.5,
+          "auroc": 0.5284,
+          "cliffs_delta": 0.0568,
+          "auprc": 0.5206,
+          "cluster_bootstrap": {
+            "point": 0.4544,
+            "lo": 0.2654,
+            "hi": 0.5864,
+            "n_clusters": 5,
+            "B": 1000,
+            "descriptive_only": false,
+            "cluster_ids": [
+              "DouBanLv1_c2_c11",
+              "DouBanLv1_c2_c3",
+              "DouBanLv1_c3_c520",
+              "DouBanLv1_c3_c67",
+              "DouBanLv1_c67_c2439"
+            ]
+          }
+        },
+        "R1_c_vis": {
+          "n_edges": 596,
+          "n_within": 298,
+          "n_cross": 298,
+          "prevalence": 0.5,
+          "auroc": 0.4729,
+          "cliffs_delta": -0.0543,
+          "auprc": 0.5124,
+          "cluster_bootstrap": {
+            "point": 0.4647,
+            "lo": 0.2105,
+            "hi": 0.7725,
+            "n_clusters": 5,
+            "B": 1000,
+            "descriptive_only": false,
+            "cluster_ids": [
+              "DouBanLv1_c2_c11",
+              "DouBanLv1_c2_c3",
+              "DouBanLv1_c3_c520",
+              "DouBanLv1_c3_c67",
+              "DouBanLv1_c67_c2439"
+            ]
+          }
+        },
+        "R2_c_app": {
+          "n_edges": 596,
+          "n_within": 298,
+          "n_cross": 298,
+          "prevalence": 0.5,
+          "auroc": 0.453,
+          "cliffs_delta": -0.094,
+          "auprc": 0.4657,
+          "cluster_bootstrap": {
+            "point": 0.5288,
+            "lo": 0.4106,
+            "hi": 0.6586,
+            "n_clusters": 5,
+            "B": 1000,
+            "descriptive_only": false,
+            "cluster_ids": [
+              "DouBanLv1_c2_c11",
+              "DouBanLv1_c2_c3",
+              "DouBanLv1_c3_c520",
+              "DouBanLv1_c3_c67",
+              "DouBanLv1_c67_c2439"
+            ]
+          }
+        },
+        "R3_c_occ": {
+          "n_edges": 596,
+          "n_within": 298,
+          "n_cross": 298,
+          "prevalence": 0.5,
+          "auroc": 0.626,
+          "cliffs_delta": 0.2521,
+          "auprc": 0.6996,
+          "cluster_bootstrap": {
+            "point": 0.6725,
+            "lo": 0.5374,
+            "hi": 0.8445,
+            "n_clusters": 5,
+            "B": 1000,
+            "descriptive_only": false,
+            "cluster_ids": [
+              "DouBanLv1_c2_c11",
+              "DouBanLv1_c2_c3",
+              "DouBanLv1_c3_c520",
+              "DouBanLv1_c3_c67",
+              "DouBanLv1_c67_c2439"
+            ]
+          }
+        },
+        "R4_c_mv": {
+          "n_edges": 596,
+          "n_within": 298,
+          "n_cross": 298,
+          "prevalence": 0.5,
+          "auroc": 0.4634,
+          "cliffs_delta": -0.0731,
+          "auprc": 0.4803,
+          "cluster_bootstrap": {
+            "point": 0.5712,
+            "lo": 0.2994,
+            "hi": 0.8433,
+            "n_clusters": 5,
+            "B": 1000,
+            "descriptive_only": false,
+            "cluster_ids": [
+              "DouBanLv1_c2_c11",
+              "DouBanLv1_c2_c3",
+              "DouBanLv1_c3_c520",
+              "DouBanLv1_c3_c67",
+              "DouBanLv1_c67_c2439"
+            ]
+          }
+        },
+        "R5_surface": {
+          "n_edges": 596,
+          "n_within": 298,
+          "n_cross": 298,
+          "prevalence": 0.5,
+          "auroc": 0.4768,
+          "cliffs_delta": -0.0463,
+          "auprc": 0.4657,
+          "cluster_bootstrap": {
+            "point": 0.4836,
+            "lo": 0.2486,
+            "hi": 0.7426,
+            "n_clusters": 5,
+            "B": 1000,
+            "descriptive_only": false,
+            "cluster_ids": [
+              "DouBanLv1_c2_c11",
+              "DouBanLv1_c2_c3",
+              "DouBanLv1_c3_c520",
+              "DouBanLv1_c3_c67",
+              "DouBanLv1_c67_c2439"
+            ]
+          }
+        },
+        "R6_mv_and_surface": {
+          "n_edges": 596,
+          "n_within": 298,
+          "n_cross": 298,
+          "prevalence": 0.5,
+          "auroc": 0.4712,
+          "cliffs_delta": -0.0576,
+          "auprc": 0.4824,
+          "cluster_bootstrap": {
+            "point": 0.5128,
+            "lo": 0.2588,
+            "hi": 0.773,
+            "n_clusters": 5,
+            "B": 1000,
+            "descriptive_only": false,
+            "cluster_ids": [
+              "DouBanLv1_c2_c11",
+              "DouBanLv1_c2_c3",
+              "DouBanLv1_c3_c520",
+              "DouBanLv1_c3_c67",
+              "DouBanLv1_c67_c2439"
+            ]
+          }
+        }
+      },
+      "pairs": {}
+    },
+    "heldout": {
+      "by_ablation": {
+        "R0_dist": {
+          "n_edges": 702,
+          "n_within": 351,
+          "n_cross": 351,
+          "prevalence": 0.5,
+          "auroc": 0.5118,
+          "cliffs_delta": 0.0236,
+          "auprc": 0.5386,
+          "cluster_bootstrap": {
+            "point": 0.5215,
+            "lo": 0.5117,
+            "hi": 0.5275,
+            "n_clusters": 4,
+            "B": 1000,
+            "descriptive_only": true,
+            "cluster_ids": [
+              "HongZhang_c1_c0",
+              "HongZhang_c2_c1",
+              "HongZhang_c2_c97",
+              "WangWenCao2_c0_c54"
+            ]
+          }
+        },
+        "R1_c_vis": {
+          "n_edges": 702,
+          "n_within": 351,
+          "n_cross": 351,
+          "prevalence": 0.5,
+          "auroc": 0.4944,
+          "cliffs_delta": -0.0111,
+          "auprc": 0.5049,
+          "cluster_bootstrap": {
+            "point": 0.473,
+            "lo": 0.3877,
+            "hi": 0.5474,
+            "n_clusters": 4,
+            "B": 1000,
+            "descriptive_only": true,
+            "cluster_ids": [
+              "HongZhang_c1_c0",
+              "HongZhang_c2_c1",
+              "HongZhang_c2_c97",
+              "WangWenCao2_c0_c54"
+            ]
+          }
+        },
+        "R2_c_app": {
+          "n_edges": 702,
+          "n_within": 351,
+          "n_cross": 351,
+          "prevalence": 0.5,
+          "auroc": 0.5397,
+          "cliffs_delta": 0.0793,
+          "auprc": 0.5533,
+          "cluster_bootstrap": {
+            "point": 0.5253,
+            "lo": 0.4974,
+            "hi": 0.5582,
+            "n_clusters": 4,
+            "B": 1000,
+            "descriptive_only": true,
+            "cluster_ids": [
+              "HongZhang_c1_c0",
+              "HongZhang_c2_c1",
+              "HongZhang_c2_c97",
+              "WangWenCao2_c0_c54"
+            ]
+          }
+        },
+        "R3_c_occ": {
+          "n_edges": 702,
+          "n_within": 351,
+          "n_cross": 351,
+          "prevalence": 0.5,
+          "auroc": 0.4934,
+          "cliffs_delta": -0.0132,
+          "auprc": 0.5161,
+          "cluster_bootstrap": {
+            "point": 0.4949,
+            "lo": 0.3217,
+            "hi": 0.6494,
+            "n_clusters": 4,
+            "B": 1000,
+            "descriptive_only": true,
+            "cluster_ids": [
+              "HongZhang_c1_c0",
+              "HongZhang_c2_c1",
+              "HongZhang_c2_c97",
+              "WangWenCao2_c0_c54"
+            ]
+          }
+        },
+        "R4_c_mv": {
+          "n_edges": 702,
+          "n_within": 351,
+          "n_cross": 351,
+          "prevalence": 0.5,
+          "auroc": 0.5053,
+          "cliffs_delta": 0.0105,
+          "auprc": 0.5563,
+          "cluster_bootstrap": {
+            "point": 0.4957,
+            "lo": 0.4118,
+            "hi": 0.5727,
+            "n_clusters": 4,
+            "B": 1000,
+            "descriptive_only": true,
+            "cluster_ids": [
+              "HongZhang_c1_c0",
+              "HongZhang_c2_c1",
+              "HongZhang_c2_c97",
+              "WangWenCao2_c0_c54"
+            ]
+          }
+        },
+        "R5_surface": {
+          "n_edges": 702,
+          "n_within": 351,
+          "n_cross": 351,
+          "prevalence": 0.5,
+          "auroc": 0.5925,
+          "cliffs_delta": 0.1849,
+          "auprc": 0.5907,
+          "cluster_bootstrap": {
+            "point": 0.5883,
+            "lo": 0.4062,
+            "hi": 0.7703,
+            "n_clusters": 4,
+            "B": 1000,
+            "descriptive_only": true,
+            "cluster_ids": [
+              "HongZhang_c1_c0",
+              "HongZhang_c2_c1",
+              "HongZhang_c2_c97",
+              "WangWenCao2_c0_c54"
+            ]
+          }
+        },
+        "R6_mv_and_surface": {
+          "n_edges": 702,
+          "n_within": 351,
+          "n_cross": 351,
+          "prevalence": 0.5,
+          "auroc": 0.5384,
+          "cliffs_delta": 0.0767,
+          "auprc": 0.5708,
+          "cluster_bootstrap": {
+            "point": 0.5243,
+            "lo": 0.45,
+            "hi": 0.6353,
+            "n_clusters": 4,
+            "B": 1000,
+            "descriptive_only": true,
+            "cluster_ids": [
+              "HongZhang_c1_c0",
+              "HongZhang_c2_c1",
+              "HongZhang_c2_c97",
+              "WangWenCao2_c0_c54"
+            ]
+          }
+        }
+      },
+      "pairs": {}
+    }
+  }
+}
