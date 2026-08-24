@@ -1,0 +1,251 @@
+{
+  "audit_commit": "984ae4d8c9aa8d2e60ba0d753b8cb912b14dfef5",
+  "benchmark": {
+    "task": "Task5R Phase4 observation-matched natural overlap benchmark",
+    "git_commit": "984ae4d8c9aa8d2e60ba0d753b8cb912b14dfef5",
+    "timestamp": "2026-08-23T17:00:38+0800",
+    "labeling_protocol": "independent proposer: local-PCA surface coherence + RGB coherence + stem-cut; NO LeafFit pipeline code path; LeafFit labels stored separately as construction reference only",
+    "validity_checks_per_plant": {
+      "reprojection": "PASS (<2px median)",
+      "same_capture": "dense PLY + COLMAP from same capture",
+      "no_synthetic_transforms": "pairs are physical contacts in the captured plant"
+    },
+    "split": "BY PLANT",
+    "dev_plants": [
+      "DouBanLv1"
+    ],
+    "heldout_plants": [
+      "HongZhang"
+    ],
+    "excluded_plants": {
+      "XianKeLai2": "giant component 54%, no qualifying pairs under FROZEN proposer",
+      "WanNianQing2": "giant component 74%, no qualifying pairs",
+      "WangWenCao2": "only giant-component pair (comp0 is merged blob, not a single leaf)",
+      "CaoMei1": "no qualifying pairs"
+    },
+    "frozen_proposer_params": {
+      "k": 16,
+      "sin_thr": 0.35,
+      "lin_thr": 0.6,
+      "plan_thr": 0.25,
+      "color_thr": 30.0,
+      "dist_cap": "2.5x median nn",
+      "contact_gap_max_m": 0.08
+    },
+    "cases": {
+      "DouBanLv1": [
+        {
+          "case_id": "D1-p2-11",
+          "plant": "DouBanLv1",
+          "a": 2,
+          "b": 11,
+          "n_a": 14508,
+          "n_b": 2809,
+          "min_gap_m": 0.0415,
+          "rgb_dist": 26.12123508163522
+        },
+        {
+          "case_id": "D1-p2-3",
+          "plant": "DouBanLv1",
+          "a": 2,
+          "b": 3,
+          "n_a": 14508,
+          "n_b": 13118,
+          "min_gap_m": 0.0427,
+          "rgb_dist": 7.152655598651843
+        },
+        {
+          "case_id": "D1-p3-518",
+          "plant": "DouBanLv1",
+          "a": 3,
+          "b": 518,
+          "n_a": 13118,
+          "n_b": 1017,
+          "min_gap_m": 0.065,
+          "rgb_dist": 5.80782517184529
+        },
+        {
+          "case_id": "D1-p66-2395",
+          "plant": "DouBanLv1",
+          "a": 66,
+          "b": 2395,
+          "n_a": 3921,
+          "n_b": 691,
+          "min_gap_m": 0.0701,
+          "rgb_dist": 4.961821230293094
+        },
+        {
+          "case_id": "D1-p3-66",
+          "plant": "DouBanLv1",
+          "a": 3,
+          "b": 66,
+          "n_a": 13118,
+          "n_b": 3921,
+          "min_gap_m": 0.0724,
+          "rgb_dist": 8.73629124652078
+        }
+      ],
+      "HongZhang": [
+        {
+          "case_id": "HZ-p2-1",
+          "plant": "HongZhang",
+          "a": 2,
+          "b": 1,
+          "n_a": 48789,
+          "n_b": 12610,
+          "min_gap_m": 0.0643,
+          "rgb_dist": 3.798357496456
+        },
+        {
+          "case_id": "HZ-p2-94",
+          "plant": "HongZhang",
+          "a": 2,
+          "b": 94,
+          "n_a": 48789,
+          "n_b": 2268,
+          "min_gap_m": 0.071,
+          "rgb_dist": 25.385166901861673
+        }
+      ]
+    }
+  },
+  "separability_summary": {
+    "task": "Task5R Phase5 identity separability gate",
+    "git_commit": "984ae4d8c9aa8d2e60ba0d753b8cb912b14dfef5",
+    "timestamp": "2026-08-23T19:05:04+0800",
+    "protocol": {
+      "candidates": "32-NN within two-leaf union, geometry only",
+      "positive_class": "within-leaf",
+      "features_source": "corrected occlusion-aware real viewsig (core.observation_identity)",
+      "bootstrap": 500,
+      "seed": 0,
+      "dev_plants": [
+        "DouBanLv1"
+      ],
+      "heldout_plants": [
+        "HongZhang"
+      ]
+    },
+    "by_split_ablation": {
+      "dev": {
+        "R0_dist": {
+          "n_pairs": 5,
+          "mean_auroc": 0.9830021808848308,
+          "min_auroc": 0.9689120087361242,
+          "mean_auprc": 0.9999952594880097,
+          "mean_prevalence": 0.99982,
+          "mean_cliffs_delta": 0.9148822994705824
+        },
+        "R1_c_vis": {
+          "n_pairs": 5,
+          "mean_auroc": 0.4277234275559647,
+          "min_auroc": 0.2380564613184655,
+          "mean_auprc": 0.9997051673259932,
+          "mean_prevalence": 0.99982,
+          "mean_cliffs_delta": 0.20741976251123764
+        },
+        "R2_c_app": {
+          "n_pairs": 5,
+          "mean_auroc": 0.4442043290429865,
+          "min_auroc": 0.2937173691697778,
+          "mean_auprc": 0.9997598710831795,
+          "mean_prevalence": 0.99982,
+          "mean_cliffs_delta": 0.04348379807212067
+        },
+        "R3_c_occ": {
+          "n_pairs": 5,
+          "mean_auroc": 0.7098427226146212,
+          "min_auroc": 0.453482664442152,
+          "mean_auprc": 0.9998452678671533,
+          "mean_prevalence": 0.99982,
+          "mean_cliffs_delta": 0.478731982569174
+        },
+        "R4_c_mv": {
+          "n_pairs": 5,
+          "mean_auroc": 0.43761313995674633,
+          "min_auroc": 0.34481950592500055,
+          "mean_auprc": 0.9997261660147855,
+          "mean_prevalence": 0.99982,
+          "mean_cliffs_delta": 0.15454843022675058
+        },
+        "R5_surface": {
+          "n_pairs": 5,
+          "mean_auroc": 0.6162406552011428,
+          "min_auroc": 0.35990789465734635,
+          "mean_auprc": 0.9998233845425251,
+          "mean_prevalence": 0.99982,
+          "mean_cliffs_delta": 0.14271970832084704
+        },
+        "R6_mv_and_surface": {
+          "n_pairs": 5,
+          "mean_auroc": 0.5476087989245447,
+          "min_auroc": 0.35431298097612846,
+          "mean_auprc": 0.9997636555079543,
+          "mean_prevalence": 0.99982,
+          "mean_cliffs_delta": 0.13876706897412844
+        }
+      },
+      "heldout": {
+        "R0_dist": {
+          "n_pairs": 2,
+          "mean_auroc": 0.9900415088999999,
+          "min_auroc": 0.9866893516543328,
+          "mean_auprc": 0.9999994788360089,
+          "mean_prevalence": 0.99995,
+          "mean_cliffs_delta": 0.9721085506367495
+        },
+        "R1_c_vis": {
+          "n_pairs": 2,
+          "mean_auroc": 0.296475526974656,
+          "min_auroc": 0.2826451737629423,
+          "mean_auprc": 0.9999135258616352,
+          "mean_prevalence": 0.99995,
+          "mean_cliffs_delta": -0.38882766070345665
+        },
+        "R2_c_app": {
+          "n_pairs": 2,
+          "mean_auroc": 0.4189988045606776,
+          "min_auroc": 0.36846602851127574,
+          "mean_auprc": 0.9999267967958285,
+          "mean_prevalence": 0.99995,
+          "mean_cliffs_delta": -0.17432921467556092
+        },
+        "R3_c_occ": {
+          "n_pairs": 2,
+          "mean_auroc": 0.5797448939408135,
+          "min_auroc": 0.5513748831630699,
+          "mean_auprc": 0.9999644154224994,
+          "mean_prevalence": 0.99995,
+          "mean_cliffs_delta": -0.0909210127349909
+        },
+        "R4_c_mv": {
+          "n_pairs": 2,
+          "mean_auroc": 0.3534984289240992,
+          "min_auroc": 0.3431799511411673,
+          "mean_auprc": 0.9999221292220369,
+          "mean_prevalence": 0.99995,
+          "mean_cliffs_delta": -0.29955336567616736
+        },
+        "R5_surface": {
+          "n_pairs": 2,
+          "mean_auroc": 0.5806388959631572,
+          "min_auroc": 0.4786741738889425,
+          "mean_auprc": 0.9999615795721413,
+          "mean_prevalence": 0.99995,
+          "mean_cliffs_delta": -0.012874696785930867
+        },
+        "R6_mv_and_surface": {
+          "n_pairs": 2,
+          "mean_auroc": 0.4962489250498301,
+          "min_auroc": 0.41058039500410254,
+          "mean_auprc": 0.9999453075787847,
+          "mean_prevalence": 0.99995,
+          "mean_cliffs_delta": -0.12688963007883566
+        }
+      }
+    }
+  },
+  "verdict": "SEPARABILITY_FAIL",
+  "task6_allowed": false,
+  "notes": "Generated from measured artifacts; no hard-coded result numbers."
+}

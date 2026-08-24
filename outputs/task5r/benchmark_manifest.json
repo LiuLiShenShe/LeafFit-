@@ -1,0 +1,109 @@
+{
+  "task": "Task5R Phase4 observation-matched natural overlap benchmark",
+  "git_commit": "984ae4d8c9aa8d2e60ba0d753b8cb912b14dfef5",
+  "timestamp": "2026-08-23T17:00:38+0800",
+  "labeling_protocol": "independent proposer: local-PCA surface coherence + RGB coherence + stem-cut; NO LeafFit pipeline code path; LeafFit labels stored separately as construction reference only",
+  "validity_checks_per_plant": {
+    "reprojection": "PASS (<2px median)",
+    "same_capture": "dense PLY + COLMAP from same capture",
+    "no_synthetic_transforms": "pairs are physical contacts in the captured plant"
+  },
+  "split": "BY PLANT",
+  "dev_plants": [
+    "DouBanLv1"
+  ],
+  "heldout_plants": [
+    "HongZhang"
+  ],
+  "excluded_plants": {
+    "XianKeLai2": "giant component 54%, no qualifying pairs under FROZEN proposer",
+    "WanNianQing2": "giant component 74%, no qualifying pairs",
+    "WangWenCao2": "only giant-component pair (comp0 is merged blob, not a single leaf)",
+    "CaoMei1": "no qualifying pairs"
+  },
+  "frozen_proposer_params": {
+    "k": 16,
+    "sin_thr": 0.35,
+    "lin_thr": 0.6,
+    "plan_thr": 0.25,
+    "color_thr": 30.0,
+    "dist_cap": "2.5x median nn",
+    "contact_gap_max_m": 0.08
+  },
+  "cases": {
+    "DouBanLv1": [
+      {
+        "case_id": "D1-p2-11",
+        "plant": "DouBanLv1",
+        "a": 2,
+        "b": 11,
+        "n_a": 14508,
+        "n_b": 2809,
+        "min_gap_m": 0.0415,
+        "rgb_dist": 26.12123508163522
+      },
+      {
+        "case_id": "D1-p2-3",
+        "plant": "DouBanLv1",
+        "a": 2,
+        "b": 3,
+        "n_a": 14508,
+        "n_b": 13118,
+        "min_gap_m": 0.0427,
+        "rgb_dist": 7.152655598651843
+      },
+      {
+        "case_id": "D1-p3-518",
+        "plant": "DouBanLv1",
+        "a": 3,
+        "b": 518,
+        "n_a": 13118,
+        "n_b": 1017,
+        "min_gap_m": 0.065,
+        "rgb_dist": 5.80782517184529
+      },
+      {
+        "case_id": "D1-p66-2395",
+        "plant": "DouBanLv1",
+        "a": 66,
+        "b": 2395,
+        "n_a": 3921,
+        "n_b": 691,
+        "min_gap_m": 0.0701,
+        "rgb_dist": 4.961821230293094
+      },
+      {
+        "case_id": "D1-p3-66",
+        "plant": "DouBanLv1",
+        "a": 3,
+        "b": 66,
+        "n_a": 13118,
+        "n_b": 3921,
+        "min_gap_m": 0.0724,
+        "rgb_dist": 8.73629124652078
+      }
+    ],
+    "HongZhang": [
+      {
+        "case_id": "HZ-p2-1",
+        "plant": "HongZhang",
+        "a": 2,
+        "b": 1,
+        "n_a": 48789,
+        "n_b": 12610,
+        "min_gap_m": 0.0643,
+        "rgb_dist": 3.798357496456
+      },
+      {
+        "case_id": "HZ-p2-94",
+        "plant": "HongZhang",
+        "a": 2,
+        "b": 94,
+        "n_a": 48789,
+        "n_b": 2268,
+        "min_gap_m": 0.071,
+        "rgb_dist": 25.385166901861673
+      }
+    ]
+  }
+}

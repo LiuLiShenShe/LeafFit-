@@ -1,0 +1,266 @@
+{
+  "task": "Task5R Phase4 observation-matched overlap audit",
+  "git_commit": "984ae4d8c9aa8d2e60ba0d753b8cb912b14dfef5",
+  "timestamp": "2026-08-23T16:53:50+0800",
+  "plants": [
+    {
+      "plant": "DouBanLv1",
+      "dense_ply": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/datasets/07-SuGaR-GS/DouBanLv1/vanilla_gs/point_cloud/iteration_7000/point_cloud_clean_v2_rerun_20260304_181041.ply",
+      "ply_exists": true,
+      "colmap_dir": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/datasets/04-COLMAP/DouBanLv1",
+      "ply_sha256": "050813a662355557449bbad989d8a57f63223e727fb8f51958ab9db4a003e7aa",
+      "camera_bin_sha256": "900b59188fffc0adefa3bfc2d69d5fa04d92076f2c109a0958d2249dae58c437",
+      "images_bin_sha256": "519783be517e52d076d053910a65661c6d8db8ed977f89b04622e685566f87d6",
+      "reprojection": "PASS (<2px median)",
+      "n_components": 10498,
+      "top_components": [
+        [
+          2,
+          14508
+        ],
+        [
+          3,
+          13118
+        ],
+        [
+          66,
+          3921
+        ],
+        [
+          11,
+          2809
+        ],
+        [
+          518,
+          1017
+        ],
+        [
+          1562,
+          793
+        ],
+        [
+          2395,
+          691
+        ],
+        [
+          132,
+          661
+        ]
+      ],
+      "n_points": 51745,
+      "visibility_fraction_mean": 0.5285038662313177,
+      "near_contact_pairs": [
+        {
+          "a": 2,
+          "b": 11,
+          "n_a": 14508,
+          "n_b": 2809,
+          "min_gap_m": 0.0415,
+          "rgb_dist": 26.12123508163522
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "n_a": 14508,
+          "n_b": 13118,
+          "min_gap_m": 0.0427,
+          "rgb_dist": 7.152655598651843
+        },
+        {
+          "a": 3,
+          "b": 518,
+          "n_a": 13118,
+          "n_b": 1017,
+          "min_gap_m": 0.065,
+          "rgb_dist": 5.80782517184529
+        },
+        {
+          "a": 66,
+          "b": 2395,
+          "n_a": 3921,
+          "n_b": 691,
+          "min_gap_m": 0.0701,
+          "rgb_dist": 4.961821230293094
+        },
+        {
+          "a": 3,
+          "b": 66,
+          "n_a": 13118,
+          "n_b": 3921,
+          "min_gap_m": 0.0724,
+          "rgb_dist": 8.73629124652078
+        }
+      ],
+      "status": "PROPOSED",
+      "runtime_seconds": 13.3
+    },
+    {
+      "plant": "XianKeLai2",
+      "dense_ply": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/datasets/07-SuGaR-GS/XianKeLai2/vanilla_gs/point_cloud/iteration_7000/point_cloud_clean_v2_rerun_20260304_181041.ply",
+      "ply_exists": true,
+      "colmap_dir": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/datasets/04-COLMAP/XianKeLai2",
+      "ply_sha256": "ab3b6e8739e5edb64fab3d831389d6a775ae13a16822ec89b982a0f45b9283f7",
+      "camera_bin_sha256": "32c330e423b228ab3aa4491ab0363757d3b89e62bbf3d583ac00333aa8a73665",
+      "images_bin_sha256": "1eabfc72a57a5a521a79d6517a10c4dd9e0241caa1ad1a47f03e9802acd193e2",
+      "reprojection": "PASS (<2px median)",
+      "n_components": 15971,
+      "top_components": [
+        [
+          0,
+          23773
+        ]
+      ],
+      "n_points": 44264,
+      "visibility_fraction_mean": 0.5123982938036119,
+      "near_contact_pairs": [],
+      "status": "PROPOSED",
+      "runtime_seconds": 6.9
+    },
+    {
+      "plant": "WanNianQing2",
+      "dense_ply": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/datasets/07-SuGaR-GS/WanNianQing2/vanilla_gs/point_cloud/iteration_7000/point_cloud_clean_v2_rerun_20260304_181041.ply",
+      "ply_exists": true,
+      "colmap_dir": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/datasets/04-COLMAP/WanNianQing2",
+      "ply_sha256": "30973212ddcd522d30f168ece5b171e3fd883cf5d73eea8b627c6e54009bed1a",
+      "camera_bin_sha256": "3c40b3d1bac611b1ef493ea782217d4b301fb4b15c1b121a0f8f02323b69b876",
+      "images_bin_sha256": "0bbe89407a22bef7264e1191e7a9dc270da1ee59db416c3ff537e236b43261be",
+      "reprojection": "PASS (<2px median)",
+      "n_components": 8727,
+      "top_components": [
+        [
+          1,
+          30276
+        ],
+        [
+          4688,
+          528
+        ]
+      ],
+      "n_points": 40757,
+      "visibility_fraction_mean": 0.6605709049265899,
+      "near_contact_pairs": [],
+      "status": "PROPOSED",
+      "runtime_seconds": 7.0
+    },
+    {
+      "plant": "HongZhang",
+      "dense_ply": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/datasets/07-SuGaR-GS/HongZhang/vanilla_gs/point_cloud/iteration_7000/point_cloud_clean_v2_rerun_20260304_181041.ply",
+      "ply_exists": true,
+      "colmap_dir": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/datasets/04-COLMAP/HongZhang",
+      "ply_sha256": "290877da420a207d0119448a7d626f9ac4786918a4ff4812a25d54053cb30976",
+      "camera_bin_sha256": "752bd83611d6bcf0b476af96867e67a8aa9913199bcc2e444a259ace093de71f",
+      "images_bin_sha256": "5792ac2caed67d1c7e58710e1bf862d7a88ea0bc5859e0c9f3a8fbf454ee6eba",
+      "reprojection": "PASS (<2px median)",
+      "n_components": 19554,
+      "top_components": [
+        [
+          2,
+          48789
+        ],
+        [
+          1,
+          12610
+        ],
+        [
+          6,
+          2612
+        ],
+        [
+          94,
+          2268
+        ],
+        [
+          0,
+          1177
+        ],
+        [
+          114,
+          1026
+        ]
+      ],
+      "n_points": 93043,
+      "visibility_fraction_mean": 0.5115530660542184,
+      "near_contact_pairs": [
+        {
+          "a": 2,
+          "b": 1,
+          "n_a": 48789,
+          "n_b": 12610,
+          "min_gap_m": 0.0643,
+          "rgb_dist": 3.798357496456
+        },
+        {
+          "a": 2,
+          "b": 94,
+          "n_a": 48789,
+          "n_b": 2268,
+          "min_gap_m": 0.071,
+          "rgb_dist": 25.385166901861673
+        }
+      ],
+      "status": "PROPOSED",
+      "runtime_seconds": 42.6
+    },
+    {
+      "plant": "WangWenCao2",
+      "dense_ply": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/datasets/07-SuGaR-GS/WangWenCao2/vanilla_gs/point_cloud/iteration_7000/point_cloud_clean_v2_rerun_20260304_181041.ply",
+      "ply_exists": true,
+      "colmap_dir": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/datasets/04-COLMAP/WangWenCao2",
+      "ply_sha256": "d81bf57078c4effbe91a146ce14c580f9cc7cc7d51d4cf339d587603efb0df48",
+      "camera_bin_sha256": "488b0db08c01d963820a26f2423c09124c5258815c0312339161916ffd96a42e",
+      "images_bin_sha256": "e7d7e2032212104b8879f8adadde9433ea8689e3c38f626be7ef37631af5b1c0",
+      "reprojection": "PASS (<2px median)",
+      "n_components": 6702,
+      "top_components": [
+        [
+          0,
+          24916
+        ],
+        [
+          62,
+          875
+        ]
+      ],
+      "n_points": 34761,
+      "visibility_fraction_mean": 0.5323637190557015,
+      "near_contact_pairs": [
+        {
+          "a": 0,
+          "b": 62,
+          "n_a": 24916,
+          "n_b": 875,
+          "min_gap_m": 0.0762,
+          "rgb_dist": 48.01453948314441
+        }
+      ],
+      "status": "PROPOSED",
+      "runtime_seconds": 23.7
+    },
+    {
+      "plant": "CaoMei1",
+      "dense_ply": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/datasets/07-SuGaR-GS/CaoMei1/vanilla_gs/point_cloud/iteration_7000/point_cloud_clean_v2_rerun_20260304_181041.ply",
+      "ply_exists": true,
+      "colmap_dir": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/datasets/04-COLMAP/CaoMei1",
+      "ply_sha256": "8449feb8c72d2ac3c045427dc2f17ceaab6fd5277bc83cc9c217c2ce49e68068",
+      "camera_bin_sha256": "52d30044761325def3ec1c614cce5086cf4f55c86b008755cfee8633b9ebf534",
+      "images_bin_sha256": "fa260e5c15444de4c665d3323be4d7e0b26d15ed8ecd2bfce6ef691540d5efe1",
+      "reprojection": "PASS (<2px median)",
+      "n_components": 8074,
+      "top_components": [
+        [
+          0,
+          25687
+        ],
+        [
+          2474,
+          692
+        ]
+      ],
+      "n_points": 37014,
+      "visibility_fraction_mean": 0.5418036161349503,
+      "near_contact_pairs": [],
+      "status": "PROPOSED",
+      "runtime_seconds": 17.7
+    }
+  ]
+}
