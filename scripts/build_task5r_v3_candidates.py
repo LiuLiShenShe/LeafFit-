@@ -141,6 +141,24 @@ def main() -> int:
             p["proposer_rank"] = rank
         cases.extend(pairs)
 
+        # ---- component-merge diagnosis (honest data-limit reporting) -------
+        # If fewer than 2 leaf-scale components exist, the proposer MERGED
+        # most leaves into one body on this morphology (rosette/clumping).
+        # Record it: these plants yield NO candidate pairs by construction.
+        merge_diag = {
+            "n_components": int(ncomp),
+            "n_leaf_scale": len(big_ids),
+            "largest_component_points": int(sizes.max()) if len(sizes) else 0,
+            "largest_fraction_of_cloud":
+                round(float(sizes.max()) / max(1, len(lab)), 3),
+            "status": ("OK" if len(big_ids) >= 2 else
+                       "INSUFFICIENT_CANDIDATES_PROPOSER_MERGED_LEAVES"),
+        }
+        if len(big_ids) < 2:
+            print(f"[{plant}] WARNING: proposer merged leaves into "
+                  f"{len(big_ids)} leaf-scale component(s) — no candidate "
+                  f"pairs possible without re-tuning (frozen params kept).")
+
         # contact-region crops for the review queue
         pdir = crops_dir / plant
         pdir.mkdir(parents=True, exist_ok=True)
@@ -148,39 +166,49 @@ def main() -> int:
         try:
             from core.real_observation import load_dense_observations
             obs = load_dense_observations(plant, colmap_root=str(colmap_root))
+            # Rank views by how well they SEE the contact region: project the
+            # contact midpoint, keep in-frame views, then rank by (a) the
+            # fraction of BOTH components' points visible in that view and
+            # (b) crop-window foreground content. Never blind fixed subsets.
+            from PIL import Image
             for p in pairs[:10]:
-                mid = 0.5 * (pts[p["component_a"]].mean(0) +
-                             pts[p["component_b"]].mean(0))
-                made = []
-                from PIL import Image
-                for vi in np.linspace(0, obs.n_views - 1, 24).astype(int):
+                Pa, Pb = pts[p["component_a"]], pts[p["component_b"]]
+                mid = 0.5 * (Pa.mean(0) + Pb.mean(0))
+                scored_views = []
+                for vi in range(obs.n_views):
                     try:
                         im = Image.open(obs.image_paths[vi]).convert("RGB")
                     except Exception:
                         continue
                     W, H = im.size
                     d = max(1, int(round(max(W, H) / 1024)))
+                    sw, sh = W // d, H // d
                     cam = obs.rt[vi] @ np.hstack([mid, 1.0])
                     if cam[2] <= 1e-6:
                         continue
                     px = obs.K[vi][0, 0] * cam[0] / cam[2] + obs.K[vi][0, 2]
                     py = obs.K[vi][1, 1] * cam[1] / cam[2] + obs.K[vi][1, 2]
                     sx, sy = px / d, py / d
-                    sw, sh = W // d, H // d
-                    if not (60 < sx < sw - 60 and 60 < sy < sh - 60):
-                        continue
                     half = max(48, int(round(0.12 * min(sw, sh))))
-                    box = (int(sx - half), int(sy - half),
-                           int(sx + half), int(sy + half))
+                    if not (half < sx < sw - half and half < sy < sh - half):
+                        continue
+                    vis_a = float(z["visible"][vi][lab == p["component_a"]].mean())
+                    vis_b = float(z["visible"][vi][lab == p["component_b"]].mean())
+                    scored_views.append(
+                        (min(vis_a, vis_b), vi, int(sx), int(sy), half, im, d))
+                scored_views.sort(key=lambda t: -t[0])
+                made = []
+                for vis_score, vi, sx, sy, half, im, d in scored_views[:6]:
+                    box = (sx - half, sy - half, sx + half, sy + half)
                     crop = im.crop((box[0] * d, box[1] * d,
                                     box[2] * d, box[3] * d))
                     crop.thumbnail((512, 512))
                     name = pdir / f"{p['case_id']}_v{obs.names[vi]}"
                     crop.save(name.with_suffix(".jpg"), quality=85)
                     made.append(name.name)
-                    if len(made) >= 6:
-                        break
                 p["review_crops"] = made
+                p["review_crops_vis_scores"] = [
+                    round(float(v), 3) for v, *_ in scored_views[:6]]
                 n_crops += len(made)
         except Exception as e:
             p["review_crops_error"] = str(e)
@@ -189,6 +217,7 @@ def main() -> int:
             "n_leaf_scale_components": len(big_ids),
             "n_candidate_pairs": len(pairs),
             "n_review_crops": n_crops,
+            "proposer_merge_diagnosis": merge_diag,
         }
         print(f"[{plant}] comps={ncomp} leaf-scale={len(big_ids)} "
               f"pairs={len(pairs)} crops={n_crops}", flush=True)
@@ -234,6 +263,14 @@ def main() -> int:
 
 生成时间: {bench['timestamp']} | viewsig: `{VISIBILITY_VERSION}` |
 提议器参数(冻结): `{PROPOSER_PARAMS}`
+
+## 数据边界（如实声明）
+- **CaoMei1 / XianKeLai2 / WanNianQing2**：图像与点云存在且对齐（NN 中位
+  0.019–0.025m），但冻结提议器在这些形态（丛生/莲座型）上把整株叶片融成
+  1–2 个大组件，**无法产生候选接触对**。这不是数据缺失，是提议器能力边界。
+  如需覆盖这三株，须先修改并重新冻结提议器参数——那属于新的提案轮次。
+- **WangWenCao2**：仅 1 个候选对（c0/c54），初判组件 54 更像茎/碎屑而非
+  第二片叶，请重点复核；截图按"接触点双组件可见率"排序选取。
 
 ## 你在审什么
 独立提议器（normal+color 区域生长，与 LeafFit 热求解器零共享代码路径）
