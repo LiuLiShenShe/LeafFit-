@@ -70,9 +70,17 @@ def git_commit(repo_root) -> str:
 
 
 def git_tree_dirty(repo_root) -> bool:
+    """True iff tracked source files are modified/staged-dirty.
+
+    Untracked files are ignored: measured artifacts (outputs/**) are written
+    by the pipeline itself and must not make the tree 'dirty' — only
+    modifications to TRACKED files can invalidate the source commit.
+    Unknown tree state still counts as dirty (fail-closed).
+    """
     try:
         out = subprocess.check_output(
-            ["git", "status", "--porcelain"], cwd=str(repo_root),
+            ["git", "status", "--porcelain", "--untracked-files=no"],
+            cwd=str(repo_root),
             stderr=subprocess.DEVNULL).decode().strip()
         return bool(out)
     except Exception:
