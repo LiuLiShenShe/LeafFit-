@@ -128,17 +128,21 @@ def evaluate(repo_root: Path) -> dict:
 
     # --- 6. matching gates -------------------------------------------------
     mg = load_json(out_dir / "matched_edges_gates.json")
-    if not mg or not mg.get("gates_passed", False):
+    formal = (mg or {}).get("gates", {}).get("1:1", {})
+    if not mg or not formal.get("gates_passed", False):
         return stop("MATCHING_FAIL", "matching_gates",
                     "FAIL", out_dir / "matched_edges_gates.json",
                     mg or {})
+    gates_passed = bool(formal.get("gates_passed"))
     units = mg.get("units", {})
     insufficient = [u for u, f in units.items()
                     if f.get("n_cross", 0) < MIN_CROSS_PER_UNIT]
     gating_units_insufficient = [u for u in insufficient
                                  if u.split(":")[0] in ("dev", "heldout")]
-    record("matching_gates", "PASS", out_dir / "matched_edges_gates.json",
-           {"insufficient_pairs_excluded": insufficient})
+    record("matching_gates", "PASS" if gates_passed else "FAIL",
+           out_dir / "matched_edges_gates.json",
+           {"insufficient_pairs_excluded": insufficient,
+            "formal_variant": "1:1"})
 
     # --- 7. dev direction freezing + dev gate ------------------------------
     sep = load_json(out_dir / "edge_separability_summary_v3.json")
