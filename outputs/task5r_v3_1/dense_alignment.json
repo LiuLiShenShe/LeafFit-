@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-08-25T12:55:54+0800",
-  "source_commit": "5f6a8c555886a8456c4547ce4c15ddbac577fdc1",
-  "source_tree_dirty": true,
+  "timestamp": "2026-08-25T13:23:07+0800",
+  "source_commit": "5a41167b330b7e6ee4079f4b7fe97e05893dabbe",
+  "source_tree_dirty": false,
   "thresholds": {
     "reproj_px_median_max": 3.0,
     "nn_median_max_m": 0.05,
