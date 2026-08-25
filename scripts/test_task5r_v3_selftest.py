@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Task5R-v3 self-test → outputs/task5r_v3/selftest.json.
+"""Task5R self-test → outputs/task5r_v3_1/selftest.json (v3.1).
 
 Golden-vector and cross-validation checks the verdict gate requires before
 ANY scientific evaluation:
@@ -28,7 +28,7 @@ for p in (str(REPO), str(REPO / "core")):
     if p not in sys.path:
         sys.path.insert(0, p)
 
-OUT = REPO / "outputs" / "task5r_v3"
+OUT = REPO / "outputs" / "task5r_v3_1"
 
 from core.observation_identity import (  # noqa: E402
     exclusive_transmittance, cov2d_lambda_max, ELLIPSE_SIGMA,
@@ -58,11 +58,17 @@ def check_covariance_goldens():
 def _brute_reference(pxd, pyd, zd, opac, c00, c01, c11,
                      dW=64, dH=64, block_px=BLOCK_PX):
     """Independent O(P*blocks) per-pixel-block reference compositor."""
+    from core.observation_identity import MAX_RADIUS_PX
     nbx = (dW + block_px - 1) // block_px
     nby = (dH + block_px - 1) // block_px
     half = (block_px - 1) / 2.0
     M = len(pxd)
-    # collect all (gaussian, block) pairs by brute enumeration of every block
+    # collect all (gaussian, block) pairs by brute enumeration of every block;
+    # v3.1: acceptance region uses the same clipped sigma_eff as production
+    from core.observation_identity import cov2d_lambda_max
+    lam = np.sqrt(np.maximum(cov2d_lambda_max(
+        np.asarray(c00), np.asarray(c01), np.asarray(c11)), 1e-12))
+    sig_eff_sq = (np.clip(ELLIPSE_SIGMA * lam, 0.7, MAX_RADIUS_PX) / lam) ** 2
     pairs = []
     for i in range(M):
         ext_x = ELLIPSE_SIGMA * np.sqrt(c00[i]) * 1.5 + block_px
@@ -77,7 +83,7 @@ def _brute_reference(pxd, pyd, zd, opac, c00, c01, c11,
                 dx, dy = cx - pxd[i], cy - pyd[i]
                 det = max(c00[i] * c11[i] - c01[i] ** 2, 1e-12)
                 d2 = (c11[i]*dx*dx - 2*c01[i]*dx*dy + c00[i]*dy*dy) / det
-                if d2 <= ELLIPSE_SIGMA ** 2:
+                if d2 <= sig_eff_sq[i]:
                     a = opac[i] * np.exp(-0.5 * d2)
                     if a >= ALPHA_FLOOR:
                         pairs.append((i, by * nbx + bx, zd[i],
@@ -164,6 +170,33 @@ def check_cliffs_identity():
     return {"max_deviation": worst}
 
 
+def check_rgb_peak_argmax_vs_bruteforce():
+    """v3.1: production groupwise_argmax_rows must match a per-group brute
+    argmax (tie → smallest block id) on randomized tie-heavy data."""
+    from core.observation_identity import groupwise_argmax_rows
+    rng = np.random.default_rng(77)
+    for trial in range(20):
+        N = int(rng.integers(50, 600))
+        n_groups = int(rng.integers(5, 60))
+        loc = rng.integers(0, n_groups, N)
+        bid = rng.integers(0, 12, N)
+        contrib = np.round(rng.uniform(0.0, 1.0, N), 2)   # heavy ties
+        rows, pg, pc = groupwise_argmax_rows(loc, bid, contrib)
+        exp = {}
+        for gid in np.unique(loc):
+            m = contrib[loc == gid].max()
+            cands = np.where((loc == gid) & (contrib == m))[0]
+            pick = cands[np.lexsort((bid[cands],))[0]]
+            exp[gid] = (int(loc[pick]), float(m), int(bid[pick]))
+        assert len(pg) == len(exp), f"trial {trial}: count mismatch"
+        for r, g, c in zip(rows, pg, pc):
+            eg, ec, eb = exp[int(g)]
+            assert int(bid[r]) == eb and abs(float(c) - ec) < 1e-12, \
+                f"trial {trial}: group {eg} picked block {int(bid[r])} " \
+                f"(exp {eb}), contrib {float(c)} (exp {ec})"
+    return {"trials": 20}
+
+
 def main() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
     results = {"timestamp": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
@@ -172,6 +205,7 @@ def main() -> int:
         ("exclusive_transmittance_golden", check_exclusive_transmittance),
         ("covariance_radius_golden", check_covariance_goldens),
         ("ellipse_block_vs_bruteforce", check_ellipse_block_vs_bruteforce),
+        ("rgb_peak_argmax_vs_bruteforce", check_rgb_peak_argmax_vs_bruteforce),
         ("matcher_determinism", check_matcher_determinism),
         ("cliffs_delta_identity", check_cliffs_identity),
     ]

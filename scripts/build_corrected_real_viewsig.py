@@ -63,9 +63,9 @@ def main() -> int:
     from core.real_observation import load_dense_gaussian_plant, load_dense_observations
 
     cache_dir = Path(ar.cache_dir).resolve() if ar.cache_dir else \
-        repo_root / "outputs" / "task5r_v3" / "projection_cache"
+        repo_root / "outputs" / "task5r_v3_1" / "projection_cache"
     out_path = Path(ar.output).resolve() if ar.output else \
-        repo_root / "outputs" / "task5r_v3" / "corrected_viewsig_manifest.jsonl"
+        repo_root / "outputs" / "task5r_v3_1" / "corrected_viewsig_manifest.jsonl"
 
     # CLI roots MUST control data loading (not just provenance metadata).
     g = load_dense_gaussian_plant(ar.plant, dense_root=str(dense_root))

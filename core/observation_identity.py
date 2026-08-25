@@ -20,8 +20,15 @@ with APPROXIMATE ELLIPSE-BLOCK COMPOSITING:
   6. a Gaussian's max_alpha = max contribution over its blocks; acc_alpha =
      sum over its blocks (v2 conflated these; v3 separates them);
   7. RGB is sampled at the representative pixel of the block where the
-     Gaussian's own contribution peaks; valid only if that peak contribution
-     >= RGB_MIN_CONTRIBUTION.
+     Gaussian's own contribution peaks (v3.1: strict groupwise ARGMAX — the
+     v3 implementation silently took the group MINIMUM); valid only if that
+     peak contribution >= RGB_MIN_CONTRIBUTION.
+
+v3.1 fixes over v3:
+  * rgb_peak_block_argmax  — groupwise argmax replaces accidental argmin;
+  * max_radius_enforced    — MAX_RADIUS_PX clips the candidate-block
+    enumeration extent AND the Mahalanobis acceptance region, matching the
+    reported footprint_radius_clip; meta reports n_gaussians_radius_clipped.
 
 This is an APPROXIMATION, not full 2D Gaussian rasterization: coverage is
 evaluated at block centers only (block_px quantization), not per-pixel. It is
@@ -43,7 +50,7 @@ from typing import Dict, List, Optional
 
 import numpy as np
 
-VISIBILITY_VERSION = "task5r-alpha-v3-ellipseblock"
+VISIBILITY_VERSION = "task5r-alpha-v3.1-rgbargmax"
 
 # Frozen constants (NOT tuned against any scientific outcome):
 CONTRIBUTION_THRESHOLD = 0.01   # min max-block alpha contribution to call visible
@@ -288,20 +295,55 @@ def exclusive_transmittance(alpha_sorted: np.ndarray, group_ids: np.ndarray):
     return T_before, al * T_before
 
 
+def groupwise_argmax_rows(loc, bid, contrib):
+    """Strict groupwise ARGMAX of `contrib` over groups defined by `loc`.
+
+    v3.1 FIX (rgb_peak_block_argmax): the v3 inline code lexsort'ed by
+    (-contrib, loc) and took the LAST row of each run — silently selecting
+    each group's MINIMUM. Here: reduce per-group maxima with maximum.at,
+    keep rows attaining their group's max, tie-break to the row with the
+    SMALLEST block id (deterministic), returning (peak_row_indices,
+    pk_gauss_ids, pk_contrib).
+    """
+    loc = np.asarray(loc)
+    bid = np.asarray(bid)
+    contrib = np.asarray(contrib, dtype=np.float64)
+    pk_max = np.zeros(int(loc.max()) + 1 if len(loc) else 1, dtype=np.float64)
+    np.maximum.at(pk_max, loc, contrib)
+    cand = np.flatnonzero(contrib == pk_max[loc])
+    ord2 = np.lexsort((bid[cand], loc[cand]))
+    cand_s = cand[ord2]
+    loc_c = loc[cand_s]
+    # FIRST row of each run (True at run starts)
+    first = np.append(True, np.diff(loc_c) != 0)
+    peak_rows = cand_s[first]
+    return peak_rows, loc[peak_rows], contrib[peak_rows]
+
+
 def _ellipse_block_pairs(pxd, pyd, zd, opac, c00, c01, c11,
                          nbx, nby, block_px: int = BLOCK_PX,
                          chunk: int = PAIR_CHUNK_GAUSS):
     """Enumerate (gaussian, block) pairs whose block centers fall inside the
     ELLIPSE_SIGMA ellipse (Mahalanobis d^2 <= sigma^2).
 
-    Chunked/vectorized; returns compacted (gi, block_id, d2) arrays where gi
-    indexes into the frustum-local arrays passed in.
+    v3.1 FIX (max_radius_enforced): the candidate enumeration extent is
+    bounded by the SAME clip that cov2d_radius_px reports — pathological
+    covariances can no longer enumerate an unbounded candidate box while the
+    reported radius claims <=MAX_RADIUS_PX. Per-Gaussian effective acceptance:
+      r_raw = sigma * sqrt(lambda_max);  r_eff = clip(r_raw, 0.7, MAX_RADIUS_PX)
+      sigma_eff = r_eff / sqrt(lambda_max)
+    The Mahalanobis gate uses d^2_eff = sigma_eff^2 * d2_unclipped, so both
+    the enumeration extent AND the acceptance region respect the clip.
+
+    Chunked/vectorized; returns compacted (gi, block_id, d2_scaled) arrays
+    where gi indexes into the frustum-local arrays passed in.
     """
     M = len(pxd)
-    sig2 = ELLIPSE_SIGMA ** 2
+    lam = np.sqrt(np.maximum(cov2d_lambda_max(c00, c01, c11), 1e-12))
+    sig_eff_sq = (np.clip(ELLIPSE_SIGMA * lam, 0.7, MAX_RADIUS_PX) / lam) ** 2
     half = (block_px - 1) / 2.0
-    ext_x = ELLIPSE_SIGMA * np.sqrt(c00)          # marginal bound on |dx|
-    ext_y = ELLIPSE_SIGMA * np.sqrt(c11)
+    ext_x = np.sqrt(sig_eff_sq * c00)             # marginal bound on |dx|
+    ext_y = np.sqrt(sig_eff_sq * c11)
     bx_lo = np.floor((pxd - ext_x) / block_px).astype(np.int64)
     bx_hi = np.floor((pxd + ext_x) / block_px).astype(np.int64)
     by_lo = np.floor((pyd - ext_y) / block_px).astype(np.int64)
@@ -332,7 +374,7 @@ def _ellipse_block_pairs(pxd, pyd, zd, opac, c00, c01, c11,
         dy = cy - pyd[gi]
         det = np.maximum(c00[gi] * c11[gi] - c01[gi] ** 2, 1e-12)
         d2 = (c11[gi] * dx * dx - 2.0 * c01[gi] * dx * dy + c00[gi] * dy * dy) / det
-        keep = d2 <= sig2
+        keep = d2 <= sig_eff_sq[gi]
         parts_gi.append(gi[keep])
         parts_bid.append(bid[keep])
         parts_d2.append(d2[keep])
@@ -371,6 +413,7 @@ def build_occlusion_aware_real_view_signature(
 
     in_frustum = np.zeros((V, N), dtype=bool)
     visible = np.zeros((V, N), dtype=bool)
+    n_radius_clipped = 0   # v3.1: Gaussians whose footprint exceeded MAX_RADIUS_PX
     max_alpha = np.zeros((V, N), dtype=np.float32)
     acc_alpha = np.zeros((V, N), dtype=np.float32)
     uv_pixel = np.full((V, N, 2), np.nan)
@@ -415,6 +458,9 @@ def build_occlusion_aware_real_view_signature(
                                        cam_xyz[idxs, 0], cam_xyz[idxs, 1],
                                        zd, fx, fy)
         rad = cov2d_radius_px(c00, c01, c11)
+        lam_full = cov2d_lambda_max(c00, c01, c11)
+        n_radius_clipped += int(
+            (ELLIPSE_SIGMA * np.sqrt(np.maximum(lam_full, 0.0)) > MAX_RADIUS_PX).sum())
 
         # --- approximate ellipse-block pairs ---
         gi, bid, d2 = _ellipse_block_pairs(pxd, pyd, zd,
@@ -447,15 +493,7 @@ def build_occlusion_aware_real_view_signature(
 
         # --- RGB at peak-contribution block ---
         img = decoded_images[v]
-        best_pos = {}
-        # argmax of contrib within each gaussian group of `loc` (loc rows are
-        # scattered across groups after sorting by block, so reduce via lexsort)
-        ord2 = np.lexsort((-contrib, loc))
-        loc_s = loc[ord2]
-        last = np.append(np.diff(loc_s) != 0, True)     # last row of each run
-        peak_rows = ord2[last]
-        pk_gauss = loc[peak_rows]
-        pk_contrib = contrib[peak_rows]
+        peak_rows, pk_gauss, pk_contrib = groupwise_argmax_rows(loc, bid, contrib)
         sel_rgb = pk_contrib >= rgb_min_contribution
         if sel_rgb.any():
             pbid = bid[peak_rows[sel_rgb]]
@@ -490,6 +528,8 @@ def build_occlusion_aware_real_view_signature(
         "footprint_weight": "alpha_eff = opacity * exp(-0.5 * mahalanobis_d2)",
         "low_pass": "0.3*I in downscaled px^2",
         "footprint_radius_clip": [0.7, MAX_RADIUS_PX],
+        "max_radius_enforced_in_candidate_enumeration": True,
+        "n_gaussians_radius_clipped": n_radius_clipped,
     }
     return CorrectedRealViewSignature(
         n_views=V, n_points=N, in_frustum=in_frustum, visible=visible,

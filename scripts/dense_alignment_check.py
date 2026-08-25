@@ -161,7 +161,7 @@ def main() -> int:
 
     report["overall_passed"] = bool(overall)
     out = Path(ar.output) if ar.output else \
-        repo_root / "outputs" / "task5r_v3" / "dense_alignment.json"
+        repo_root / "outputs" / "task5r_v3_1" / "dense_alignment.json"
     out.write_text(json.dumps(report, indent=2))
     print("OVERALL_PASSED", overall)
     print("WROTE", out)

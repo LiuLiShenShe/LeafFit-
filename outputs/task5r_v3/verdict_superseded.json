@@ -1,0 +1,79 @@
+{
+  "verdict": "SEPARABILITY_FAIL",
+  "task6_allowed": false,
+  "checks": [
+    {
+      "order": 1,
+      "name": "implementation_selftest",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/selftest.json",
+      "details": {}
+    },
+    {
+      "order": 2,
+      "name": "source_tree_clean",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/.git",
+      "details": {
+        "commit": "cd728529d60a5a4ea99bcccdff959e4905108396"
+      }
+    },
+    {
+      "order": 3,
+      "name": "viewsig_cache_consistency",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/corrected_viewsig_manifest.jsonl",
+      "details": {
+        "n_plants": 6
+      }
+    },
+    {
+      "order": 4,
+      "name": "dense_alignment",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/dense_alignment.json",
+      "details": {}
+    },
+    {
+      "order": 5,
+      "name": "human_verification",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/human_verification.json",
+      "details": {}
+    },
+    {
+      "order": 6,
+      "name": "matching_gates",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/matched_edges_gates.json",
+      "details": {
+        "insufficient_pairs_excluded": [],
+        "formal_variant": "1:1"
+      }
+    },
+    {
+      "order": 7,
+      "name": "dev_gate_no_signal",
+      "status": "FAIL",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3/edge_separability_summary_v3.json",
+      "details": {
+        "R4_c_mv": 0.4634,
+        "delta_min": 0.05
+      }
+    }
+  ],
+  "first_failure": "dev_gate_no_signal",
+  "timestamp": "2026-08-24T17:57:21+0800",
+  "superseded_by": "task5r-v3.1",
+  "invalidation": "INVALIDATED_BY_IMPLEMENTATION_AUDIT",
+  "first_failure_audit": "rgb_peak_block_argmax",
+  "task6_allowed_final": false,
+  "audit_findings": [
+    "rgb_peak_block_argmax",
+    "max_radius_not_enforced_in_enumeration",
+    "pooled_edge_statistics_as_formal",
+    "heldout_sign_transform_error"
+  ],
+  "original_verdict_sha256": "84e07dbd4ebd3974e0033eb54b41e11e4aef7475e3e792463aa788f2c76c8604",
+  "invalidated_at": "2026-08-25T10:46:49+0800"
+}

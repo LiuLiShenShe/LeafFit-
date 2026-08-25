@@ -51,13 +51,13 @@ def main() -> int:
     repo_root = Path(ar.repo_root).resolve() if ar.repo_root else REPO_DEFAULT
     sys.path[:0] = [str(repo_root), str(repo_root / "core")]
 
-    hv = repo_root / "outputs" / "task5r_v3" / "human_verification.json"
+    hv = repo_root / "outputs" / "task5r_v3_1" / "human_verification.json"
     if not hv.exists() or not json.loads(hv.read_text()).get("approved", False):
         print("REFUSING TO RUN: human_verification.json missing/not approved.\n"
               "Labels are PROPOSER_DIAGNOSTIC; obtain human review first.")
         return 2
 
-    out_dir = repo_root / "outputs" / "task5r_v3"
+    out_dir = repo_root / "outputs" / "task5r_v3_1"
     dense_root = Path(ar.dense_root) if ar.dense_root else \
         repo_root.parent / "datasets" / "07-SuGaR-GS"
     cand = json.loads((Path(ar.candidates) if ar.candidates else

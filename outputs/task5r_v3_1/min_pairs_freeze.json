@@ -1,0 +1,8 @@
+{
+  "n_pilot": 5,
+  "min_pairs": 205,
+  "final_half_width": 0.05,
+  "pilot_per_pair_var": 0.1334,
+  "frozen_at": "2026-08-25T10:56:15+0800",
+  "note": "Pilot = consumed/exploratory v3 run; K frozen before any v3.1 result is read."
+}

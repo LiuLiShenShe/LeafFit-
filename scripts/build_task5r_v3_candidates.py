@@ -59,7 +59,7 @@ def main() -> int:
     colmap_root = Path(ar.colmap_root) if ar.colmap_root else \
         repo_root.parent / "datasets" / "04-COLMAP"
     out_dir = Path(ar.output_dir).resolve() if ar.output_dir else \
-        repo_root / "outputs" / "task5r_v3"
+        repo_root / "outputs" / "task5r_v3_1"
     manifest_path = Path(ar.manifest) if ar.manifest else \
         out_dir / "corrected_viewsig_manifest.jsonl"
     cache_dir = Path(ar.cache_dir) if ar.cache_dir else \
