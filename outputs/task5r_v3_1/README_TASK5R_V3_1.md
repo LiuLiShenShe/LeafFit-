@@ -63,3 +63,23 @@ v3 的一切数值结论不得再引用。
 "非边缘失败"、"held-out 未消耗"。benchmark 统一称
 single-reviewer human-confirmed benchmark。无信号结果表述为
 SEPARABILITY_NOT_DEMONSTRATED（非"已证明无信号"）。
+
+---
+
+## 更新（2026-08-25 晚）：人审通过后正式测量结果
+
+用户 single-reviewer 复核：9 KEEP / 1 REJECT（DouBanLv1_c3_c4）。
+正式测量 4,304,894 edges（匹配后 dev 564 / heldout 1008 进分析）。
+
+**verdict = SEPARABILITY_NOT_DEMONSTRATED**（first_failure=heldout_gate_once，
+task6_allowed=false；HEAD 82364a2，链校验全 PASS）。
+
+- 正式点估计（pair macro AUROC）：dev R4_c_mv=0.6091 [CI 0.351–0.867]；
+  heldout R4_c_mv=0.4488 [CI 0.276–0.675] < 冻结阈值 0.55 → 门停。
+- 描述性（不门控）：pooled dev 0.4457 / heldout 0.3465。
+- 失败模式 = preset_direction_failed（CI 未整体低于 0.5，非反向信号证明）。
+- 样本门：9 确认对 << 预冻结 K=205；即使方向一致也不足以宣称可复现分离。
+- heldout 内部异质：WangWenCao2_c0_c54 单对 AUROC 0.806，HongZhang 三对
+  0.27–0.44——heldout 方向由植株主导而非方法主导。
+- 结论措辞：多视角观测身份特征在本次 single-reviewer 确认的 9 对基准上
+  **未能展示**跨株分离能力；这不构成"已证明无信号"。
