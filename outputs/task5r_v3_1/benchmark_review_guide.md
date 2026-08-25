@@ -1,6 +1,6 @@
 # Task5R-v3 基准人工复核指南
 
-生成时间: 2026-08-25T11:48:34+0800 | viewsig: `task5r-alpha-v3.1-rgbargmax` |
+生成时间: 2026-08-25T12:44:10+0800 | viewsig: `task5r-alpha-v3.1-rgbargmax` |
 提议器参数(冻结): `{'k': 16, 'sin_thr': 0.35, 'lin_thr': 0.6, 'plan_thr': 0.25, 'color_thr': 30.0}`
 
 ## 数据边界（如实声明）
