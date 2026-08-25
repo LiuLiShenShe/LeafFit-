@@ -124,8 +124,27 @@ def evaluate(repo_root: Path) -> dict:
         c = obj.get(commit_key)
         d = obj.get(dirty_key)
         if c is not None and c != src_commit:
-            chain_problems.append(
-                f"{name}: source_commit {str(c)[:12]} != HEAD {src_commit[:12]}")
+            # two-phase commits are legitimate: accept an ANCESTOR commit
+            # whose SOURCE tree (core/scripts/tests) is identical to HEAD's.
+            same_source = False
+            try:
+                import subprocess as _sp
+                _anc = _sp.run(["git", "merge-base", "--is-ancestor",
+                                str(c), src_commit], cwd=str(repo_root),
+                               capture_output=True).returncode == 0
+                if _anc:
+                    _diff = _sp.run(
+                        ["git", "diff", "--stat", str(c), src_commit,
+                         "--", "core", "scripts", "tests"],
+                        cwd=str(repo_root), capture_output=True)
+                    same_source = _anc and _diff.returncode == 0 and \
+                        not _diff.stdout.strip()
+            except Exception:
+                same_source = False
+            if not same_source:
+                chain_problems.append(
+                    f"{name}: source_commit {str(c)[:12]} differs from HEAD "
+                    f"{src_commit[:12]} in tracked source (core/scripts/tests)")
         if d:
             chain_problems.append(f"{name}: source_tree_dirty=true")
 
