@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-25T11:19:16+0800",
+  "timestamp": "2026-08-25T13:58:48+0800",
   "checks": {
     "exclusive_transmittance_golden": {
       "passed": true,
@@ -38,6 +38,6 @@
     }
   },
   "all_passed": true,
-  "source_commit": "0e7808038b05c4980cf9a23a5b0513369cce09b6",
-  "source_tree_dirty": true
+  "source_commit": "3764e1e260fa9ca80a16a4e201870c64a28d0e5f",
+  "source_tree_dirty": false
 }

@@ -1,5 +1,5 @@
 {
-  "verdict": "IMPLEMENTATION_INVALID",
+  "verdict": "BENCHMARK_NOT_HUMAN_VERIFIED",
   "task6_allowed": false,
   "checks": [
     {
@@ -12,15 +12,47 @@
     {
       "order": 2,
       "name": "source_tree_clean",
-      "status": "FAIL",
+      "status": "PASS",
       "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/.git",
       "details": {
-        "dirty": true,
-        "recorded_commit": null,
-        "current_commit": "113e779d06fe8d0eec52469b63fe9b37c81bbfc1"
+        "commit": "3764e1e260fa9ca80a16a4e201870c64a28d0e5f"
+      }
+    },
+    {
+      "order": 3,
+      "name": "upstream_manifest_chain",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3_1",
+      "details": {
+        "n_viewsig_records": 6
+      }
+    },
+    {
+      "order": 4,
+      "name": "viewsig_cache_consistency",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3_1/corrected_viewsig_manifest.jsonl",
+      "details": {
+        "n_plants": 6
+      }
+    },
+    {
+      "order": 5,
+      "name": "dense_alignment",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3_1/dense_alignment.json",
+      "details": {}
+    },
+    {
+      "order": 6,
+      "name": "human_verification",
+      "status": "PENDING",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3_1/human_verification.json",
+      "details": {
+        "note": "proposer labels are PROPOSER_DIAGNOSTIC until a human reviewer fills human_verification.json"
       }
     }
   ],
-  "first_failure": "source_tree_clean",
-  "timestamp": "2026-08-25T13:49:29+0800"
+  "first_failure": "human_verification",
+  "timestamp": "2026-08-25T14:00:47+0800"
 }

@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-08-25T13:44:34+0800",
-  "source_commit": "57a360ed9b32f8f5643ed629ce53aa4040690176",
+  "timestamp": "2026-08-25T13:59:15+0800",
+  "source_commit": "3764e1e260fa9ca80a16a4e201870c64a28d0e5f",
   "source_tree_dirty": false,
   "thresholds": {
     "reproj_px_median_max": 3.0,
@@ -17,6 +17,34 @@
       "reproj_n_tracks": 4441,
       "nn_median_m": 0.0198,
       "nn_frac_within_05m": 0.8348,
+      "checks": {
+        "reproj_ok": true,
+        "nn_median_ok": true,
+        "nn_frac_ok": true
+      },
+      "passed": true
+    },
+    "XianKeLai2": {
+      "n_sparse": 26405,
+      "n_dense": 44264,
+      "reproj_px_median": 1.127,
+      "reproj_n_tracks": 14193,
+      "nn_median_m": 0.025,
+      "nn_frac_within_05m": 0.709,
+      "checks": {
+        "reproj_ok": true,
+        "nn_median_ok": true,
+        "nn_frac_ok": true
+      },
+      "passed": true
+    },
+    "WanNianQing2": {
+      "n_sparse": 17715,
+      "n_dense": 40757,
+      "reproj_px_median": 1.102,
+      "reproj_n_tracks": 7507,
+      "nn_median_m": 0.0241,
+      "nn_frac_within_05m": 0.7801,
       "checks": {
         "reproj_ok": true,
         "nn_median_ok": true,
@@ -59,34 +87,6 @@
       "reproj_n_tracks": 8305,
       "nn_median_m": 0.0189,
       "nn_frac_within_05m": 0.7273,
-      "checks": {
-        "reproj_ok": true,
-        "nn_median_ok": true,
-        "nn_frac_ok": true
-      },
-      "passed": true
-    },
-    "XianKeLai2": {
-      "n_sparse": 26405,
-      "n_dense": 44264,
-      "reproj_px_median": 1.127,
-      "reproj_n_tracks": 14193,
-      "nn_median_m": 0.025,
-      "nn_frac_within_05m": 0.709,
-      "checks": {
-        "reproj_ok": true,
-        "nn_median_ok": true,
-        "nn_frac_ok": true
-      },
-      "passed": true
-    },
-    "WanNianQing2": {
-      "n_sparse": 17715,
-      "n_dense": 40757,
-      "reproj_px_median": 1.102,
-      "reproj_n_tracks": 7507,
-      "nn_median_m": 0.0241,
-      "nn_frac_within_05m": 0.7801,
       "checks": {
         "reproj_ok": true,
         "nn_median_ok": true,
