@@ -114,6 +114,7 @@ def evaluate(repo_root: Path) -> dict:
     # --- 2b. UPSTREAM MANIFEST CHAIN VALIDATION ---------------------------
     # Every upstream measured artifact must itself claim a clean source tree
     # at the current commit. v3 only checked the current working tree.
+    from core.observation_identity import VISIBILITY_VERSION
     chain_problems = []
 
     def check_upstream(name, obj, commit_key="source_commit",

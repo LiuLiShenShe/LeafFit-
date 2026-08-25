@@ -12,60 +12,15 @@
     {
       "order": 2,
       "name": "source_tree_clean",
-      "status": "PASS",
+      "status": "FAIL",
       "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/.git",
       "details": {
-        "commit": "e954a078c6e5d9768135b71a6eb5535b66014cd6"
-      }
-    },
-    {
-      "order": 3,
-      "name": "upstream_manifest_chain",
-      "status": "FAIL",
-      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3_1",
-      "details": {
-        "problems": [
-          "viewsig[DouBanLv1].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[HongZhang].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[WangWenCao2].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[CaoMei1].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[XianKeLai2].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[WanNianQing2].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[DouBanLv1]: source_tree_dirty=true",
-          "viewsig[DouBanLv1].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[HongZhang]: source_tree_dirty=true",
-          "viewsig[HongZhang].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[WangWenCao2]: source_tree_dirty=true",
-          "viewsig[WangWenCao2].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[CaoMei1].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[XianKeLai2]: source_tree_dirty=true",
-          "viewsig[XianKeLai2].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[WanNianQing2]: source_tree_dirty=true",
-          "viewsig[WanNianQing2].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[DouBanLv1].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[HongZhang]: source_tree_dirty=true",
-          "viewsig[HongZhang].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[WangWenCao2]: source_tree_dirty=true",
-          "viewsig[WangWenCao2].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[CaoMei1]: source_tree_dirty=true",
-          "viewsig[CaoMei1].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[XianKeLai2]: source_tree_dirty=true",
-          "viewsig[XianKeLai2].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[WanNianQing2]: source_tree_dirty=true",
-          "viewsig[WanNianQing2].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[DouBanLv1].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[HongZhang].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[WangWenCao2].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[CaoMei1].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[XianKeLai2].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "viewsig[WanNianQing2].algorithm: source_commit c9278bc36fd5 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "dense_alignment: source_commit 5a41167b330b differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "selftest: source_commit 0e7808038b05 differs from HEAD e954a078c6e5 in tracked source (core/scripts/tests)",
-          "selftest: source_tree_dirty=true"
-        ]
+        "dirty": true,
+        "recorded_commit": null,
+        "current_commit": "113e779d06fe8d0eec52469b63fe9b37c81bbfc1"
       }
     }
   ],
-  "first_failure": "upstream_manifest_chain",
-  "timestamp": "2026-08-25T13:27:38+0800"
+  "first_failure": "source_tree_clean",
+  "timestamp": "2026-08-25T13:49:29+0800"
 }
