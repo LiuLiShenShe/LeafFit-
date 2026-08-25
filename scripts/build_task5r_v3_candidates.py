@@ -232,6 +232,10 @@ def main() -> int:
         "near_contact_m": NEAR_CONTACT_M,
         "min_component_points": MIN_COMPONENT_POINTS,
         "viewsig_version": VISIBILITY_VERSION,
+        "source_commit": git_commit(repo_root),
+        "source_tree_dirty": __import__(
+            "core.observation_identity", fromlist=["git_tree_dirty"]
+        ).git_tree_dirty(repo_root),
         "git_commit": git_commit(repo_root),
         "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
         "plant_summaries": plant_summaries,

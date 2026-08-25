@@ -119,7 +119,10 @@ def main() -> int:
     from scipy.spatial import cKDTree
 
     plants = [p.strip() for p in ar.plants.split(",") if p.strip()]
+    from core.observation_identity import git_commit, git_tree_dirty
     report = {"timestamp": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+              "source_commit": git_commit(repo_root),
+              "source_tree_dirty": git_tree_dirty(repo_root),
               "thresholds": THRESHOLDS, "plants": {}}
     overall = True
 

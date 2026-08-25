@@ -210,6 +210,12 @@ def main() -> int:
              "heldout:ALL": {"n_cross": int(((~me1.label) & ~is_dev).sum())}}
     (out_dir / "matched_edges_gates.json").write_text(
         json.dumps({"matcher_version": em.MATCHER_VERSION,
+                    "source_commit": __import__(
+                        "core.observation_identity", fromlist=["git_commit"]
+                    ).git_commit(repo_root),
+                    "source_tree_dirty": __import__(
+                        "core.observation_identity", fromlist=["git_tree_dirty"]
+                    ).git_tree_dirty(repo_root),
                     "seed": ar.seed, "gates": gates_report,
                     "units": units}, indent=2))
     print(f"WROTE {csv_path} ({len(pair_scores)} edges) + matched edges")
