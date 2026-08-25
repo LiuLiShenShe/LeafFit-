@@ -15,7 +15,7 @@
       "status": "PASS",
       "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/.git",
       "details": {
-        "commit": "a29089ee61dbac50a28de7fc95f2f78031ae7282"
+        "commit": "ed8cde8ac0c1238e827b1562911176f202b5766f"
       }
     },
     {
@@ -54,5 +54,5 @@
     }
   ],
   "first_failure": "human_verification",
-  "timestamp": "2026-08-25T14:01:09+0800"
+  "timestamp": "2026-08-25T14:03:57+0800"
 }
