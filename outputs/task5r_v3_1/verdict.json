@@ -1,5 +1,5 @@
 {
-  "verdict": "BENCHMARK_NOT_HUMAN_VERIFIED",
+  "verdict": "SEPARABILITY_NOT_DEMONSTRATED",
   "task6_allowed": false,
   "checks": [
     {
@@ -15,7 +15,7 @@
       "status": "PASS",
       "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/.git",
       "details": {
-        "commit": "ed8cde8ac0c1238e827b1562911176f202b5766f"
+        "commit": "b91bdfe819b8d6dd04640b1f5ba66d09a5cb67fc"
       }
     },
     {
@@ -46,13 +46,62 @@
     {
       "order": 6,
       "name": "human_verification",
-      "status": "PENDING",
+      "status": "PASS",
       "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3_1/human_verification.json",
+      "details": {}
+    },
+    {
+      "order": 7,
+      "name": "provenance_sha256_complete",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3_1",
       "details": {
-        "note": "proposer labels are PROPOSER_DIAGNOSTIC until a human reviewer fills human_verification.json"
+        "review_queue_csv_sha256": "180a8cdbba63d47b1f806eac6a95aea073edcded0e9273725e5cdd65b231a2af",
+        "matched_edges_1to1_sha256": "c8efa442b5f7e1203b2f70d9f3993253bd100c2acd43f64ddb74b8a4253fe268",
+        "matched_edges_1to5_sha256": "f0a8e1a140e5ddebf0d6783ca3d6cec52a8d52607494cac6e3decaf8c12dea3e"
+      }
+    },
+    {
+      "order": 8,
+      "name": "matching_gates",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3_1/matched_edges_gates.json",
+      "details": {
+        "insufficient_pairs_excluded": [],
+        "formal_variant": "1:1"
+      }
+    },
+    {
+      "order": 9,
+      "name": "dev_gate_direction_frozen",
+      "status": "PASS",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3_1/edge_separability_summary_v3.json",
+      "details": {
+        "frozen_signs": {
+          "R0_dist": 1,
+          "R1_c_vis": 1,
+          "R2_c_app": -1,
+          "R3_c_occ": 1,
+          "R4_c_mv": 1,
+          "R5_surface": 1,
+          "R6_mv_and_surface": 1
+        }
+      }
+    },
+    {
+      "order": 10,
+      "name": "heldout_gate_once",
+      "status": "FAIL",
+      "artifact": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3_1/edge_separability_summary_v3.json",
+      "details": {
+        "R4_c_mv": {
+          "macro_auroc": 0.4488,
+          "signed": 0.4488,
+          "mode": "preset_direction_failed"
+        }
       }
     }
   ],
-  "first_failure": "human_verification",
-  "timestamp": "2026-08-25T14:03:57+0800"
+  "first_failure": "heldout_gate_once",
+  "timestamp": "2026-08-25T14:25:15+0800"
 }

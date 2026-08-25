@@ -1,0 +1,891 @@
+{
+  "timestamp": "2026-08-25T14:24:59+0800",
+  "matcher": "task5r-v3.1-distmatch-1v1",
+  "statistics_version": "pair-macro-formal-v3.1",
+  "n_matched_1v1": 1572,
+  "n_missing_in_scores": 0,
+  "splits": {
+    "dev": {
+      "by_ablation": {
+        "R0_dist": {
+          "n_pairs": 5,
+          "n_pairs_degenerate_excluded_from_macro": 0,
+          "macro_auroc": 0.5462,
+          "pooled_auroc_descriptive": 0.508,
+          "pooled_descriptive_only": true,
+          "cliffs_delta_pooled_descriptive": 0.016,
+          "auprc_pooled_descriptive": 0.5242,
+          "n_edges": 564,
+          "n_within": 282,
+          "n_cross": 282,
+          "cluster_bootstrap": {
+            "point": 0.5462,
+            "lo": 0.3725,
+            "hi": 0.7271,
+            "n_clusters": 5,
+            "B": 1000,
+            "descriptive_only": false,
+            "cluster_ids": [
+              "DouBanLv1_c2_c4",
+              "DouBanLv1_c3_c2",
+              "DouBanLv1_c3_c542",
+              "DouBanLv1_c3_c69",
+              "DouBanLv1_c69_c2520"
+            ],
+            "unit": "contact_pair"
+          },
+          "per_pair": [
+            {
+              "case_id": "DouBanLv1_c2_c4",
+              "n_edges": 58,
+              "n_within": 29,
+              "n_cross": 29,
+              "auroc": 0.4911
+            },
+            {
+              "case_id": "DouBanLv1_c3_c2",
+              "n_edges": 472,
+              "n_within": 236,
+              "n_cross": 236,
+              "auroc": 0.5014
+            },
+            {
+              "case_id": "DouBanLv1_c3_c542",
+              "n_edges": 14,
+              "n_within": 7,
+              "n_cross": 7,
+              "auroc": 0.8776
+            },
+            {
+              "case_id": "DouBanLv1_c3_c69",
+              "n_edges": 12,
+              "n_within": 6,
+              "n_cross": 6,
+              "auroc": 0.6111
+            },
+            {
+              "case_id": "DouBanLv1_c69_c2520",
+              "n_edges": 8,
+              "n_within": 4,
+              "n_cross": 4,
+              "auroc": 0.25
+            }
+          ]
+        },
+        "R1_c_vis": {
+          "n_pairs": 5,
+          "n_pairs_degenerate_excluded_from_macro": 0,
+          "macro_auroc": 0.6007,
+          "pooled_auroc_descriptive": 0.4968,
+          "pooled_descriptive_only": true,
+          "cliffs_delta_pooled_descriptive": -0.0064,
+          "auprc_pooled_descriptive": 0.561,
+          "n_edges": 564,
+          "n_within": 282,
+          "n_cross": 282,
+          "cluster_bootstrap": {
+            "point": 0.6007,
+            "lo": 0.2775,
+            "hi": 0.8905,
+            "n_clusters": 5,
+            "B": 1000,
+            "descriptive_only": false,
+            "cluster_ids": [
+              "DouBanLv1_c2_c4",
+              "DouBanLv1_c3_c2",
+              "DouBanLv1_c3_c542",
+              "DouBanLv1_c3_c69",
+              "DouBanLv1_c69_c2520"
+            ],
+            "unit": "contact_pair"
+          },
+          "per_pair": [
+            {
+              "case_id": "DouBanLv1_c2_c4",
+              "n_edges": 58,
+              "n_within": 29,
+              "n_cross": 29,
+              "auroc": 0.6159
+            },
+            {
+              "case_id": "DouBanLv1_c3_c2",
+              "n_edges": 472,
+              "n_within": 236,
+              "n_cross": 236,
+              "auroc": 0.469
+            },
+            {
+              "case_id": "DouBanLv1_c3_c542",
+              "n_edges": 14,
+              "n_within": 7,
+              "n_cross": 7,
+              "auroc": 0.9184
+            },
+            {
+              "case_id": "DouBanLv1_c3_c69",
+              "n_edges": 12,
+              "n_within": 6,
+              "n_cross": 6,
+              "auroc": 0.0
+            },
+            {
+              "case_id": "DouBanLv1_c69_c2520",
+              "n_edges": 8,
+              "n_within": 4,
+              "n_cross": 4,
+              "auroc": 1.0
+            }
+          ]
+        },
+        "R2_c_app": {
+          "n_pairs": 5,
+          "n_pairs_degenerate_excluded_from_macro": 0,
+          "macro_auroc": 0.4926,
+          "pooled_auroc_descriptive": 0.4658,
+          "pooled_descriptive_only": true,
+          "cliffs_delta_pooled_descriptive": -0.0685,
+          "auprc_pooled_descriptive": 0.5058,
+          "n_edges": 564,
+          "n_within": 282,
+          "n_cross": 282,
+          "cluster_bootstrap": {
+            "point": 0.4926,
+            "lo": 0.4429,
+            "hi": 0.5593,
+            "n_clusters": 5,
+            "B": 1000,
+            "descriptive_only": false,
+            "cluster_ids": [
+              "DouBanLv1_c2_c4",
+              "DouBanLv1_c3_c2",
+              "DouBanLv1_c3_c542",
+              "DouBanLv1_c3_c69",
+              "DouBanLv1_c69_c2520"
+            ],
+            "unit": "contact_pair"
+          },
+          "per_pair": [
+            {
+              "case_id": "DouBanLv1_c2_c4",
+              "n_edges": 58,
+              "n_within": 29,
+              "n_cross": 29,
+              "auroc": 0.4293
+            },
+            {
+              "case_id": "DouBanLv1_c3_c2",
+              "n_edges": 472,
+              "n_within": 236,
+              "n_cross": 236,
+              "auroc": 0.467
+            },
+            {
+              "case_id": "DouBanLv1_c3_c542",
+              "n_edges": 14,
+              "n_within": 7,
+              "n_cross": 7,
+              "auroc": 0.6224
+            },
+            {
+              "case_id": "DouBanLv1_c3_c69",
+              "n_edges": 12,
+              "n_within": 6,
+              "n_cross": 6,
+              "auroc": 0.4444
+            },
+            {
+              "case_id": "DouBanLv1_c69_c2520",
+              "n_edges": 8,
+              "n_within": 4,
+              "n_cross": 4,
+              "auroc": 0.5
+            }
+          ]
+        },
+        "R3_c_occ": {
+          "n_pairs": 5,
+          "n_pairs_degenerate_excluded_from_macro": 0,
+          "macro_auroc": 0.6152,
+          "pooled_auroc_descriptive": 0.5497,
+          "pooled_descriptive_only": true,
+          "cliffs_delta_pooled_descriptive": 0.0994,
+          "auprc_pooled_descriptive": 0.5906,
+          "n_edges": 564,
+          "n_within": 282,
+          "n_cross": 282,
+          "cluster_bootstrap": {
+            "point": 0.6152,
+            "lo": 0.2838,
+            "hi": 0.8906,
+            "n_clusters": 5,
+            "B": 1000,
+            "descriptive_only": false,
+            "cluster_ids": [
+              "DouBanLv1_c2_c4",
+              "DouBanLv1_c3_c2",
+              "DouBanLv1_c3_c542",
+              "DouBanLv1_c3_c69",
+              "DouBanLv1_c69_c2520"
+            ],
+            "unit": "contact_pair"
+          },
+          "per_pair": [
+            {
+              "case_id": "DouBanLv1_c2_c4",
+              "n_edges": 58,
+              "n_within": 29,
+              "n_cross": 29,
+              "auroc": 0.657
+            },
+            {
+              "case_id": "DouBanLv1_c3_c2",
+              "n_edges": 472,
+              "n_within": 236,
+              "n_cross": 236,
+              "auroc": 0.5212
+            },
+            {
+              "case_id": "DouBanLv1_c3_c542",
+              "n_edges": 14,
+              "n_within": 7,
+              "n_cross": 7,
+              "auroc": 0.898
+            },
+            {
+              "case_id": "DouBanLv1_c3_c69",
+              "n_edges": 12,
+              "n_within": 6,
+              "n_cross": 6,
+              "auroc": 0.0
+            },
+            {
+              "case_id": "DouBanLv1_c69_c2520",
+              "n_edges": 8,
+              "n_within": 4,
+              "n_cross": 4,
+              "auroc": 1.0
+            }
+          ]
+        },
+        "R4_c_mv": {
+          "n_pairs": 5,
+          "n_pairs_degenerate_excluded_from_macro": 0,
+          "macro_auroc": 0.6091,
+          "pooled_auroc_descriptive": 0.4457,
+          "pooled_descriptive_only": true,
+          "cliffs_delta_pooled_descriptive": -0.1085,
+          "auprc_pooled_descriptive": 0.5518,
+          "n_edges": 564,
+          "n_within": 282,
+          "n_cross": 282,
+          "cluster_bootstrap": {
+            "point": 0.6091,
+            "lo": 0.3514,
+            "hi": 0.8668,
+            "n_clusters": 5,
+            "B": 1000,
+            "descriptive_only": false,
+            "cluster_ids": [
+              "DouBanLv1_c2_c4",
+              "DouBanLv1_c3_c2",
+              "DouBanLv1_c3_c542",
+              "DouBanLv1_c3_c69",
+              "DouBanLv1_c69_c2520"
+            ],
+            "unit": "contact_pair"
+          },
+          "per_pair": [
+            {
+              "case_id": "DouBanLv1_c2_c4",
+              "n_edges": 58,
+              "n_within": 29,
+              "n_cross": 29,
+              "auroc": 0.5791
+            },
+            {
+              "case_id": "DouBanLv1_c3_c2",
+              "n_edges": 472,
+              "n_within": 236,
+              "n_cross": 236,
+              "auroc": 0.4224
+            },
+            {
+              "case_id": "DouBanLv1_c3_c542",
+              "n_edges": 14,
+              "n_within": 7,
+              "n_cross": 7,
+              "auroc": 0.8776
+            },
+            {
+              "case_id": "DouBanLv1_c3_c69",
+              "n_edges": 12,
+              "n_within": 6,
+              "n_cross": 6,
+              "auroc": 0.1667
+            },
+            {
+              "case_id": "DouBanLv1_c69_c2520",
+              "n_edges": 8,
+              "n_within": 4,
+              "n_cross": 4,
+              "auroc": 1.0
+            }
+          ]
+        },
+        "R5_surface": {
+          "n_pairs": 5,
+          "n_pairs_degenerate_excluded_from_macro": 0,
+          "macro_auroc": 0.6379,
+          "pooled_auroc_descriptive": 0.5608,
+          "pooled_descriptive_only": true,
+          "cliffs_delta_pooled_descriptive": 0.1215,
+          "auprc_pooled_descriptive": 0.502,
+          "n_edges": 564,
+          "n_within": 282,
+          "n_cross": 282,
+          "cluster_bootstrap": {
+            "point": 0.6379,
+            "lo": 0.418,
+            "hi": 0.8577,
+            "n_clusters": 5,
+            "B": 1000,
+            "descriptive_only": false,
+            "cluster_ids": [
+              "DouBanLv1_c2_c4",
+              "DouBanLv1_c3_c2",
+              "DouBanLv1_c3_c542",
+              "DouBanLv1_c3_c69",
+              "DouBanLv1_c69_c2520"
+            ],
+            "unit": "contact_pair"
+          },
+          "per_pair": [
+            {
+              "case_id": "DouBanLv1_c2_c4",
+              "n_edges": 58,
+              "n_within": 29,
+              "n_cross": 29,
+              "auroc": 0.3413
+            },
+            {
+              "case_id": "DouBanLv1_c3_c2",
+              "n_edges": 472,
+              "n_within": 236,
+              "n_cross": 236,
+              "auroc": 0.5743
+            },
+            {
+              "case_id": "DouBanLv1_c3_c542",
+              "n_edges": 14,
+              "n_within": 7,
+              "n_cross": 7,
+              "auroc": 0.8571
+            },
+            {
+              "case_id": "DouBanLv1_c3_c69",
+              "n_edges": 12,
+              "n_within": 6,
+              "n_cross": 6,
+              "auroc": 0.4167
+            },
+            {
+              "case_id": "DouBanLv1_c69_c2520",
+              "n_edges": 8,
+              "n_within": 4,
+              "n_cross": 4,
+              "auroc": 1.0
+            }
+          ]
+        },
+        "R6_mv_and_surface": {
+          "n_pairs": 5,
+          "n_pairs_degenerate_excluded_from_macro": 0,
+          "macro_auroc": 0.564,
+          "pooled_auroc_descriptive": 0.518,
+          "pooled_descriptive_only": true,
+          "cliffs_delta_pooled_descriptive": 0.036,
+          "auprc_pooled_descriptive": 0.5371,
+          "n_edges": 564,
+          "n_within": 282,
+          "n_cross": 282,
+          "cluster_bootstrap": {
+            "point": 0.564,
+            "lo": 0.255,
+            "hi": 0.873,
+            "n_clusters": 5,
+            "B": 1000,
+            "descriptive_only": false,
+            "cluster_ids": [
+              "DouBanLv1_c2_c4",
+              "DouBanLv1_c3_c2",
+              "DouBanLv1_c3_c542",
+              "DouBanLv1_c3_c69",
+              "DouBanLv1_c69_c2520"
+            ],
+            "unit": "contact_pair"
+          },
+          "per_pair": [
+            {
+              "case_id": "DouBanLv1_c2_c4",
+              "n_edges": 58,
+              "n_within": 29,
+              "n_cross": 29,
+              "auroc": 0.3734
+            },
+            {
+              "case_id": "DouBanLv1_c3_c2",
+              "n_edges": 472,
+              "n_within": 236,
+              "n_cross": 236,
+              "auroc": 0.5284
+            },
+            {
+              "case_id": "DouBanLv1_c3_c542",
+              "n_edges": 14,
+              "n_within": 7,
+              "n_cross": 7,
+              "auroc": 0.9184
+            },
+            {
+              "case_id": "DouBanLv1_c3_c69",
+              "n_edges": 12,
+              "n_within": 6,
+              "n_cross": 6,
+              "auroc": 0.0
+            },
+            {
+              "case_id": "DouBanLv1_c69_c2520",
+              "n_edges": 8,
+              "n_within": 4,
+              "n_cross": 4,
+              "auroc": 1.0
+            }
+          ]
+        }
+      },
+      "per_pair": {},
+      "pairs": {
+        "R0_dist": 5,
+        "R1_c_vis": 5,
+        "R2_c_app": 5,
+        "R3_c_occ": 5,
+        "R4_c_mv": 5,
+        "R5_surface": 5,
+        "R6_mv_and_surface": 5
+      }
+    },
+    "heldout": {
+      "by_ablation": {
+        "R0_dist": {
+          "n_pairs": 4,
+          "n_pairs_degenerate_excluded_from_macro": 0,
+          "macro_auroc": 0.5084,
+          "pooled_auroc_descriptive": 0.4886,
+          "pooled_descriptive_only": true,
+          "cliffs_delta_pooled_descriptive": -0.0228,
+          "auprc_pooled_descriptive": 0.4867,
+          "n_edges": 1008,
+          "n_within": 504,
+          "n_cross": 504,
+          "cluster_bootstrap": {
+            "point": 0.5084,
+            "lo": 0.4832,
+            "hi": 0.5337,
+            "n_clusters": 4,
+            "B": 1000,
+            "descriptive_only": true,
+            "cluster_ids": [
+              "HongZhang_c1_c1356",
+              "HongZhang_c2_c1",
+              "HongZhang_c2_c98",
+              "WangWenCao2_c0_c54"
+            ],
+            "unit": "contact_pair"
+          },
+          "per_pair": [
+            {
+              "case_id": "HongZhang_c1_c1356",
+              "n_edges": 702,
+              "n_within": 351,
+              "n_cross": 351,
+              "auroc": 0.4733
+            },
+            {
+              "case_id": "HongZhang_c2_c1",
+              "n_edges": 48,
+              "n_within": 24,
+              "n_cross": 24,
+              "auroc": 0.5365
+            },
+            {
+              "case_id": "HongZhang_c2_c98",
+              "n_edges": 168,
+              "n_within": 84,
+              "n_cross": 84,
+              "auroc": 0.4931
+            },
+            {
+              "case_id": "WangWenCao2_c0_c54",
+              "n_edges": 90,
+              "n_within": 45,
+              "n_cross": 45,
+              "auroc": 0.5309
+            }
+          ]
+        },
+        "R1_c_vis": {
+          "n_pairs": 4,
+          "n_pairs_degenerate_excluded_from_macro": 0,
+          "macro_auroc": 0.4071,
+          "pooled_auroc_descriptive": 0.2791,
+          "pooled_descriptive_only": true,
+          "cliffs_delta_pooled_descriptive": -0.4419,
+          "auprc_pooled_descriptive": 0.4051,
+          "n_edges": 1008,
+          "n_within": 504,
+          "n_cross": 504,
+          "cluster_bootstrap": {
+            "point": 0.4071,
+            "lo": 0.1741,
+            "hi": 0.7061,
+            "n_clusters": 4,
+            "B": 1000,
+            "descriptive_only": true,
+            "cluster_ids": [
+              "HongZhang_c1_c1356",
+              "HongZhang_c2_c1",
+              "HongZhang_c2_c98",
+              "WangWenCao2_c0_c54"
+            ],
+            "unit": "contact_pair"
+          },
+          "per_pair": [
+            {
+              "case_id": "HongZhang_c1_c1356",
+              "n_edges": 702,
+              "n_within": 351,
+              "n_cross": 351,
+              "auroc": 0.1712
+            },
+            {
+              "case_id": "HongZhang_c2_c1",
+              "n_edges": 48,
+              "n_within": 24,
+              "n_cross": 24,
+              "auroc": 0.1771
+            },
+            {
+              "case_id": "HongZhang_c2_c98",
+              "n_edges": 168,
+              "n_within": 84,
+              "n_cross": 84,
+              "auroc": 0.3977
+            },
+            {
+              "case_id": "WangWenCao2_c0_c54",
+              "n_edges": 90,
+              "n_within": 45,
+              "n_cross": 45,
+              "auroc": 0.8825
+            }
+          ]
+        },
+        "R2_c_app": {
+          "n_pairs": 4,
+          "n_pairs_degenerate_excluded_from_macro": 0,
+          "macro_auroc": 0.4507,
+          "pooled_auroc_descriptive": 0.3496,
+          "pooled_descriptive_only": true,
+          "cliffs_delta_pooled_descriptive": -0.3007,
+          "auprc_pooled_descriptive": 0.4387,
+          "n_edges": 1008,
+          "n_within": 504,
+          "n_cross": 504,
+          "cluster_bootstrap": {
+            "point": 0.4507,
+            "lo": 0.3292,
+            "hi": 0.5941,
+            "n_clusters": 4,
+            "B": 1000,
+            "descriptive_only": true,
+            "cluster_ids": [
+              "HongZhang_c1_c1356",
+              "HongZhang_c2_c1",
+              "HongZhang_c2_c98",
+              "WangWenCao2_c0_c54"
+            ],
+            "unit": "contact_pair"
+          },
+          "per_pair": [
+            {
+              "case_id": "HongZhang_c1_c1356",
+              "n_edges": 702,
+              "n_within": 351,
+              "n_cross": 351,
+              "auroc": 0.2815
+            },
+            {
+              "case_id": "HongZhang_c2_c1",
+              "n_edges": 48,
+              "n_within": 24,
+              "n_cross": 24,
+              "auroc": 0.3854
+            },
+            {
+              "case_id": "HongZhang_c2_c98",
+              "n_edges": 168,
+              "n_within": 84,
+              "n_cross": 84,
+              "auroc": 0.4722
+            },
+            {
+              "case_id": "WangWenCao2_c0_c54",
+              "n_edges": 90,
+              "n_within": 45,
+              "n_cross": 45,
+              "auroc": 0.6637
+            }
+          ]
+        },
+        "R3_c_occ": {
+          "n_pairs": 4,
+          "n_pairs_degenerate_excluded_from_macro": 0,
+          "macro_auroc": 0.5849,
+          "pooled_auroc_descriptive": 0.6716,
+          "pooled_descriptive_only": true,
+          "cliffs_delta_pooled_descriptive": 0.3432,
+          "auprc_pooled_descriptive": 0.6926,
+          "n_edges": 1008,
+          "n_within": 504,
+          "n_cross": 504,
+          "cluster_bootstrap": {
+            "point": 0.5849,
+            "lo": 0.3739,
+            "hi": 0.7406,
+            "n_clusters": 4,
+            "B": 1000,
+            "descriptive_only": true,
+            "cluster_ids": [
+              "HongZhang_c1_c1356",
+              "HongZhang_c2_c1",
+              "HongZhang_c2_c98",
+              "WangWenCao2_c0_c54"
+            ],
+            "unit": "contact_pair"
+          },
+          "per_pair": [
+            {
+              "case_id": "HongZhang_c1_c1356",
+              "n_edges": 702,
+              "n_within": 351,
+              "n_cross": 351,
+              "auroc": 0.7142
+            },
+            {
+              "case_id": "HongZhang_c2_c1",
+              "n_edges": 48,
+              "n_within": 24,
+              "n_cross": 24,
+              "auroc": 0.2604
+            },
+            {
+              "case_id": "HongZhang_c2_c98",
+              "n_edges": 168,
+              "n_within": 84,
+              "n_cross": 84,
+              "auroc": 0.5981
+            },
+            {
+              "case_id": "WangWenCao2_c0_c54",
+              "n_edges": 90,
+              "n_within": 45,
+              "n_cross": 45,
+              "auroc": 0.7669
+            }
+          ]
+        },
+        "R4_c_mv": {
+          "n_pairs": 4,
+          "n_pairs_degenerate_excluded_from_macro": 0,
+          "macro_auroc": 0.4488,
+          "pooled_auroc_descriptive": 0.3465,
+          "pooled_descriptive_only": true,
+          "cliffs_delta_pooled_descriptive": -0.3071,
+          "auprc_pooled_descriptive": 0.4208,
+          "n_edges": 1008,
+          "n_within": 504,
+          "n_cross": 504,
+          "cluster_bootstrap": {
+            "point": 0.4488,
+            "lo": 0.2756,
+            "hi": 0.6749,
+            "n_clusters": 4,
+            "B": 1000,
+            "descriptive_only": true,
+            "cluster_ids": [
+              "HongZhang_c1_c1356",
+              "HongZhang_c2_c1",
+              "HongZhang_c2_c98",
+              "WangWenCao2_c0_c54"
+            ],
+            "unit": "contact_pair"
+          },
+          "per_pair": [
+            {
+              "case_id": "HongZhang_c1_c1356",
+              "n_edges": 702,
+              "n_within": 351,
+              "n_cross": 351,
+              "auroc": 0.2804
+            },
+            {
+              "case_id": "HongZhang_c2_c1",
+              "n_edges": 48,
+              "n_within": 24,
+              "n_cross": 24,
+              "auroc": 0.2708
+            },
+            {
+              "case_id": "HongZhang_c2_c98",
+              "n_edges": 168,
+              "n_within": 84,
+              "n_cross": 84,
+              "auroc": 0.4375
+            },
+            {
+              "case_id": "WangWenCao2_c0_c54",
+              "n_edges": 90,
+              "n_within": 45,
+              "n_cross": 45,
+              "auroc": 0.8064
+            }
+          ]
+        },
+        "R5_surface": {
+          "n_pairs": 4,
+          "n_pairs_degenerate_excluded_from_macro": 0,
+          "macro_auroc": 0.5805,
+          "pooled_auroc_descriptive": 0.7221,
+          "pooled_descriptive_only": true,
+          "cliffs_delta_pooled_descriptive": 0.4442,
+          "auprc_pooled_descriptive": 0.6464,
+          "n_edges": 1008,
+          "n_within": 504,
+          "n_cross": 504,
+          "cluster_bootstrap": {
+            "point": 0.5805,
+            "lo": 0.3843,
+            "hi": 0.7766,
+            "n_clusters": 4,
+            "B": 1000,
+            "descriptive_only": true,
+            "cluster_ids": [
+              "HongZhang_c1_c1356",
+              "HongZhang_c2_c1",
+              "HongZhang_c2_c98",
+              "WangWenCao2_c0_c54"
+            ],
+            "unit": "contact_pair"
+          },
+          "per_pair": [
+            {
+              "case_id": "HongZhang_c1_c1356",
+              "n_edges": 702,
+              "n_within": 351,
+              "n_cross": 351,
+              "auroc": 0.8063
+            },
+            {
+              "case_id": "HongZhang_c2_c1",
+              "n_edges": 48,
+              "n_within": 24,
+              "n_cross": 24,
+              "auroc": 0.4288
+            },
+            {
+              "case_id": "HongZhang_c2_c98",
+              "n_edges": 168,
+              "n_within": 84,
+              "n_cross": 84,
+              "auroc": 0.747
+            },
+            {
+              "case_id": "WangWenCao2_c0_c54",
+              "n_edges": 90,
+              "n_within": 45,
+              "n_cross": 45,
+              "auroc": 0.3398
+            }
+          ]
+        },
+        "R6_mv_and_surface": {
+          "n_pairs": 4,
+          "n_pairs_degenerate_excluded_from_macro": 0,
+          "macro_auroc": 0.6059,
+          "pooled_auroc_descriptive": 0.6511,
+          "pooled_descriptive_only": true,
+          "cliffs_delta_pooled_descriptive": 0.3022,
+          "auprc_pooled_descriptive": 0.5928,
+          "n_edges": 1008,
+          "n_within": 504,
+          "n_cross": 504,
+          "cluster_bootstrap": {
+            "point": 0.6059,
+            "lo": 0.4747,
+            "hi": 0.7089,
+            "n_clusters": 4,
+            "B": 1000,
+            "descriptive_only": true,
+            "cluster_ids": [
+              "HongZhang_c1_c1356",
+              "HongZhang_c2_c1",
+              "HongZhang_c2_c98",
+              "WangWenCao2_c0_c54"
+            ],
+            "unit": "contact_pair"
+          },
+          "per_pair": [
+            {
+              "case_id": "HongZhang_c1_c1356",
+              "n_edges": 702,
+              "n_within": 351,
+              "n_cross": 351,
+              "auroc": 0.7323
+            },
+            {
+              "case_id": "HongZhang_c2_c1",
+              "n_edges": 48,
+              "n_within": 24,
+              "n_cross": 24,
+              "auroc": 0.4045
+            },
+            {
+              "case_id": "HongZhang_c2_c98",
+              "n_edges": 168,
+              "n_within": 84,
+              "n_cross": 84,
+              "auroc": 0.6015
+            },
+            {
+              "case_id": "WangWenCao2_c0_c54",
+              "n_edges": 90,
+              "n_within": 45,
+              "n_cross": 45,
+              "auroc": 0.6854
+            }
+          ]
+        }
+      },
+      "per_pair": {},
+      "pairs": {
+        "R0_dist": 4,
+        "R1_c_vis": 4,
+        "R2_c_app": 4,
+        "R3_c_occ": 4,
+        "R4_c_mv": 4,
+        "R5_surface": 4,
+        "R6_mv_and_surface": 4
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "matcher_version": "task5r-v3-distmatch-1v1",
+  "source_commit": "b91bdfe819b8d6dd04640b1f5ba66d09a5cb67fc",
+  "source_tree_dirty": false,
+  "seed": 0,
+  "gates": {
+    "1:1": {
+      "n_within": 786,
+      "n_cross": 786,
+      "prevalence": 0.5,
+      "control_auroc_negdist": 0.49837486807943077,
+      "control_auroc_dist": 0.5016251319205692,
+      "unmatchable_cross_count": 0,
+      "merged_bin_event_count": 0,
+      "gates_passed": true,
+      "prevalence_gate_passed": true,
+      "control_gate_passed": true,
+      "unmatchable_frac": 0.0,
+      "matched_csv_sha256_pending": true,
+      "matched_csv": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3_1/matched_edges_1to1.csv"
+    },
+    "1:5": {
+      "n_within": 3930,
+      "n_cross": 786,
+      "prevalence": 0.8333333333333334,
+      "control_auroc_negdist": 0.5091745495276758,
+      "control_auroc_dist": 0.4908254504723242,
+      "unmatchable_cross_count": 0,
+      "merged_bin_event_count": 0,
+      "gates_passed": null,
+      "prevalence_gate_passed": false,
+      "control_gate_passed": true,
+      "unmatchable_frac": 0.0,
+      "note": "1:N sensitivity variant: prevalence band is a 1:1-formal gate; control-AUROC still reported",
+      "matched_csv_sha256_pending": true,
+      "matched_csv": "/data/fj/LeafFit\u8bba\u6587\u590d\u73b0\u53ca\u4fee\u6539/leaf_fit/outputs/task5r_v3_1/matched_edges_1to5.csv"
+    }
+  },
+  "units": {
+    "dev:ALL": {
+      "n_cross": 282
+    },
+    "heldout:ALL": {
+      "n_cross": 504
+    }
+  }
+}
