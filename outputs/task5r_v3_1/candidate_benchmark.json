@@ -12,10 +12,10 @@
   "near_contact_m": 0.08,
   "min_component_points": 500,
   "viewsig_version": "task5r-alpha-v3.1-rgbargmax",
-  "source_commit": "5a41167b330b7e6ee4079f4b7fe97e05893dabbe",
+  "source_commit": "57a360ed9b32f8f5643ed629ce53aa4040690176",
   "source_tree_dirty": false,
-  "git_commit": "5a41167b330b7e6ee4079f4b7fe97e05893dabbe",
-  "timestamp": "2026-08-25T13:23:03+0800",
+  "git_commit": "57a360ed9b32f8f5643ed629ce53aa4040690176",
+  "timestamp": "2026-08-25T13:44:29+0800",
   "plant_summaries": {
     "DouBanLv1": {
       "n_components": 10730,
