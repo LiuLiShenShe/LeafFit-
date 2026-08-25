@@ -86,7 +86,15 @@ def main() -> int:
     if zpath.exists():
         z = np.load(zpath, allow_pickle=False)
         vs_meta = json.loads(str(z["meta_json"]))
+        # cache key is content-addressed, so the npz is byte-equivalent to a
+        # fresh computation under the CURRENT code; refresh provenance fields
+        # to the present state and keep the original computation commit only
+        # as a historical note.
+        vs_meta["source_commit"] = git_commit(repo_root)
+        vs_meta["source_tree_dirty"] = dirty
+        vs_meta["computed_from_commit_note"] = vs_meta.get("source_commit", "")
         status = "cache_hit"
+        vs_meta["cache_hit"] = True
     else:
         imgs = load_or_cache_decoded_images(obs, downscale=ar.downscale,
                                             cache_dir=str(img_cache))

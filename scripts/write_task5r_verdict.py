@@ -150,11 +150,17 @@ def evaluate(repo_root: Path) -> dict:
 
     ms_path = out_dir / "corrected_viewsig_manifest.jsonl"
     if ms_path.exists():
-        for i, line in enumerate(ms_path.read_text().splitlines()):
+        last_rows = {}
+        for line in ms_path.read_text().splitlines():
             r = json.loads(line)
-            check_upstream(f"viewsig[{r.get('plant', i)}]", r)
+            # append-only manifest: LAST row per plant is authoritative
+            # (matches the cache-consistency check's last-wins semantics)
+            if r.get("visibility_version") == VISIBILITY_VERSION:
+                last_rows[r["plant"]] = r
+        for plant, r in last_rows.items():
+            check_upstream(f"viewsig[{plant}]", r)
             alg = r.get("visibility_algorithm") or {}
-            check_upstream(f"viewsig[{r.get('plant', i)}].algorithm", alg)
+            check_upstream(f"viewsig[{plant}].algorithm", alg)
     else:
         chain_problems.append("corrected_viewsig_manifest.jsonl: <missing>")
     check_upstream("benchmark_manifest", man)
